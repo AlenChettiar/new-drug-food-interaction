@@ -1,0 +1,7 @@
+Model,Validation Accuracy,Unseen Accuracy,Unseen F1
+XGBoost (Baseline),0.6667,0.72,0.7013
+LightGBM,0.6667,0.66,0.665
+Random Forest,0.6852,0.56,0.5979
+Support Vector Machine,0.6111,0.54,0.5957
+Logistic Regression,0.7037,0.52,0.5698
+K-Nearest Neighbors,0.5556,0.56,0.541

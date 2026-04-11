@@ -1,0 +1,21 @@
+===============================================
+  Model Evaluation Metrics: K-Nearest Neighbors
+===============================================
+
+[Training Set Performance]
+  - Accuracy: 0.6274
+  - Precision: 0.6222
+  - Recall (Sensitivity): 0.6274
+  - F1 Score: 0.5714
+
+[Validation Set Performance]
+  - Accuracy: 0.5556
+  - Precision: 0.5198
+  - Recall (Sensitivity): 0.5556
+  - F1 Score: 0.499
+
+[Unseen Test Set Performance]
+  - Accuracy: 0.56
+  - Precision: 0.6745
+  - Recall (Sensitivity): 0.56
+  - F1 Score: 0.541

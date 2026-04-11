@@ -1,0 +1,21 @@
+===============================================
+  Model Evaluation Metrics: Logistic Regression
+===============================================
+
+[Training Set Performance]
+  - Accuracy: 0.7547
+  - Precision: 0.7992
+  - Recall (Sensitivity): 0.7547
+  - F1 Score: 0.7614
+
+[Validation Set Performance]
+  - Accuracy: 0.7037
+  - Precision: 0.7099
+  - Recall (Sensitivity): 0.7037
+  - F1 Score: 0.7056
+
+[Unseen Test Set Performance]
+  - Accuracy: 0.52
+  - Precision: 0.6911
+  - Recall (Sensitivity): 0.52
+  - F1 Score: 0.5698

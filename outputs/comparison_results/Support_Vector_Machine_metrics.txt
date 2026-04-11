@@ -1,0 +1,21 @@
+===============================================
+  Model Evaluation Metrics: Support Vector Machine
+===============================================
+
+[Training Set Performance]
+  - Accuracy: 0.7736
+  - Precision: 0.8277
+  - Recall (Sensitivity): 0.7736
+  - F1 Score: 0.7796
+
+[Validation Set Performance]
+  - Accuracy: 0.6111
+  - Precision: 0.6604
+  - Recall (Sensitivity): 0.6111
+  - F1 Score: 0.6213
+
+[Unseen Test Set Performance]
+  - Accuracy: 0.54
+  - Precision: 0.704
+  - Recall (Sensitivity): 0.54
+  - F1 Score: 0.5957

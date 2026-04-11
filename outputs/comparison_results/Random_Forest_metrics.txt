@@ -1,0 +1,21 @@
+===============================================
+  Model Evaluation Metrics: Random Forest
+===============================================
+
+[Training Set Performance]
+  - Accuracy: 0.9292
+  - Precision: 0.9341
+  - Recall (Sensitivity): 0.9292
+  - F1 Score: 0.9301
+
+[Validation Set Performance]
+  - Accuracy: 0.6852
+  - Precision: 0.688
+  - Recall (Sensitivity): 0.6852
+  - F1 Score: 0.6738
+
+[Unseen Test Set Performance]
+  - Accuracy: 0.56
+  - Precision: 0.6556
+  - Recall (Sensitivity): 0.56
+  - F1 Score: 0.5979
