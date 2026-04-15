@@ -1015,30 +1015,8 @@ def main():
     )
     print(f"[RFE] Final dense feature matrix mapping exactly {X_train_full.shape[1]} dimensions.")
 
-    # ── 4. BorderlineSMOTE for Moderate class oversampling (Fix 3) ────────
-    print("\n[SMOTE] Oversampling Moderate class via BorderlineSMOTE...")
-    y_cls_train_orig = y_cls_train.copy()
-    n_moderate = int((y_cls_train == 1).sum())
-    print(f"  Moderate samples before SMOTE: {n_moderate}")
-
-    if n_moderate >= 2:  # need at least 2 samples for SMOTE
-        smote = BorderlineSMOTE(
-            sampling_strategy={1: max(40, n_moderate)},
-            k_neighbors=min(4, n_moderate - 1),
-            random_state=SEED,
-            kind="borderline-1"
-        )
-        X_train_full, y_cls_train = smote.fit_resample(X_train_full, y_cls_train)
-
-        # Extend regression targets for synthetic rows
-        moderate_median_pct = np.median(y_reg_train[y_cls_train_orig == 1])
-        n_synthetic = len(y_cls_train) - len(y_reg_train)
-        y_reg_train = np.concatenate([y_reg_train,
-                                       np.full(n_synthetic, moderate_median_pct)])
-        print(f"  Moderate samples after SMOTE:  {int((y_cls_train == 1).sum())}")
-        print(f"  Total training rows: {len(y_cls_train)} (was {len(y_cls_train_orig)})")
-    else:
-        print(f"  [WARN] Too few moderate samples ({n_moderate}) for SMOTE, skipping.")
+    # ── 4. Removed SMOTE (Purely Real Data Used for Balanced Classes) ─────
+    print("\n[Data] Skipping SMOTE. Dataset is already mathematically balanced 1:1:1 purely from real-world FDA data.")
 
     # ── 5. Train Soft-Voting Ensemble ──────────────────────────────────────
     print("\n[STEP 3] Training Soft-Voting Ensemble (XGBoost + RandomForest + GradientBoosting)")

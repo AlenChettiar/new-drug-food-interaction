@@ -5,46 +5,46 @@
 - **Task**: Multiclass Classification (0: Neutral, 1: Moderate, 2: Critical)
 - **Preprocessing**: BorderlineSMOTE | RFE(20) | StandardScaler | Morgan FP (256-bit)
 - **Split Strategy**: Leave-One-Drug-Out (LODO) for unseen evaluation
-- **Training Sample Size**: 120 pairs
-- **Validation Sample Size**: 24 pairs
-- **Unseen Held-Out Size (LODO)**: 52 pairs
+- **Training Sample Size**: 283 pairs
+- **Validation Sample Size**: 71 pairs
+- **Unseen Held-Out Size (LODO)**: 84 pairs
 
 ## 2. Classification Metrics by Split
 
 ### 🟢 Training Set
 | Metric | Value |
 |--------|-------|
-| Accuracy | 0.9750 |
-| Precision | 0.9760 |
-| Recall | 0.9750 |
-| F1 | 0.9748 |
-| Roc_Auc | 0.9992 |
+| Accuracy | 0.9541 |
+| Precision | 0.9539 |
+| Recall | 0.9541 |
+| F1 | 0.9538 |
+| Roc_Auc | 0.9949 |
 
 ### 🟡 Validation Set
 | Metric | Value |
 |--------|-------|
-| Accuracy | 0.8333 |
-| Precision | 0.8472 |
-| Recall | 0.8333 |
-| F1 | 0.8232 |
-| Roc_Auc | 0.9321 |
+| Accuracy | 0.7887 |
+| Precision | 0.7881 |
+| Recall | 0.7887 |
+| F1 | 0.7790 |
+| Roc_Auc | 0.8884 |
 
 ### 🔴 Unseen Test Set (LODO)
 | Metric | Value |
 |--------|-------|
-| Accuracy | 0.8077 |
-| Precision | 0.8063 |
-| Recall | 0.8077 |
-| F1 | 0.7969 |
-| Roc_Auc | 0.9342 |
+| Accuracy | 0.8810 |
+| Precision | 0.8789 |
+| Recall | 0.8810 |
+| F1 | 0.8792 |
+| Roc_Auc | 0.9528 |
 
 ## 3. Regression Metrics (% Bioavailability Change)
 
 | Split | RMSE | MAE | R² |
 |-------|------|-----|-----|
-| Train | 2.4532 | 1.6287 | 0.9911 |
-| Validation | 19.0861 | 14.0486 | 0.3555 |
-| Unseen (LODO) | 18.7340 | 14.0220 | 0.4998 |
+| Train | 6.2604 | 4.0180 | 0.9552 |
+| Validation | 22.4861 | 17.3290 | 0.4091 |
+| Unseen (LODO) | 20.5662 | 15.9350 | 0.4416 |
 
 ## 4. Visual Dashboards
 

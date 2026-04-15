@@ -1,172 +1,439 @@
 Drug_Name,Food_Name,Drug_SMILES,Food_SMILES,Drug_Class,Bioavail_Change_Pct,interactions,Split,fda_mentions_food,fda_interaction_keywords
-Ribociclib,Dairy,CN(C)C(=O)C1=CC2=CN=C(N=C2N1C3CCCC3)NC4=NC=C(C=C4)N5CCNCC5,[Ca],CDK4_inhibitor,0.0,0,train,0,8
-Sunitinib,Caffeine,CCN(CC)CCNC(=O)C1=C(NC(=C1C)/C=C\2/C3=C(C=CC(=C3)F)NC2=O)C,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,multikinase_inhibitor,0.0,0,train,0,7
-Mercaptopurine,Calcium,C1=NC2=C(N1)C(=S)N=CN2,[Ca],antimetabolite,0.0,0,train,0,6
-Ponatinib,Dairy,CC1=C(C=C(C=C1)C(=O)NC2=CC(=C(C=C2)CN3CCN(CC3)C)C(F)(F)F)C#CC4=CN=C5N4N=CC=C5,[Ca],BCR-ABL_inhibitor,0.0,0,train,0,8
-Sorafenib,Alcohol,CNC(=O)C1=NC=CC(=C1)OC2=CC=C(C=C2)NC(=O)NC3=CC(=C(C=C3)Cl)C(F)(F)F,CCO,multikinase_inhibitor,0.0,0,train,0,9
-Cyclophosphamide,Dairy,C1CNP(=O)(OC1)N(CCCl)CCCl,[Ca],alkylating_agent,0.0,0,train,0,8
-Busulfan,Calcium,CS(=O)(=O)OCCCCOS(=O)(=O)C,[Ca],alkylating_agent,0.0,0,train,0,6
-Busulfan,Dairy,CS(=O)(=O)OCCCCOS(=O)(=O)C,[Ca],alkylating_agent,0.0,0,train,0,6
-Brigatinib,Green Tea,CN1CCN(CC1)C2CCN(CC2)C3=CC(=C(C=C3)NC4=NC=C(C(=N4)NC5=CC=CC=C5P(=O)(C)C)Cl)OC,C1[C@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC(=C(C(=C3)O)O)O)OC(=O)C4=CC(=C(C(=C4)O)O)O,ALK_inhibitor,0.0,0,train,0,8
-Ospemifene,Caffeine,C1=CC=C(C=C1)/C(=C(/C2=CC=CC=C2)\C3=CC=C(C=C3)OCCO)/CCCl,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,SERM,0.0,0,train,0,7
-Sorafenib,Grapefruit,CNC(=O)C1=NC=CC(=C1)OC2=CC=C(C=C2)NC(=O)NC3=CC(=C(C=C3)Cl)C(F)(F)F,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,multikinase_inhibitor,0.0,0,train,0,9
-Cyclophosphamide,St. John'S Wort,C1CNP(=O)(OC1)N(CCCl)CCCl,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,alkylating_agent,0.0,0,train,0,8
-Abiraterone,Caffeine,C[C@]12CC[C@@H](CC1=CC[C@@H]3[C@@H]2CC[C@]4([C@H]3CC=C4C5=CN=CC=C5)C)O,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,CYP17_inhibitor,0.0,0,train,0,8
-Abiraterone,Green Tea,C[C@]12CC[C@@H](CC1=CC[C@@H]3[C@@H]2CC[C@]4([C@H]3CC=C4C5=CN=CC=C5)C)O,C1[C@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC(=C(C(=C3)O)O)O)OC(=O)C4=CC(=C(C(=C4)O)O)O,CYP17_inhibitor,0.0,0,train,0,8
-Mercaptopurine,St. John'S Wort,C1=NC2=C(N1)C(=S)N=CN2,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,antimetabolite,0.0,0,train,0,6
-Fluorouracil,Caffeine,C1=C(C(=O)NC(=O)N1)F,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,antimetabolite,0.0,0,train,0,3
-Sunitinib,St. John'S Wort,CCN(CC)CCNC(=O)C1=C(NC(=C1C)/C=C\2/C3=C(C=CC(=C3)F)NC2=O)C,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,multikinase_inhibitor,0.0,0,train,0,7
-Radotinib,Garlic,CC1=C(C=C(C=C1)C(=O)NC2=CC(=CC(=C2)C(F)(F)F)N3C=C(N=C3)C)NC4=NC=CC(=N4)C5=NC=CN=C5,C=CCSS(=O)CC=C,BCR-ABL_inhibitor,0.0,0,train,0,0
-Fluorouracil,Green Tea,C1=C(C(=O)NC(=O)N1)F,C1[C@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC(=C(C(=C3)O)O)O)OC(=O)C4=CC(=C(C(=C4)O)O)O,antimetabolite,0.0,0,train,0,3
-Carmustine,Vitamin C,C(CCl)NC(=O)N(CCCl)N=O,C([C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O)O,alkylating_agent,0.0,0,train,0,2
-Cytarabine,Caffeine,C1=CN(C(=O)N=C1N)[C@H]2[C@H]([C@@H]([C@H](O2)CO)O)O,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,antimetabolite,0.0,0,train,0,3
-Chlorambucil,Alcohol,C1=CC(=CC=C1CCCC(=O)O)N(CCCl)CCCl,CCO,alkylating_agent,0.0,0,train,0,5
-Ruxolitinib,Caffeine,C1CCC(C1)[C@@H](CC#N)N2C=C(C=N2)C3=C4C=CNC4=NC=N3,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,JAK_inhibitor,0.0,0,train,0,8
-Sunitinib,Dairy,CCN(CC)CCNC(=O)C1=C(NC(=C1C)/C=C\2/C3=C(C=CC(=C3)F)NC2=O)C,[Ca],multikinase_inhibitor,0.0,0,train,0,7
-Radotinib,Fat,CC1=C(C=C(C=C1)C(=O)NC2=CC(=CC(=C2)C(F)(F)F)N3C=C(N=C3)C)NC4=NC=CC(=N4)C5=NC=CN=C5,CCCCCCCC/C=C\CCCCCCCC(=O)O,BCR-ABL_inhibitor,0.0,0,train,0,0
-Gefitinib,Caffeine,COC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)F)Cl)OCCCN4CCOCC4,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,EGFR_inhibitor,0.0,0,train,0,8
-Mercaptopurine,Alcohol,C1=NC2=C(N1)C(=S)N=CN2,CCO,antimetabolite,0.0,0,train,0,6
-Bazedoxifene,Garlic,CC1=C(N(C2=C1C=C(C=C2)O)CC3=CC=C(C=C3)OCCN4CCCCCC4)C5=CC=C(C=C5)O,C=CCSS(=O)CC=C,SERM,0.0,0,train,0,8
-Tamoxifen,Calcium,CC/C(=C(\C1=CC=CC=C1)/C2=CC=C(C=C2)OCCN(C)C)/C3=CC=CC=C3,[Ca],SERM,0.0,0,train,0,9
-Vismodegib,Garlic,CS(=O)(=O)C1=CC(=C(C=C1)C(=O)NC2=CC(=C(C=C2)Cl)C3=CC=CC=N3)Cl,C=CCSS(=O)CC=C,hedgehog_inhibitor,0.0,0,train,0,7
+Alectinib,Calcium,CCC1=CC2=C(C=C1N3CCC(CC3)N4CCOCC4)C(C5=C(C2=O)C6=C(N5)C=C(C=C6)C#N)(C)C,[Ca],ALK_inhibitor,0.0,0,train,0,8
+Ponatinib,Empty Stomach,CC1=C(C=C(C=C1)C(=O)NC2=CC(=C(C=C2)CN3CCN(CC3)C)C(F)(F)F)C#CC4=CN=C5N4N=CC=C5,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,BCR-ABL_inhibitor,0.0,0,train,0,8
 Busulfan,Alcohol,CS(=O)(=O)OCCCCOS(=O)(=O)C,CCO,alkylating_agent,0.0,0,train,0,6
-Nilotinib,Vitamin C,CC1=C(C=C(C=C1)C(=O)NC2=CC(=CC(=C2)C(F)(F)F)N3C=C(N=C3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,C([C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O)O,BCR-ABL_inhibitor,0.0,0,train,0,9
-Methotrexate,Calcium,CN(CC1=CN=C2C(=N1)C(=NC(=N2)N)N)C3=CC=C(C=C3)C(=O)N[C@@H](CCC(=O)O)C(=O)O,[Ca],antimetabolite,0.0,0,train,0,10
-Pazopanib,Grapefruit,CC1=C(C=C(C=C1)NC2=NC=CC(=N2)N(C)C3=CC4=NN(C(=C4C=C3)C)C)S(=O)(=O)N,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,multikinase_inhibitor,0.0,0,train,0,8
-Obatoclax,Garlic,CC1=CC(=C(N1)/C=C\2/C(=C/C(=C/3\C=C4C=CC=CC4=N3)/N2)OC)C,C=CCSS(=O)CC=C,BCL2_inhibitor,0.0,0,train,0,0
-Carmustine,Dairy,C(CCl)NC(=O)N(CCCl)N=O,[Ca],alkylating_agent,0.0,0,train,0,2
-Cytarabine,Green Tea,C1=CN(C(=O)N=C1N)[C@H]2[C@H]([C@@H]([C@H](O2)CO)O)O,C1[C@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC(=C(C(=C3)O)O)O)OC(=O)C4=CC(=C(C(=C4)O)O)O,antimetabolite,0.0,0,train,0,3
-Axitinib,Calcium,CNC(=O)C1=CC=CC=C1SC2=CC3=C(C=C2)C(=NN3)/C=C/C4=CC=CC=N4,[Ca],multikinase_inhibitor,0.0,0,train,0,8
-Mercaptopurine,Dairy,C1=NC2=C(N1)C(=S)N=CN2,[Ca],antimetabolite,0.0,0,train,0,6
-Obatoclax,Fat,CC1=CC(=C(N1)/C=C\2/C(=C/C(=C/3\C=C4C=CC=CC4=N3)/N2)OC)C,CCCCCCCC/C=C\CCCCCCCC(=O)O,BCL2_inhibitor,0.0,0,train,0,0
-Imatinib,St. John'S Wort,CC1=C(C=C(C=C1)NC(=O)C2=CC=C(C=C2)CN3CCN(CC3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,BCR-ABL_inhibitor,0.0,0,train,0,8
-Carmustine,St. John'S Wort,C(CCl)NC(=O)N(CCCl)N=O,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,alkylating_agent,0.0,0,train,0,2
+Nilutamide,Vitamin C,CC1(C(=O)N(C(=O)N1)C2=CC(=C(C=C2)[N+](=O)[O-])C(F)(F)F)C,C([C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O)O,androgen_antagonist,0.0,0,train,0,5
+Vismodegib,Meal,CS(=O)(=O)C1=CC(=C(C=C1)C(=O)NC2=CC(=C(C=C2)Cl)C3=CC=CC=N3)Cl,CCCCCCCCCCCCCCCC(=O)O,hedgehog_inhibitor,0.0,0,train,0,7
+Copanlisib,Antacid,COC1=C(C=CC2=C3NCCN3C(=NC(=O)C4=CN=C(N=C4)N)N=C21)OCCCN5CCOCC5,[OH-].[OH-].[Mg+2],PI3K_inhibitor,0.0,0,train,0,0
+Capmatinib,Garlic,CNC(=O)C1=C(C=C(C=C1)C2=NN3C(=CN=C3N=C2)CC4=CC5=C(C=C4)N=CC=C5)F,C=CCSS(=O)CC=C,MET_inhibitor,0.0,0,train,0,8
+Topotecan,Garlic,CC[C@@]1(C2=C(COC1=O)C(=O)N3CC4=CC5=C(C=CC(=C5CN(C)C)O)N=C4C3=C2)O,C=CCSS(=O)CC=C,topoisomerase_inhibitor,0.0,0,train,0,5
+Nilutamide,Caffeine,CC1(C(=O)N(C(=O)N1)C2=CC(=C(C=C2)[N+](=O)[O-])C(F)(F)F)C,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,androgen_antagonist,0.0,0,train,0,5
+Panobinostat,Dairy,CC1=C(C2=CC=CC=C2N1)CCNCC3=CC=C(C=C3)/C=C/C(=O)NO,[Ca],HDAC_inhibitor,0.0,0,train,0,0
+Enasidenib,Empty Stomach,CC(C)(CNC1=NC(=NC(=N1)C2=NC(=CC=C2)C(F)(F)F)NC3=CC(=NC=C3)C(F)(F)F)O,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,IDH_inhibitor,0.0,0,train,0,8
+Rucaparib,Dairy,CNCC1=CC=C(C=C1)C2=C3CCNC(=O)C4=C3C(=CC(=C4)F)N2,[Ca],PARP_inhibitor,0.0,0,train,0,8
+Pomalidomide,Antacid,C1CC(=O)NC(=O)C1N2C(=O)C3=C(C2=O)C(=CC=C3)N,[OH-].[OH-].[Mg+2],IMiD,0.0,0,train,0,10
+Irinotecan,Green Tea,CCC1=C2CN3C(=CC4=C(C3=O)COC(=O)[C@@]4(CC)O)C2=NC5=C1C=C(C=C5)OC(=O)N6CCC(CC6)N7CCCCC7,C1[C@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC(=C(C(=C3)O)O)O)OC(=O)C4=CC(=C(C(=C4)O)O)O,topoisomerase_inhibitor,0.0,0,train,0,9
+Cobimetinib,Dairy,C1CCN[C@@H](C1)C2(CN(C2)C(=O)C3=C(C(=C(C=C3)F)F)NC4=C(C=C(C=C4)I)F)O,[Ca],MEK_inhibitor,0.0,0,train,0,8
+Letrozole,Calcium,C1=CC(=CC=C1C#N)C(C2=CC=C(C=C2)C#N)N3C=NC=N3,[Ca],aromatase_inhibitor,0.0,0,train,0,6
+Topotecan,St. John'S Wort,CC[C@@]1(C2=C(COC1=O)C(=O)N3CC4=CC5=C(C=CC(=C5CN(C)C)O)N=C4C3=C2)O,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,topoisomerase_inhibitor,0.0,0,train,0,5
+Raloxifene,Coffee,C1CCN(CC1)CCOC2=CC=C(C=C2)C(=O)C3=C(SC4=C3C=CC(=C4)O)C5=CC=C(C=C5)O,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,SERM,0.0,0,train,0,6
+Ospemifene,Garlic,C1=CC=C(C=C1)/C(=C(/C2=CC=CC=C2)\C3=CC=C(C=C3)OCCO)/CCCl,C=CCSS(=O)CC=C,SERM,0.0,0,train,0,7
+Tamoxifen,Green Tea,CC/C(=C(\C1=CC=CC=C1)/C2=CC=C(C=C2)OCCN(C)C)/C3=CC=CC=C3,C1[C@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC(=C(C(=C3)O)O)O)OC(=O)C4=CC(=C(C(=C4)O)O)O,SERM,0.0,0,train,0,9
+Bazedoxifene,Fasting,CC1=C(N(C2=C1C=C(C=C2)O)CC3=CC=C(C=C3)OCCN4CCCCCC4)C5=CC=C(C=C5)O,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,SERM,0.0,0,train,0,8
 Melphalan,Calcium,C1=CC(=CC=C1C[C@@H](C(=O)O)N)N(CCCl)CCCl,[Ca],alkylating_agent,0.0,0,train,0,4
-Afatinib,Caffeine,CN(C)C/C=C/C(=O)NC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC(=C(C=C3)F)Cl)O[C@H]4CCOC4,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,EGFR_inhibitor,0.0,0,train,0,7
-Ponatinib,Vitamin C,CC1=C(C=C(C=C1)C(=O)NC2=CC(=C(C=C2)CN3CCN(CC3)C)C(F)(F)F)C#CC4=CN=C5N4N=CC=C5,C([C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O)O,BCR-ABL_inhibitor,0.0,0,train,0,8
-Melphalan,Alcohol,C1=CC(=CC=C1C[C@@H](C(=O)O)N)N(CCCl)CCCl,CCO,alkylating_agent,0.0,0,train,0,4
-Vemurafenib,Alcohol,CCCS(=O)(=O)NC1=C(C(=C(C=C1)F)C(=O)C2=CNC3=C2C=C(C=N3)C4=CC=C(C=C4)Cl)F,CCO,BRAF_inhibitor,0.0,0,train,0,8
-Abiraterone,Dairy,C[C@]12CC[C@@H](CC1=CC[C@@H]3[C@@H]2CC[C@]4([C@H]3CC=C4C5=CN=CC=C5)C)O,[Ca],CYP17_inhibitor,0.0,0,train,0,8
-Obatoclax,Caffeine,CC1=CC(=C(N1)/C=C\2/C(=C/C(=C/3\C=C4C=CC=CC4=N3)/N2)OC)C,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,BCL2_inhibitor,0.0,0,train,0,0
+Capecitabine,Coffee,CCCCCOC(=O)NC1=NC(=O)N(C=C1F)[C@H]2[C@@H]([C@@H]([C@H](O2)C)O)O,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,antimetabolite,0.0,0,train,0,7
+Selumetinib,Antacid,CN1C=NC2=C1C=C(C(=C2F)NC3=C(C=C(C=C3)Br)Cl)C(=O)NOCCO,[OH-].[OH-].[Mg+2],MEK_inhibitor,0.0,0,train,0,8
+Alectinib,St. John'S Wort,CCC1=CC2=C(C=C1N3CCC(CC3)N4CCOCC4)C(C5=C(C2=O)C6=C(N5)C=C(C=C6)C#N)(C)C,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,ALK_inhibitor,0.0,0,train,0,8
+Ponatinib,St. John'S Wort,CC1=C(C=C(C=C1)C(=O)NC2=CC(=C(C=C2)CN3CCN(CC3)C)C(F)(F)F)C#CC4=CN=C5N4N=CC=C5,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,BCR-ABL_inhibitor,0.0,0,train,0,8
+Topotecan,Alcohol,CC[C@@]1(C2=C(COC1=O)C(=O)N3CC4=CC5=C(C=CC(=C5CN(C)C)O)N=C4C3=C2)O,CCO,topoisomerase_inhibitor,0.0,0,train,0,5
+Tucatinib,Juice,CC1=C(C=CC(=C1)NC2=NC=NC3=C2C=C(C=C3)NC4=NC(CO4)(C)C)OC5=CC6=NC=NN6C=C5,C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O,HER2_inhibitor,0.0,0,train,0,8
+Ivosidenib,Magnesium,C1CC(=O)N([C@@H]1C(=O)N(C2=CC(=CN=C2)F)[C@@H](C3=CC=CC=C3Cl)C(=O)NC4CC(C4)(F)F)C5=NC=CC(=C5)C#N,[OH-].[OH-].[Mg+2],IDH_inhibitor,0.0,0,train,0,8
+Temozolomide,Juice,CN1C(=O)N2C=NC(=C2N=N1)C(=O)N,C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O,alkylating_agent,0.0,0,train,0,6
+Ivosidenib,Iron,C1CC(=O)N([C@@H]1C(=O)N(C2=CC(=CN=C2)F)[C@@H](C3=CC=CC=C3Cl)C(=O)NC4CC(C4)(F)F)C5=NC=CC(=C5)C#N,[Fe],IDH_inhibitor,0.0,0,train,0,8
+Temozolomide,Meal,CN1C(=O)N2C=NC(=C2N=N1)C(=O)N,CCCCCCCCCCCCCCCC(=O)O,alkylating_agent,0.0,0,train,0,6
+Teniposide,Dairy,COC1=CC(=CC(=C1O)OC)[C@H]2[C@@H]3[C@H](COC3=O)[C@@H](C4=CC5=C(C=C24)OCO5)O[C@H]6[C@@H]([C@H]([C@H]7[C@H](O6)CO[C@H](O7)C8=CC=CS8)O)O,[Ca],topoisomerase_inhibitor,0.0,0,train,0,0
+Ribociclib,Garlic,CN(C)C(=O)C1=CC2=CN=C(N=C2N1C3CCCC3)NC4=NC=C(C=C4)N5CCNCC5,C=CCSS(=O)CC=C,CDK4_inhibitor,0.0,0,train,0,8
+Belinostat,Meal,C1=CC=C(C=C1)NS(=O)(=O)C2=CC=CC(=C2)/C=C/C(=O)NO,CCCCCCCCCCCCCCCC(=O)O,HDAC_inhibitor,0.0,0,train,0,7
+Lomustine,Magnesium,C1CCC(CC1)NC(=O)N(CCCl)N=O,[OH-].[OH-].[Mg+2],alkylating_agent,0.0,0,train,0,4
+Acalabrutinib,Magnesium,CC#CC(=O)N1CCC[C@H]1C2=NC(=C3N2C=CN=C3N)C4=CC=C(C=C4)C(=O)NC5=CC=CC=N5,[OH-].[OH-].[Mg+2],BTK_inhibitor,0.0,0,train,0,8
+Exemestane,Empty Stomach,C[C@]12CC[C@H]3[C@H]([C@@H]1CCC2=O)CC(=C)C4=CC(=O)C=C[C@]34C,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,aromatase_inhibitor,0.0,0,train,0,7
+Panobinostat,Grapefruit,CC1=C(C2=CC=CC=C2N1)CCNCC3=CC=C(C=C3)/C=C/C(=O)NO,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,HDAC_inhibitor,0.0,0,train,0,0
+Abiraterone,Iron,C[C@]12CC[C@@H](CC1=CC[C@@H]3[C@@H]2CC[C@]4([C@H]3CC=C4C5=CN=CC=C5)C)O,[Fe],CYP17_inhibitor,0.0,0,train,0,8
+Rucaparib,Antacid,CNCC1=CC=C(C=C1)C2=C3CCNC(=O)C4=C3C(=CC(=C4)F)N2,[OH-].[OH-].[Mg+2],PARP_inhibitor,0.0,0,train,0,8
+Alpelisib,Magnesium,CC1=C(SC(=N1)NC(=O)N2CCC[C@H]2C(=O)N)C3=CC(=NC=C3)C(C)(C)C(F)(F)F,[OH-].[OH-].[Mg+2],PI3K_inhibitor,0.0,0,train,0,8
+Brigatinib,Vitamin C,CN1CCN(CC1)C2CCN(CC2)C3=CC(=C(C=C3)NC4=NC=C(C(=N4)NC5=CC=CC=C5P(=O)(C)C)Cl)OC,C([C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O)O,ALK_inhibitor,0.0,0,train,0,8
+Acalabrutinib,St. John'S Wort,CC#CC(=O)N1CCC[C@H]1C2=NC(=C3N2C=CN=C3N)C4=CC=C(C=C4)C(=O)NC5=CC=CC=N5,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,BTK_inhibitor,0.0,0,train,0,8
+Melphalan,Vitamin C,C1=CC(=CC=C1C[C@@H](C(=O)O)N)N(CCCl)CCCl,C([C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O)O,alkylating_agent,0.0,0,train,0,4
+Radotinib,Empty Stomach,CC1=C(C=C(C=C1)C(=O)NC2=CC(=CC(=C2)C(F)(F)F)N3C=C(N=C3)C)NC4=NC=CC(=N4)C5=NC=CN=C5,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,BCR-ABL_inhibitor,0.0,0,train,0,0
 Nilotinib,Caffeine,CC1=C(C=C(C=C1)C(=O)NC2=CC(=CC(=C2)C(F)(F)F)N3C=C(N=C3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,BCR-ABL_inhibitor,0.0,0,train,0,9
-Raloxifene,Alcohol,C1CCN(CC1)CCOC2=CC=C(C=C2)C(=O)C3=C(SC4=C3C=CC(=C4)O)C5=CC=C(C=C5)O,CCO,SERM,-34.3,1,train,1,6
-Raloxifene,Calcium,C1CCN(CC1)CCOC2=CC=C(C=C2)C(=O)C3=C(SC4=C3C=CC(=C4)O)C5=CC=C(C=C5)O,[Ca],SERM,22.3,1,train,1,6
-Vandetanib,Calcium,CN1CCC(CC1)COC2=C(C=C3C(=C2)N=CN=C3NC4=C(C=C(C=C4)Br)F)OC,[Ca],EGFR_inhibitor,20.3,1,train,1,8
-Nilotinib,Calcium,CC1=C(C=C(C=C1)C(=O)NC2=CC(=CC(=C2)C(F)(F)F)N3C=C(N=C3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,[Ca],BCR-ABL_inhibitor,-22.3,1,train,1,9
-Ponatinib,Alcohol,CC1=C(C=C(C=C1)C(=O)NC2=CC(=C(C=C2)CN3CCN(CC3)C)C(F)(F)F)C#CC4=CN=C5N4N=CC=C5,CCO,BCR-ABL_inhibitor,-27.9,1,train,1,8
-Erlotinib,Alcohol,COCCOC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC=CC(=C3)C#C)OCCOC,CCO,EGFR_inhibitor,22.1,1,train,1,8
-Imatinib,Calcium,CC1=C(C=C(C=C1)NC(=O)C2=CC=C(C=C2)CN3CCN(CC3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,[Ca],BCR-ABL_inhibitor,28.9,1,train,1,8
-Methotrexate,Alcohol,CN(CC1=CN=C2C(=N1)C(=NC(=N2)N)N)C3=CC=C(C=C3)C(=O)N[C@@H](CCC(=O)O)C(=O)O,CCO,antimetabolite,22.6,1,train,1,10
-Sorafenib,Calcium,CNC(=O)C1=NC=CC(=C1)OC2=CC=C(C=C2)NC(=O)NC3=CC(=C(C=C3)Cl)C(F)(F)F,[Ca],multikinase_inhibitor,-32.6,1,train,1,9
-Lenvatinib,Calcium,COC1=CC2=NC=CC(=C2C=C1C(=O)N)OC3=CC(=C(C=C3)NC(=O)NC4CC4)Cl,[Ca],multikinase_inhibitor,-27.8,1,train,1,8
-Bazedoxifene,Calcium,CC1=C(N(C2=C1C=C(C=C2)O)CC3=CC=C(C=C3)OCCN4CCCCCC4)C5=CC=C(C=C5)O,[Ca],SERM,32.9,1,train,1,8
-Pazopanib,Caffeine,CC1=C(C=C(C=C1)NC2=NC=CC(=N2)N(C)C3=CC4=NN(C(=C4C=C3)C)C)S(=O)(=O)N,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,multikinase_inhibitor,31.6,1,train,1,8
-Pazopanib,Calcium,CC1=C(C=C(C=C1)NC2=NC=CC(=N2)N(C)C3=CC4=NN(C(=C4C=C3)C)C)S(=O)(=O)N,[Ca],multikinase_inhibitor,-21.7,1,train,1,8
-Crizotinib,Calcium,C[C@H](C1=C(C=CC(=C1Cl)F)Cl)OC2=C(N=CC(=C2)C3=CN(N=C3)C4CCNCC4)N,[Ca],ALK_inhibitor,31.4,1,train,1,8
-Vemurafenib,Caffeine,CCCS(=O)(=O)NC1=C(C(=C(C=C1)F)C(=O)C2=CNC3=C2C=C(C=N3)C4=CC=C(C=C4)Cl)F,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,BRAF_inhibitor,31.6,1,train,1,8
-Vemurafenib,Calcium,CCCS(=O)(=O)NC1=C(C(=C(C=C1)F)C(=O)C2=CNC3=C2C=C(C=N3)C4=CC=C(C=C4)Cl)F,[Ca],BRAF_inhibitor,26.4,1,train,1,8
-Enzalutamide,Caffeine,CC1(C(=O)N(C(=S)N1C2=CC(=C(C=C2)C(=O)NC)F)C3=CC(=C(C=C3)C#N)C(F)(F)F)C,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,androgen_antagonist,20.4,1,train,1,8
-Ribociclib,Caffeine,CN(C)C(=O)C1=CC2=CN=C(N=C2N1C3CCCC3)NC4=NC=C(C=C4)N5CCNCC5,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,CDK4_inhibitor,23.7,1,train,1,8
-Ribociclib,Calcium,CN(C)C(=O)C1=CC2=CN=C(N=C2N1C3CCCC3)NC4=NC=C(C=C4)N5CCNCC5,[Ca],CDK4_inhibitor,23.4,1,train,1,8
-Raloxifene,Fat,C1CCN(CC1)CCOC2=CC=C(C=C2)C(=O)C3=C(SC4=C3C=CC(=C4)O)C5=CC=C(C=C5)O,CCCCCCCC/C=C\CCCCCCCC(=O)O,SERM,52.0,2,train,1,6
-Vandetanib,St. John'S Wort,CN1CCC(CC1)COC2=C(C=C3C(=C2)N=CN=C3NC4=C(C=C(C=C4)Br)F)OC,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,EGFR_inhibitor,-57.3,2,train,1,8
-Vandetanib,Fat,CN1CCC(CC1)COC2=C(C=C3C(=C2)N=CN=C3NC4=C(C=C(C=C4)Br)F)OC,CCCCCCCC/C=C\CCCCCCCC(=O)O,EGFR_inhibitor,48.0,2,train,1,8
-Ospemifene,Fat,C1=CC=C(C=C1)/C(=C(/C2=CC=CC=C2)\C3=CC=C(C=C3)OCCO)/CCCl,CCCCCCCC/C=C\CCCCCCCC(=O)O,SERM,59.1,2,train,1,7
-Nilotinib,Grapefruit,CC1=C(C=C(C=C1)C(=O)NC2=CC(=CC(=C2)C(F)(F)F)N3C=C(N=C3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,BCR-ABL_inhibitor,55.0,2,train,1,9
-Nilotinib,Fat,CC1=C(C=C(C=C1)C(=O)NC2=CC(=CC(=C2)C(F)(F)F)N3C=C(N=C3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,CCCCCCCC/C=C\CCCCCCCC(=O)O,BCR-ABL_inhibitor,36.4,2,train,1,9
-Ponatinib,Grapefruit,CC1=C(C=C(C=C1)C(=O)NC2=CC(=C(C=C2)CN3CCN(CC3)C)C(F)(F)F)C#CC4=CN=C5N4N=CC=C5,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,BCR-ABL_inhibitor,35.5,2,train,1,8
-Ponatinib,Fat,CC1=C(C=C(C=C1)C(=O)NC2=CC(=C(C=C2)CN3CCN(CC3)C)C(F)(F)F)C#CC4=CN=C5N4N=CC=C5,CCCCCCCC/C=C\CCCCCCCC(=O)O,BCR-ABL_inhibitor,43.0,2,train,1,8
-Erlotinib,Grapefruit,COCCOC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC=CC(=C3)C#C)OCCOC,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,EGFR_inhibitor,38.7,2,train,1,8
-Erlotinib,St. John'S Wort,COCCOC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC=CC(=C3)C#C)OCCOC,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,EGFR_inhibitor,-45.8,2,train,1,8
-Erlotinib,Fat,COCCOC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC=CC(=C3)C#C)OCCOC,CCCCCCCC/C=C\CCCCCCCC(=O)O,EGFR_inhibitor,41.0,2,train,1,8
-Capecitabine,Fat,CCCCCOC(=O)NC1=NC(=O)N(C=C1F)[C@H]2[C@@H]([C@@H]([C@H](O2)C)O)O,CCCCCCCC/C=C\CCCCCCCC(=O)O,antimetabolite,43.7,2,train,1,7
-Imatinib,Grapefruit,CC1=C(C=C(C=C1)NC(=O)C2=CC=C(C=C2)CN3CCN(CC3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,BCR-ABL_inhibitor,53.6,2,train,1,8
-Imatinib,Fat,CC1=C(C=C(C=C1)NC(=O)C2=CC=C(C=C2)CN3CCN(CC3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,CCCCCCCC/C=C\CCCCCCCC(=O)O,BCR-ABL_inhibitor,36.0,2,train,1,8
-Gefitinib,Fat,COC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)F)Cl)OCCCN4CCOCC4,CCCCCCCC/C=C\CCCCCCCC(=O)O,EGFR_inhibitor,31.4,2,train,1,8
-Methotrexate,Fat,CN(CC1=CN=C2C(=N1)C(=NC(=N2)N)N)C3=CC=C(C=C3)C(=O)N[C@@H](CCC(=O)O)C(=O)O,CCCCCCCC/C=C\CCCCCCCC(=O)O,antimetabolite,32.0,2,train,1,10
-Mercaptopurine,Fat,C1=NC2=C(N1)C(=S)N=CN2,CCCCCCCC/C=C\CCCCCCCC(=O)O,antimetabolite,58.5,2,train,1,6
-Sunitinib,Fat,CCN(CC)CCNC(=O)C1=C(NC(=C1C)/C=C\2/C3=C(C=CC(=C3)F)NC2=O)C,CCCCCCCC/C=C\CCCCCCCC(=O)O,multikinase_inhibitor,39.1,2,train,1,7
-Sorafenib,Fat,CNC(=O)C1=NC=CC(=C1)OC2=CC=C(C=C2)NC(=O)NC3=CC(=C(C=C3)Cl)C(F)(F)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,multikinase_inhibitor,44.9,2,train,1,9
-Tamoxifen,Fat,CC/C(=C(\C1=CC=CC=C1)/C2=CC=C(C=C2)OCCN(C)C)/C3=CC=CC=C3,CCCCCCCC/C=C\CCCCCCCC(=O)O,SERM,57.3,2,train,1,9
-Fluorouracil,Fat,C1=C(C(=O)NC(=O)N1)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,antimetabolite,37.8,2,train,1,3
-Lenvatinib,Fat,COC1=CC2=NC=CC(=C2C=C1C(=O)N)OC3=CC(=C(C=C3)NC(=O)NC4CC4)Cl,CCCCCCCC/C=C\CCCCCCCC(=O)O,multikinase_inhibitor,49.9,2,train,1,8
-Bazedoxifene,St. John'S Wort,CC1=C(N(C2=C1C=C(C=C2)O)CC3=CC=C(C=C3)OCCN4CCCCCC4)C5=CC=C(C=C5)O,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,SERM,-50.9,2,train,1,8
-Bazedoxifene,Fat,CC1=C(N(C2=C1C=C(C=C2)O)CC3=CC=C(C=C3)OCCN4CCCCCC4)C5=CC=C(C=C5)O,CCCCCCCC/C=C\CCCCCCCC(=O)O,SERM,35.5,2,train,1,8
-Busulfan,Fat,CS(=O)(=O)OCCCCOS(=O)(=O)C,CCCCCCCC/C=C\CCCCCCCC(=O)O,alkylating_agent,53.3,2,train,1,6
-Regorafenib,Grapefruit,CNC(=O)C1=NC=CC(=C1)OC2=CC(=C(C=C2)NC(=O)NC3=CC(=C(C=C3)Cl)C(F)(F)F)F,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,multikinase_inhibitor,58.2,2,train,1,8
-Regorafenib,St. John'S Wort,CNC(=O)C1=NC=CC(=C1)OC2=CC(=C(C=C2)NC(=O)NC3=CC(=C(C=C3)Cl)C(F)(F)F)F,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,multikinase_inhibitor,-57.9,2,train,1,8
-Regorafenib,Fat,CNC(=O)C1=NC=CC(=C1)OC2=CC(=C(C=C2)NC(=O)NC3=CC(=C(C=C3)Cl)C(F)(F)F)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,multikinase_inhibitor,47.9,2,train,1,8
-Bosutinib,St. John'S Wort,CN1CCN(CC1)CCCOC2=C(C=C3C(=C2)N=CC(=C3NC4=CC(=C(C=C4Cl)Cl)OC)C#N)OC,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,BCR-ABL_inhibitor,-45.4,2,train,1,8
-Bosutinib,Fat,CN1CCN(CC1)CCCOC2=C(C=C3C(=C2)N=CC(=C3NC4=CC(=C(C=C4Cl)Cl)OC)C#N)OC,CCCCCCCC/C=C\CCCCCCCC(=O)O,BCR-ABL_inhibitor,54.9,2,train,1,8
-Cyclophosphamide,Fat,C1CNP(=O)(OC1)N(CCCl)CCCl,CCCCCCCC/C=C\CCCCCCCC(=O)O,alkylating_agent,40.7,2,train,1,8
-Afatinib,St. John'S Wort,CN(C)C/C=C/C(=O)NC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC(=C(C=C3)F)Cl)O[C@H]4CCOC4,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,EGFR_inhibitor,-45.6,2,train,1,7
-Afatinib,Fat,CN(C)C/C=C/C(=O)NC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC(=C(C=C3)F)Cl)O[C@H]4CCOC4,CCCCCCCC/C=C\CCCCCCCC(=O)O,EGFR_inhibitor,46.3,2,train,1,7
-Lapatinib,Grapefruit,CS(=O)(=O)CCNCC1=CC=C(O1)C2=CC3=C(C=C2)N=CN=C3NC4=CC(=C(C=C4)OCC5=CC(=CC=C5)F)Cl,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,EGFR_inhibitor,51.2,2,train,1,8
-Lapatinib,Fat,CS(=O)(=O)CCNCC1=CC=C(O1)C2=CC3=C(C=C2)N=CN=C3NC4=CC(=C(C=C4)OCC5=CC(=CC=C5)F)Cl,CCCCCCCC/C=C\CCCCCCCC(=O)O,EGFR_inhibitor,51.9,2,train,1,8
-Pazopanib,Fat,CC1=C(C=C(C=C1)NC2=NC=CC(=N2)N(C)C3=CC4=NN(C(=C4C=C3)C)C)S(=O)(=O)N,CCCCCCCC/C=C\CCCCCCCC(=O)O,multikinase_inhibitor,32.2,2,train,1,8
-Abiraterone,Fat,C[C@]12CC[C@@H](CC1=CC[C@@H]3[C@@H]2CC[C@]4([C@H]3CC=C4C5=CN=CC=C5)C)O,CCCCCCCC/C=C\CCCCCCCC(=O)O,CYP17_inhibitor,39.9,2,train,1,8
-Acalabrutinib,Fat,CC#CC(=O)N1CCC[C@H]1C2=NC(=C3N2C=CN=C3N)C4=CC=C(C=C4)C(=O)NC5=CC=CC=N5,CCCCCCCC/C=C\CCCCCCCC(=O)O,BTK_inhibitor,39.8,2,train,1,8
-Crizotinib,Grapefruit,C[C@H](C1=C(C=CC(=C1Cl)F)Cl)OC2=C(N=CC(=C2)C3=CN(N=C3)C4CCNCC4)N,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,ALK_inhibitor,44.2,2,train,1,8
-Crizotinib,Fat,C[C@H](C1=C(C=CC(=C1Cl)F)Cl)OC2=C(N=CC(=C2)C3=CN(N=C3)C4CCNCC4)N,CCCCCCCC/C=C\CCCCCCCC(=O)O,ALK_inhibitor,33.6,2,train,1,8
-Vemurafenib,Fat,CCCS(=O)(=O)NC1=C(C(=C(C=C1)F)C(=O)C2=CNC3=C2C=C(C=N3)C4=CC=C(C=C4)Cl)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,BRAF_inhibitor,44.8,2,train,1,8
-Enzalutamide,Fat,CC1(C(=O)N(C(=S)N1C2=CC(=C(C=C2)C(=O)NC)F)C3=CC(=C(C=C3)C#N)C(F)(F)F)C,CCCCCCCC/C=C\CCCCCCCC(=O)O,androgen_antagonist,33.2,2,train,1,8
-Ruxolitinib,Fat,C1CCC(C1)[C@@H](CC#N)N2C=C(C=N2)C3=C4C=CNC4=NC=N3,CCCCCCCC/C=C\CCCCCCCC(=O)O,JAK_inhibitor,39.4,2,train,1,8
-Vismodegib,Fat,CS(=O)(=O)C1=CC(=C(C=C1)C(=O)NC2=CC(=C(C=C2)Cl)C3=CC=CC=N3)Cl,CCCCCCCC/C=C\CCCCCCCC(=O)O,hedgehog_inhibitor,45.3,2,train,1,7
-Ribociclib,Fat,CN(C)C(=O)C1=CC2=CN=C(N=C2N1C3CCCC3)NC4=NC=C(C=C4)N5CCNCC5,CCCCCCCC/C=C\CCCCCCCC(=O)O,CDK4_inhibitor,42.3,2,train,1,8
-Axitinib,Grapefruit,CNC(=O)C1=CC=CC=C1SC2=CC3=C(C=C2)C(=NN3)/C=C/C4=CC=CC=N4,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,multikinase_inhibitor,32.3,2,train,1,8
-Axitinib,St. John'S Wort,CNC(=O)C1=CC=CC=C1SC2=CC3=C(C=C2)C(=NN3)/C=C/C4=CC=CC=N4,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,multikinase_inhibitor,-45.8,2,train,1,8
-Axitinib,Fat,CNC(=O)C1=CC=CC=C1SC2=CC3=C(C=C2)C(=NN3)/C=C/C4=CC=CC=N4,CCCCCCCC/C=C\CCCCCCCC(=O)O,multikinase_inhibitor,34.8,2,train,1,8
-Brigatinib,Grapefruit,CN1CCN(CC1)C2CCN(CC2)C3=CC(=C(C=C3)NC4=NC=C(C(=N4)NC5=CC=CC=C5P(=O)(C)C)Cl)OC,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,ALK_inhibitor,57.9,2,train,1,8
-Brigatinib,Fat,CN1CCN(CC1)C2CCN(CC2)C3=CC(=C(C=C3)NC4=NC=C(C(=N4)NC5=CC=CC=C5P(=O)(C)C)Cl)OC,CCCCCCCC/C=C\CCCCCCCC(=O)O,ALK_inhibitor,54.2,2,train,1,8
-Olaparib,Caffeine,C1CC1C(=O)N2CCN(CC2)C(=O)C3=C(C=CC(=C3)CC4=NNC(=O)C5=CC=CC=C54)F,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,PARP_inhibitor,0.0,0,unseen,0,8
-Venetoclax,St. John'S Wort,CC1(CCC(=C(C1)C2=CC=C(C=C2)Cl)CN3CCN(CC3)C4=CC(=C(C=C4)C(=O)NS(=O)(=O)C5=CC(=C(C=C5)NCC6CCOCC6)[N+](=O)[O-])OC7=CN=C8C(=C7)C=CN8)C,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,BCL2_inhibitor,0.0,0,unseen,0,9
-Ceritinib,Dairy,CC1=CC(=C(C=C1C2CCNCC2)OC(C)C)NC3=NC=C(C(=N3)NC4=CC=CC=C4S(=O)(=O)C(C)C)Cl,[Ca],ALK_inhibitor,0.0,0,unseen,0,8
-Gemcitabine,St. John'S Wort,C1=CN(C(=O)N=C1N)[C@H]2C([C@@H]([C@H](O2)CO)O)(F)F,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,antimetabolite,0.0,0,unseen,0,6
-Gemcitabine,Caffeine,C1=CN(C(=O)N=C1N)[C@H]2C([C@@H]([C@H](O2)CO)O)(F)F,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,antimetabolite,0.0,0,unseen,0,6
-Toremifene,Dairy,CN(C)CCOC1=CC=C(C=C1)/C(=C(/CCCl)\C2=CC=CC=C2)/C3=CC=CC=C3,[Ca],SERM,0.0,0,unseen,0,8
-Osimertinib,Vitamin C,CN1C=C(C2=CC=CC=C21)C3=NC(=NC=C3)NC4=C(C=C(C(=C4)NC(=O)C=C)N(C)CCN(C)C)OC,C([C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O)O,EGFR_inhibitor,0.0,0,unseen,0,8
-Dabrafenib,Green Tea,CC(C)(C)C1=NC(=C(S1)C2=NC(=NC=C2)N)C3=C(C(=CC=C3)NS(=O)(=O)C4=C(C=CC=C4F)F)F,C1[C@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC(=C(C(=C3)O)O)O)OC(=O)C4=CC(=C(C(=C4)O)O)O,BRAF_inhibitor,0.0,0,unseen,0,8
-Palbociclib,St. John'S Wort,CC1=C(C(=O)N(C2=NC(=NC=C12)NC3=NC=C(C=C3)N4CCNCC4)C5CCCC5)C(=O)C,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,CDK4_inhibitor,0.0,0,unseen,0,8
-Dasatinib,Caffeine,CC1=C(C(=CC=C1)Cl)NC(=O)C2=CN=C(S2)NC3=CC(=NC(=N3)C)N4CCN(CC4)CCO,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,BCR-ABL_inhibitor,0.0,0,unseen,0,8
-Osimertinib,St. John'S Wort,CN1C=C(C2=CC=CC=C21)C3=NC(=NC=C3)NC4=C(C=C(C(=C4)NC(=O)C=C)N(C)CCN(C)C)OC,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,EGFR_inhibitor,0.0,0,unseen,0,8
-Ifosfamide,Vitamin C,C1CN(P(=O)(OC1)NCCCl)CCCl,C([C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O)O,alkylating_agent,0.0,0,unseen,0,8
-Ceritinib,Vitamin C,CC1=CC(=C(C=C1C2CCNCC2)OC(C)C)NC3=NC=C(C(=N3)NC4=CC=CC=C4S(=O)(=O)C(C)C)Cl,C([C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O)O,ALK_inhibitor,0.0,0,unseen,0,8
-Cabozantinib,St. John'S Wort,COC1=CC2=C(C=CN=C2C=C1OC)OC3=CC=C(C=C3)NC(=O)C4(CC4)C(=O)NC5=CC=C(C=C5)F,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,multikinase_inhibitor,0.0,0,unseen,0,8
-Olaparib,Vitamin C,C1CC1C(=O)N2CCN(CC2)C(=O)C3=C(C=CC(=C3)CC4=NNC(=O)C5=CC=CC=C54)F,C([C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O)O,PARP_inhibitor,0.0,0,unseen,0,8
-Dasatinib,Garlic,CC1=C(C(=CC=C1)Cl)NC(=O)C2=CN=C(S2)NC3=CC(=NC(=N3)C)N4CCN(CC4)CCO,C=CCSS(=O)CC=C,BCR-ABL_inhibitor,0.0,0,unseen,0,8
+Glasdegib,Fasting,CN1CC[C@H](C[C@@H]1C2=NC3=CC=CC=C3N2)NC(=O)NC4=CC=C(C=C4)C#N,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,hedgehog_inhibitor,0.0,0,train,0,8
+Enzalutamide,Fasting,CC1(C(=O)N(C(=S)N1C2=CC(=C(C=C2)C(=O)NC)F)C3=CC(=C(C=C3)C#N)C(F)(F)F)C,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,androgen_antagonist,0.0,0,train,0,8
+Tazemetostat,Coffee,CCN(C1CCOCC1)C2=CC(=CC(=C2C)C(=O)NCC3=C(C=C(NC3=O)C)C)C4=CC=C(C=C4)CN5CCOCC5,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,EZH2_inhibitor,0.0,0,train,0,8
+Radotinib,Meal,CC1=C(C=C(C=C1)C(=O)NC2=CC(=CC(=C2)C(F)(F)F)N3C=C(N=C3)C)NC4=NC=CC(=N4)C5=NC=CN=C5,CCCCCCCCCCCCCCCC(=O)O,BCR-ABL_inhibitor,0.0,0,train,0,0
+Tepotinib,Grapefruit,CN1CCC(CC1)COC2=CN=C(N=C2)C3=CC=CC(=C3)CN4C(=O)C=CC(=N4)C5=CC=CC(=C5)C#N,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,MET_inhibitor,0.0,0,train,0,8
+Topotecan,Grapefruit,CC[C@@]1(C2=C(COC1=O)C(=O)N3CC4=CC5=C(C=CC(=C5CN(C)C)O)N=C4C3=C2)O,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,topoisomerase_inhibitor,0.0,0,train,0,5
+Ivosidenib,Vitamin C,C1CC(=O)N([C@@H]1C(=O)N(C2=CC(=CN=C2)F)[C@@H](C3=CC=CC=C3Cl)C(=O)NC4CC(C4)(F)F)C5=NC=CC(=C5)C#N,C([C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O)O,IDH_inhibitor,0.0,0,train,0,8
+Vorinostat,Coffee,C1=CC=C(C=C1)NC(=O)CCCCCCC(=O)NO,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,HDAC_inhibitor,0.0,0,train,0,8
+Pazopanib,Grapefruit,CC1=C(C=C(C=C1)NC2=NC=CC(=N2)N(C)C3=CC4=NN(C(=C4C=C3)C)C)S(=O)(=O)N,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,multikinase_inhibitor,0.0,0,train,0,8
+Ospemifene,Calcium,C1=CC=C(C=C1)/C(=C(/C2=CC=CC=C2)\C3=CC=C(C=C3)OCCO)/CCCl,[Ca],SERM,0.0,0,train,0,7
+Pazopanib,Iron,CC1=C(C=C(C=C1)NC2=NC=CC(=N2)N(C)C3=CC4=NN(C(=C4C=C3)C)C)S(=O)(=O)N,[Fe],multikinase_inhibitor,0.0,0,train,0,8
+Melphalan,Grapefruit,C1=CC(=CC=C1C[C@@H](C(=O)O)N)N(CCCl)CCCl,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,alkylating_agent,0.0,0,train,0,4
+Larotrectinib,Caffeine,C1C[C@@H](N(C1)C2=NC3=C(C=NN3C=C2)NC(=O)N4CC[C@@H](C4)O)C5=C(C=CC(=C5)F)F,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,TRK_inhibitor,0.0,0,train,0,8
+Bazedoxifene,Alcohol,CC1=C(N(C2=C1C=C(C=C2)O)CC3=CC=C(C=C3)OCCN4CCCCCC4)C5=CC=C(C=C5)O,CCO,SERM,0.0,0,train,0,8
+Niraparib,Magnesium,C1C[C@H](CNC1)C2=CC=C(C=C2)N3C=C4C=CC=C(C4=N3)C(=O)N,[OH-].[OH-].[Mg+2],PARP_inhibitor,0.0,0,train,0,8
+Raloxifene,Green Tea,C1CCN(CC1)CCOC2=CC=C(C=C2)C(=O)C3=C(SC4=C3C=CC(=C4)O)C5=CC=C(C=C5)O,C1[C@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC(=C(C(=C3)O)O)O)OC(=O)C4=CC(=C(C(=C4)O)O)O,SERM,0.0,0,train,0,6
+Ribociclib,Antacid,CN(C)C(=O)C1=CC2=CN=C(N=C2N1C3CCCC3)NC4=NC=C(C=C4)N5CCNCC5,[OH-].[OH-].[Mg+2],CDK4_inhibitor,0.0,0,train,0,8
+Letrozole,Caffeine,C1=CC(=CC=C1C#N)C(C2=CC=C(C=C2)C#N)N3C=NC=N3,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,aromatase_inhibitor,0.0,0,train,0,6
+Lapatinib,Coffee,CS(=O)(=O)CCNCC1=CC=C(O1)C2=CC3=C(C=C2)N=CN=C3NC4=CC(=C(C=C4)OCC5=CC(=CC=C5)F)Cl,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,EGFR_inhibitor,0.0,0,train,0,8
+Niraparib,Alcohol,C1C[C@H](CNC1)C2=CC=C(C=C2)N3C=C4C=CC=C(C4=N3)C(=O)N,CCO,PARP_inhibitor,0.0,0,train,0,8
+Capmatinib,Coffee,CNC(=O)C1=C(C=C(C=C1)C2=NN3C(=CN=C3N=C2)CC4=CC5=C(C=C4)N=CC=C5)F,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,MET_inhibitor,0.0,0,train,0,8
+Capmatinib,Fasting,CNC(=O)C1=C(C=C(C=C1)C2=NN3C(=CN=C3N=C2)CC4=CC5=C(C=C4)N=CC=C5)F,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,MET_inhibitor,0.0,0,train,0,8
+Gefitinib,Juice,COC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)F)Cl)OCCCN4CCOCC4,C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O,EGFR_inhibitor,0.0,0,train,0,8
+Teniposide,Alcohol,COC1=CC(=CC(=C1O)OC)[C@H]2[C@@H]3[C@H](COC3=O)[C@@H](C4=CC5=C(C=C24)OCO5)O[C@H]6[C@@H]([C@H]([C@H]7[C@H](O6)CO[C@H](O7)C8=CC=CS8)O)O,CCO,topoisomerase_inhibitor,0.0,0,train,0,0
+Ruxolitinib,Iron,C1CCC(C1)[C@@H](CC#N)N2C=C(C=N2)C3=C4C=CNC4=NC=N3,[Fe],JAK_inhibitor,0.0,0,train,0,8
+Vismodegib,Garlic,CS(=O)(=O)C1=CC(=C(C=C1)C(=O)NC2=CC(=C(C=C2)Cl)C3=CC=CC=N3)Cl,C=CCSS(=O)CC=C,hedgehog_inhibitor,0.0,0,train,0,7
+Teniposide,Caffeine,COC1=CC(=CC(=C1O)OC)[C@H]2[C@@H]3[C@H](COC3=O)[C@@H](C4=CC5=C(C=C24)OCO5)O[C@H]6[C@@H]([C@H]([C@H]7[C@H](O6)CO[C@H](O7)C8=CC=CS8)O)O,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,topoisomerase_inhibitor,0.0,0,train,0,0
+Tamoxifen,St. John'S Wort,CC/C(=C(\C1=CC=CC=C1)/C2=CC=C(C=C2)OCCN(C)C)/C3=CC=CC=C3,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,SERM,0.0,0,train,0,9
+Copanlisib,Fat,COC1=C(C=CC2=C3NCCN3C(=NC(=O)C4=CN=C(N=C4)N)N=C21)OCCCN5CCOCC5,CCCCCCCC/C=C\CCCCCCCC(=O)O,PI3K_inhibitor,0.0,0,train,0,0
+Erdafitinib,Juice,CC(C)NCCN(C1=CC2=NC(=CN=C2C=C1)C3=CN(N=C3)C)C4=CC(=CC(=C4)OC)OC,C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O,FGFR_inhibitor,0.0,0,train,0,8
+Afatinib,Calcium,CN(C)C/C=C/C(=O)NC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC(=C(C=C3)F)Cl)O[C@H]4CCOC4,[Ca],EGFR_inhibitor,0.0,0,train,0,7
+Procarbazine,Calcium,CC(C)NC(=O)C1=CC=C(C=C1)CNNC,[Ca],alkylating_agent,0.0,0,train,0,4
+Chlorambucil,Garlic,C1=CC(=CC=C1CCCC(=O)O)N(CCCl)CCCl,C=CCSS(=O)CC=C,alkylating_agent,0.0,0,train,0,5
+Irinotecan,Meal,CCC1=C2CN3C(=CC4=C(C3=O)COC(=O)[C@@]4(CC)O)C2=NC5=C1C=C(C=C5)OC(=O)N6CCC(CC6)N7CCCCC7,CCCCCCCCCCCCCCCC(=O)O,topoisomerase_inhibitor,0.0,0,train,0,9
+Apalutamide,Grapefruit,CNC(=O)C1=C(C=C(C=C1)N2C(=S)N(C(=O)C23CCC3)C4=CC(=C(N=C4)C#N)C(F)(F)F)F,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,androgen_antagonist,0.0,0,train,0,8
+Afatinib,Caffeine,CN(C)C/C=C/C(=O)NC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC(=C(C=C3)F)Cl)O[C@H]4CCOC4,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,EGFR_inhibitor,0.0,0,train,0,7
+Nilotinib,Iron,CC1=C(C=C(C=C1)C(=O)NC2=CC(=CC(=C2)C(F)(F)F)N3C=C(N=C3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,[Fe],BCR-ABL_inhibitor,0.0,0,train,0,9
+Erdafitinib,Grapefruit,CC(C)NCCN(C1=CC2=NC(=CN=C2C=C1)C3=CN(N=C3)C)C4=CC(=CC(=C4)OC)OC,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,FGFR_inhibitor,0.0,0,train,0,8
+Tamoxifen,Iron,CC/C(=C(\C1=CC=CC=C1)/C2=CC=C(C=C2)OCCN(C)C)/C3=CC=CC=C3,[Fe],SERM,0.0,0,train,0,9
+Vorinostat,Alcohol,C1=CC=C(C=C1)NC(=O)CCCCCCC(=O)NO,CCO,HDAC_inhibitor,0.0,0,train,0,8
+Selpercatinib,Vitamin C,CC(C)(COC1=CN2C(=C(C=N2)C#N)C(=C1)C3=CN=C(C=C3)N4CC5CC(C4)N5CC6=CN=C(C=C6)OC)O,C([C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O)O,RET_inhibitor,0.0,0,train,0,8
+Nilutamide,Juice,CC1(C(=O)N(C(=O)N1)C2=CC(=C(C=C2)[N+](=O)[O-])C(F)(F)F)C,C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O,androgen_antagonist,0.0,0,train,0,5
+Apalutamide,Coffee,CNC(=O)C1=C(C=C(C=C1)N2C(=S)N(C(=O)C23CCC3)C4=CC(=C(N=C4)C#N)C(F)(F)F)F,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,androgen_antagonist,0.0,0,train,0,8
+Ruxolitinib,Food,C1CCC(C1)[C@@H](CC#N)N2C=C(C=N2)C3=C4C=CNC4=NC=N3,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,JAK_inhibitor,0.0,0,train,0,8
+Adagrasib,Grapefruit,CN1CCC[C@H]1COC2=NC3=C(CCN(C3)C4=CC=CC5=C4C(=CC=C5)Cl)C(=N2)N6CCN([C@H](C6)CC#N)C(=O)C(=C)F,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,KRAS_inhibitor,0.0,0,train,0,8
+Capecitabine,Iron,CCCCCOC(=O)NC1=NC(=O)N(C=C1F)[C@H]2[C@@H]([C@@H]([C@H](O2)C)O)O,[Fe],antimetabolite,0.0,0,train,0,7
+Pemigatinib,Magnesium,CCN1C2=C3C=C(NC3=NC=C2CN(C1=O)C4=C(C(=CC(=C4F)OC)OC)F)CN5CCOCC5,[OH-].[OH-].[Mg+2],FGFR_inhibitor,0.0,0,train,0,8
+Flutamide,Meal,CC(C)C(=O)NC1=CC(=C(C=C1)[N+](=O)[O-])C(F)(F)F,CCCCCCCCCCCCCCCC(=O)O,androgen_antagonist,0.0,0,train,0,5
+Afatinib,Fasting,CN(C)C/C=C/C(=O)NC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC(=C(C=C3)F)Cl)O[C@H]4CCOC4,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,EGFR_inhibitor,0.0,0,train,0,7
+Pacritinib,Garlic,C1CCN(C1)CCOC2=C3COC/C=C/COCC4=CC(=CC=C4)C5=NC(=NC=C5)NC(=C3)C=C2,C=CCSS(=O)CC=C,JAK_inhibitor,0.0,0,train,0,9
+Pemigatinib,Alcohol,CCN1C2=C3C=C(NC3=NC=C2CN(C1=O)C4=C(C(=CC(=C4F)OC)OC)F)CN5CCOCC5,CCO,FGFR_inhibitor,0.0,0,train,0,8
+Quizartinib,Coffee,CC(C)(C)C1=CC(=NO1)NC(=O)NC2=CC=C(C=C2)C3=CN4C5=C(C=C(C=C5)OCCN6CCOCC6)SC4=N3,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,FLT3_inhibitor,0.0,0,train,0,8
+Estramustine,Vitamin C,C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2O)CCC4=C3C=CC(=C4)OC(=O)N(CCCl)CCCl,C([C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O)O,alkylating_agent,0.0,0,train,0,0
+Cobimetinib,Alcohol,C1CCN[C@@H](C1)C2(CN(C2)C(=O)C3=C(C(=C(C=C3)F)F)NC4=C(C=C(C=C4)I)F)O,CCO,MEK_inhibitor,0.0,0,train,0,8
+Lenalidomide,Coffee,C1CC(=O)NC(=O)C1N2CC3=C(C2=O)C=CC=C3N,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,IMiD,0.0,0,train,0,9
+Tamoxifen,Garlic,CC/C(=C(\C1=CC=CC=C1)/C2=CC=C(C=C2)OCCN(C)C)/C3=CC=CC=C3,C=CCSS(=O)CC=C,SERM,0.0,0,train,0,9
+Cytarabine,Fat,C1=CN(C(=O)N=C1N)[C@H]2[C@H]([C@@H]([C@H](O2)CO)O)O,CCCCCCCC/C=C\CCCCCCCC(=O)O,antimetabolite,0.0,0,train,0,3
+Abiraterone,Vitamin C,C[C@]12CC[C@@H](CC1=CC[C@@H]3[C@@H]2CC[C@]4([C@H]3CC=C4C5=CN=CC=C5)C)O,C([C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O)O,CYP17_inhibitor,0.0,0,train,0,8
+Irinotecan,Calcium,CCC1=C2CN3C(=CC4=C(C3=O)COC(=O)[C@@]4(CC)O)C2=NC5=C1C=C(C=C5)OC(=O)N6CCC(CC6)N7CCCCC7,[Ca],topoisomerase_inhibitor,0.0,0,train,0,9
+Exemestane,Food,C[C@]12CC[C@H]3[C@H]([C@@H]1CCC2=O)CC(=C)C4=CC(=O)C=C[C@]34C,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,aromatase_inhibitor,0.0,0,train,0,7
+Topotecan,Coffee,CC[C@@]1(C2=C(COC1=O)C(=O)N3CC4=CC5=C(C=CC(=C5CN(C)C)O)N=C4C3=C2)O,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,topoisomerase_inhibitor,0.0,0,train,0,5
+Cobimetinib,Food,C1CCN[C@@H](C1)C2(CN(C2)C(=O)C3=C(C(=C(C=C3)F)F)NC4=C(C=C(C=C4)I)F)O,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,MEK_inhibitor,0.0,0,train,0,8
+Procarbazine,St. John'S Wort,CC(C)NC(=O)C1=CC=C(C=C1)CNNC,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,alkylating_agent,0.0,0,train,0,4
+Raloxifene,Iron,C1CCN(CC1)CCOC2=CC=C(C=C2)C(=O)C3=C(SC4=C3C=CC(=C4)O)C5=CC=C(C=C5)O,[Fe],SERM,0.0,0,train,0,6
+Glasdegib,Alcohol,CN1CC[C@H](C[C@@H]1C2=NC3=CC=CC=C3N2)NC(=O)NC4=CC=C(C=C4)C#N,CCO,hedgehog_inhibitor,0.0,0,train,0,8
+Regorafenib,Iron,CNC(=O)C1=NC=CC(=C1)OC2=CC(=C(C=C2)NC(=O)NC3=CC(=C(C=C3)Cl)C(F)(F)F)F,[Fe],multikinase_inhibitor,0.0,0,train,0,8
+Darolutamide,Calcium,C[C@@H](CN1C=CC(=N1)C2=CC(=C(C=C2)C#N)Cl)NC(=O)C3=NNC(=C3)C(C)O,[Ca],androgen_antagonist,0.0,0,train,0,8
+Afatinib,Alcohol,CN(C)C/C=C/C(=O)NC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC(=C(C=C3)F)Cl)O[C@H]4CCOC4,CCO,EGFR_inhibitor,0.0,0,train,0,7
+Nilotinib,Vitamin C,CC1=C(C=C(C=C1)C(=O)NC2=CC(=CC(=C2)C(F)(F)F)N3C=C(N=C3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,C([C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O)O,BCR-ABL_inhibitor,0.0,0,train,0,9
+Melphalan,Juice,C1=CC(=CC=C1C[C@@H](C(=O)O)N)N(CCCl)CCCl,C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O,alkylating_agent,0.0,0,train,0,4
+Romidepsin,Green Tea,C/C=C\1/C(=O)N[C@H](C(=O)O[C@H]\2CC(=O)N[C@@H](C(=O)N[C@H](CSSCC/C=C2)C(=O)N1)C(C)C)C(C)C,C1[C@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC(=C(C(=C3)O)O)O)OC(=O)C4=CC(=C(C(=C4)O)O)O,HDAC_inhibitor,0.0,0,train,0,0
+Acalabrutinib,Meal,CC#CC(=O)N1CCC[C@H]1C2=NC(=C3N2C=CN=C3N)C4=CC=C(C=C4)C(=O)NC5=CC=CC=N5,CCCCCCCCCCCCCCCC(=O)O,BTK_inhibitor,33.1,1,train,1,8
+Pomalidomide,Meal,C1CC(=O)NC(=O)C1N2C(=O)C3=C(C2=O)C(=CC=C3)N,CCCCCCCCCCCCCCCC(=O)O,IMiD,31.8,1,train,1,10
+Anastrozole,Alcohol,CC(C)(C#N)C1=CC(=CC(=C1)CN2C=NC=N2)C(C)(C)C#N,CCO,aromatase_inhibitor,32.9,1,train,1,5
+Vandetanib,Iron,CN1CCC(CC1)COC2=C(C=C3C(=C2)N=CN=C3NC4=C(C=C(C=C4)Br)F)OC,[Fe],EGFR_inhibitor,-21.0,1,train,1,8
+Tucatinib,Meal,CC1=C(C=CC(=C1)NC2=NC=NC3=C2C=C(C=C3)NC4=NC(CO4)(C)C)OC5=CC6=NC=NN6C=C5,CCCCCCCCCCCCCCCC(=O)O,HER2_inhibitor,29.5,1,train,1,8
+Bazedoxifene,Magnesium,CC1=C(N(C2=C1C=C(C=C2)O)CC3=CC=C(C=C3)OCCN4CCCCCC4)C5=CC=C(C=C5)O,[OH-].[OH-].[Mg+2],SERM,25.5,1,train,1,8
+Lenvatinib,Meal,COC1=CC2=NC=CC(=C2C=C1C(=O)N)OC3=CC(=C(C=C3)NC(=O)NC4CC4)Cl,CCCCCCCCCCCCCCCC(=O)O,multikinase_inhibitor,25.3,1,train,1,8
+Pexidartinib,Food,C1=CC(=NC=C1CC2=CNC3=C2C=C(C=N3)Cl)NCC4=CN=C(C=C4)C(F)(F)F,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,CSF1R_inhibitor,22.6,1,train,1,8
+Brigatinib,Fasting,CN1CCN(CC1)C2CCN(CC2)C3=CC(=C(C=C3)NC4=NC=C(C(=N4)NC5=CC=CC=C5P(=O)(C)C)Cl)OC,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,ALK_inhibitor,24.8,1,train,1,8
+Nilotinib,Food,CC1=C(C=C(C=C1)C(=O)NC2=CC(=CC(=C2)C(F)(F)F)N3C=C(N=C3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,BCR-ABL_inhibitor,26.6,1,train,1,9
+Vorinostat,Calcium,C1=CC=C(C=C1)NC(=O)CCCCCCC(=O)NO,[Ca],HDAC_inhibitor,-26.2,1,train,1,8
+Erlotinib,Alcohol,COCCOC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC=CC(=C3)C#C)OCCOC,CCO,EGFR_inhibitor,29.5,1,train,1,8
+Darolutamide,Food,C[C@@H](CN1C=CC(=N1)C2=CC(=C(C=C2)C#N)Cl)NC(=O)C3=NNC(=C3)C(C)O,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,androgen_antagonist,-28.6,1,train,1,8
+Afatinib,Meal,CN(C)C/C=C/C(=O)NC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC(=C(C=C3)F)Cl)O[C@H]4CCOC4,CCCCCCCCCCCCCCCC(=O)O,EGFR_inhibitor,-33.8,1,train,1,7
+Pexidartinib,Juice,C1=CC(=NC=C1CC2=CNC3=C2C=C(C=N3)Cl)NCC4=CN=C(C=C4)C(F)(F)F,C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O,CSF1R_inhibitor,30.9,1,train,1,8
+Pemigatinib,Meal,CCN1C2=C3C=C(NC3=NC=C2CN(C1=O)C4=C(C(=CC(=C4F)OC)OC)F)CN5CCOCC5,CCCCCCCCCCCCCCCC(=O)O,FGFR_inhibitor,28.0,1,train,1,8
+Nilotinib,Magnesium,CC1=C(C=C(C=C1)C(=O)NC2=CC(=CC(=C2)C(F)(F)F)N3C=C(N=C3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,[OH-].[OH-].[Mg+2],BCR-ABL_inhibitor,28.7,1,train,1,9
+Pacritinib,Meal,C1CCN(C1)CCOC2=C3COC/C=C/COCC4=CC(=CC=C4)C5=NC(=NC=C5)NC(=C3)C=C2,CCCCCCCCCCCCCCCC(=O)O,JAK_inhibitor,29.4,1,train,1,9
+Pazopanib,Meal,CC1=C(C=C(C=C1)NC2=NC=CC(=N2)N(C)C3=CC4=NN(C(=C4C=C3)C)C)S(=O)(=O)N,CCCCCCCCCCCCCCCC(=O)O,multikinase_inhibitor,33.5,1,train,1,8
+Ponatinib,Juice,CC1=C(C=C(C=C1)C(=O)NC2=CC(=C(C=C2)CN3CCN(CC3)C)C(F)(F)F)C#CC4=CN=C5N4N=CC=C5,C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O,BCR-ABL_inhibitor,33.4,1,train,1,8
+Tazemetostat,Juice,CCN(C1CCOCC1)C2=CC(=CC(=C2C)C(=O)NCC3=C(C=C(NC3=O)C)C)C4=CC=C(C=C4)CN5CCOCC5,C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O,EZH2_inhibitor,32.6,1,train,1,8
+Ospemifene,Meal,C1=CC=C(C=C1)/C(=C(/C2=CC=CC=C2)\C3=CC=C(C=C3)OCCO)/CCCl,CCCCCCCCCCCCCCCC(=O)O,SERM,20.7,1,train,1,7
+Capmatinib,Meal,CNC(=O)C1=C(C=C(C=C1)C2=NN3C(=CN=C3N=C2)CC4=CC5=C(C=C4)N=CC=C5)F,CCCCCCCCCCCCCCCC(=O)O,MET_inhibitor,-30.1,1,train,1,8
+Pacritinib,Food,C1CCN(C1)CCOC2=C3COC/C=C/COCC4=CC(=CC=C4)C5=NC(=NC=C5)NC(=C3)C=C2,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,JAK_inhibitor,26.8,1,train,1,9
+Sotorasib,Meal,C[C@H]1CN(CCN1C2=NC(=O)N(C3=NC(=C(C=C32)F)C4=C(C=CC=C4F)O)C5=C(C=CN=C5C(C)C)C)C(=O)C=C,CCCCCCCCCCCCCCCC(=O)O,KRAS_inhibitor,-31.6,1,train,1,8
+Idelalisib,Food,CC[C@@H](C1=NC2=C(C(=CC=C2)F)C(=O)N1C3=CC=CC=C3)NC4=NC=NC5=C4NC=N5,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,PI3K_inhibitor,26.6,1,train,1,8
+Fedratinib,Meal,CC1=CN=C(N=C1NC2=CC(=CC=C2)S(=O)(=O)NC(C)(C)C)NC3=CC=C(C=C3)OCCN4CCCC4,CCCCCCCCCCCCCCCC(=O)O,JAK_inhibitor,34.5,1,train,1,8
+Brigatinib,Meal,CN1CCN(CC1)C2CCN(CC2)C3=CC(=C(C=C3)NC4=NC=C(C(=N4)NC5=CC=CC=C5P(=O)(C)C)Cl)OC,CCCCCCCCCCCCCCCC(=O)O,ALK_inhibitor,30.9,1,train,1,8
+Nilotinib,Antacid,CC1=C(C=C(C=C1)C(=O)NC2=CC(=CC(=C2)C(F)(F)F)N3C=C(N=C3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,[OH-].[OH-].[Mg+2],BCR-ABL_inhibitor,-32.6,1,train,1,9
+Capecitabine,Meal,CCCCCOC(=O)NC1=NC(=O)N(C=C1F)[C@H]2[C@@H]([C@@H]([C@H](O2)C)O)O,CCCCCCCCCCCCCCCC(=O)O,antimetabolite,-28.1,1,train,1,7
+Axitinib,Meal,CNC(=O)C1=CC=CC=C1SC2=CC3=C(C=C2)C(=NN3)/C=C/C4=CC=CC=N4,CCCCCCCCCCCCCCCC(=O)O,multikinase_inhibitor,-26.1,1,train,1,8
+Ribociclib,Meal,CN(C)C(=O)C1=CC2=CN=C(N=C2N1C3CCCC3)NC4=NC=C(C=C4)N5CCNCC5,CCCCCCCCCCCCCCCC(=O)O,CDK4_inhibitor,-28.1,1,train,1,8
+Pomalidomide,Food,C1CC(=O)NC(=O)C1N2C(=O)C3=C(C2=O)C(=CC=C3)N,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,IMiD,23.4,1,train,1,10
+Ripretinib,Meal,CCN1C2=CC(=NC=C2C=C(C1=O)C3=CC(=C(C=C3Br)F)NC(=O)NC4=CC=CC=C4)NC,CCCCCCCCCCCCCCCC(=O)O,KIT_inhibitor,30.8,1,train,1,8
+Encorafenib,Food,C[C@@H](CNC1=NC=CC(=N1)C2=CN(N=C2C3=C(C(=CC(=C3)Cl)NS(=O)(=O)C)F)C(C)C)NC(=O)OC,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,BRAF_inhibitor,34.1,1,train,1,9
+Sotorasib,Antacid,C[C@H]1CN(CCN1C2=NC(=O)N(C3=NC(=C(C=C32)F)C4=C(C=CC=C4F)O)C5=C(C=CN=C5C(C)C)C)C(=O)C=C,[OH-].[OH-].[Mg+2],KRAS_inhibitor,25.1,1,train,1,8
+Nilotinib,Empty Stomach,CC1=C(C=C(C=C1)C(=O)NC2=CC(=CC(=C2)C(F)(F)F)N3C=C(N=C3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,BCR-ABL_inhibitor,-26.5,1,train,1,9
+Apalutamide,Fasting,CNC(=O)C1=C(C=C(C=C1)N2C(=S)N(C(=O)C23CCC3)C4=CC(=C(N=C4)C#N)C(F)(F)F)F,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,androgen_antagonist,-20.2,1,train,1,8
+Pazopanib,Magnesium,CC1=C(C=C(C=C1)NC2=NC=CC(=N2)N(C)C3=CC4=NN(C(=C4C=C3)C)C)S(=O)(=O)N,[OH-].[OH-].[Mg+2],multikinase_inhibitor,-23.7,1,train,1,8
+Thalidomide,Alcohol,C1CC(=O)NC(=O)C1N2C(=O)C3=CC=CC=C3C2=O,CCO,IMiD,-21.7,1,train,1,9
+Pexidartinib,Antacid,C1=CC(=NC=C1CC2=CNC3=C2C=C(C=N3)Cl)NCC4=CN=C(C=C4)C(F)(F)F,[OH-].[OH-].[Mg+2],CSF1R_inhibitor,26.3,1,train,1,8
+Selpercatinib,Food,CC(C)(COC1=CN2C(=C(C=N2)C#N)C(=C1)C3=CN=C(C=C3)N4CC5CC(C4)N5CC6=CN=C(C=C6)OC)O,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,RET_inhibitor,22.0,1,train,1,8
+Midostaurin,Food,C[C@@]12[C@@H]([C@@H](C[C@@H](O1)N3C4=CC=CC=C4C5=C6C(=C7C8=CC=CC=C8N2C7=C53)CNC6=O)N(C)C(=O)C9=CC=CC=C9)OC,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,FLT3_inhibitor,-26.8,1,train,1,8
+Lorlatinib,Meal,C[C@@H]1C2=C(C=CC(=C2)F)C(=O)N(CC3=NN(C(=C3C4=CC(=C(N=C4)N)O1)C#N)C)C,CCCCCCCCCCCCCCCC(=O)O,ALK_inhibitor,28.3,1,train,1,9
+Sunitinib,Food,CCN(CC)CCNC(=O)C1=C(NC(=C1C)/C=C\2/C3=C(C=CC(=C3)F)NC2=O)C,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,multikinase_inhibitor,-27.4,1,train,1,7
+Sotorasib,Food,C[C@H]1CN(CCN1C2=NC(=O)N(C3=NC(=C(C=C32)F)C4=C(C=CC=C4F)O)C5=C(C=CN=C5C(C)C)C)C(=O)C=C,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,KRAS_inhibitor,-34.0,1,train,1,8
+Crizotinib,Calcium,C[C@H](C1=C(C=CC(=C1Cl)F)Cl)OC2=C(N=CC(=C2)C3=CN(N=C3)C4CCNCC4)N,[Ca],ALK_inhibitor,31.8,1,train,1,8
+Selpercatinib,Fasting,CC(C)(COC1=CN2C(=C(C=N2)C#N)C(=C1)C3=CN=C(C=C3)N4CC5CC(C4)N5CC6=CN=C(C=C6)OC)O,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,RET_inhibitor,-21.8,1,train,1,8
+Afatinib,Food,CN(C)C/C=C/C(=O)NC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC(=C(C=C3)F)Cl)O[C@H]4CCOC4,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,EGFR_inhibitor,23.4,1,train,1,7
+Letrozole,Fasting,C1=CC(=CC=C1C#N)C(C2=CC=C(C=C2)C#N)N3C=NC=N3,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,aromatase_inhibitor,25.9,1,train,1,6
+Pemigatinib,Food,CCN1C2=C3C=C(NC3=NC=C2CN(C1=O)C4=C(C(=CC(=C4F)OC)OC)F)CN5CCOCC5,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,FGFR_inhibitor,-32.2,1,train,1,8
+Temozolomide,Food,CN1C(=O)N2C=NC(=C2N=N1)C(=O)N,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,alkylating_agent,-25.6,1,train,1,6
+Pirtobrutinib,Caffeine,C[C@@H](C(F)(F)F)N1C(=C(C(=N1)C2=CC=C(C=C2)CNC(=O)C3=C(C=CC(=C3)F)OC)C(=O)N)N,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,BTK_inhibitor,34.4,1,train,1,8
+Enzalutamide,Food,CC1(C(=O)N(C(=S)N1C2=CC(=C(C=C2)C(=O)NC)F)C3=CC(=C(C=C3)C#N)C(F)(F)F)C,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,androgen_antagonist,33.2,1,train,1,8
+Axitinib,Antacid,CNC(=O)C1=CC=CC=C1SC2=CC3=C(C=C2)C(=NN3)/C=C/C4=CC=CC=N4,[OH-].[OH-].[Mg+2],multikinase_inhibitor,-31.4,1,train,1,8
+Alpelisib,Food,CC1=C(SC(=N1)NC(=O)N2CCC[C@H]2C(=O)N)C3=CC(=NC=C3)C(C)(C)C(F)(F)F,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,PI3K_inhibitor,21.1,1,train,1,8
+Larotrectinib,Juice,C1C[C@@H](N(C1)C2=NC3=C(C=NN3C=C2)NC(=O)N4CC[C@@H](C4)O)C5=C(C=CC(=C5)F)F,C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O,TRK_inhibitor,26.5,1,train,1,8
+Imatinib,Iron,CC1=C(C=C(C=C1)NC(=O)C2=CC=C(C=C2)CN3CCN(CC3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,[Fe],BCR-ABL_inhibitor,31.6,1,train,1,8
+Brigatinib,Juice,CN1CCN(CC1)C2CCN(CC2)C3=CC(=C(C=C3)NC4=NC=C(C(=N4)NC5=CC=CC=C5P(=O)(C)C)Cl)OC,C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O,ALK_inhibitor,31.9,1,train,1,8
+Fedratinib,Food,CC1=CN=C(N=C1NC2=CC(=CC=C2)S(=O)(=O)NC(C)(C)C)NC3=CC=C(C=C3)OCCN4CCCC4,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,JAK_inhibitor,-29.8,1,train,1,8
+Abiraterone,Empty Stomach,C[C@]12CC[C@@H](CC1=CC[C@@H]3[C@@H]2CC[C@]4([C@H]3CC=C4C5=CN=CC=C5)C)O,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,CYP17_inhibitor,23.6,1,train,1,8
+Thalidomide,Meal,C1CC(=O)NC(=O)C1N2C(=O)C3=CC=CC=C3C2=O,CCCCCCCCCCCCCCCC(=O)O,IMiD,24.7,1,train,1,9
+Pazopanib,Caffeine,CC1=C(C=C(C=C1)NC2=NC=CC(=N2)N(C)C3=CC4=NN(C(=C4C=C3)C)C)S(=O)(=O)N,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,multikinase_inhibitor,33.5,1,train,1,8
+Bosutinib,Food,CN1CCN(CC1)CCCOC2=C(C=C3C(=C2)N=CC(=C3NC4=CC(=C(C=C4Cl)Cl)OC)C#N)OC,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,BCR-ABL_inhibitor,23.5,1,train,1,8
+Bicalutamide,Food,CC(CS(=O)(=O)C1=CC=C(C=C1)F)(C(=O)NC2=CC(=C(C=C2)C#N)C(F)(F)F)O,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,androgen_antagonist,-20.1,1,train,1,7
+Procarbazine,Alcohol,CC(C)NC(=O)C1=CC=C(C=C1)CNNC,CCO,alkylating_agent,-33.0,1,train,1,4
+Bosutinib,Antacid,CN1CCN(CC1)CCCOC2=C(C=C3C(=C2)N=CC(=C3NC4=CC(=C(C=C4Cl)Cl)OC)C#N)OC,[OH-].[OH-].[Mg+2],BCR-ABL_inhibitor,-22.8,1,train,1,8
+Thalidomide,Calcium,C1CC(=O)NC(=O)C1N2C(=O)C3=CC=CC=C3C2=O,[Ca],IMiD,27.8,1,train,1,9
+Chlorambucil,Food,C1=CC(=CC=C1CCCC(=O)O)N(CCCl)CCCl,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,alkylating_agent,23.0,1,train,1,5
+Zanubrutinib,Meal,C=CC(=O)N1CCC(CC1)[C@@H]2CCNC3=C(C(=NN23)C4=CC=C(C=C4)OC5=CC=CC=C5)C(=O)N,CCCCCCCCCCCCCCCC(=O)O,BTK_inhibitor,-21.2,1,train,1,8
+Larotrectinib,Food,C1C[C@@H](N(C1)C2=NC3=C(C=NN3C=C2)NC(=O)N4CC[C@@H](C4)O)C5=C(C=CC(=C5)F)F,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,TRK_inhibitor,-22.9,1,train,1,8
+Enzalutamide,Meal,CC1(C(=O)N(C(=S)N1C2=CC(=C(C=C2)C(=O)NC)F)C3=CC(=C(C=C3)C#N)C(F)(F)F)C,CCCCCCCCCCCCCCCC(=O)O,androgen_antagonist,-25.2,1,train,1,8
+Raloxifene,Magnesium,C1CCN(CC1)CCOC2=CC=C(C=C2)C(=O)C3=C(SC4=C3C=CC(=C4)O)C5=CC=C(C=C5)O,[OH-].[OH-].[Mg+2],SERM,30.6,1,train,1,6
+Lenvatinib,Food,COC1=CC2=NC=CC(=C2C=C1C(=O)N)OC3=CC(=C(C=C3)NC(=O)NC4CC4)Cl,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,multikinase_inhibitor,-34.5,1,train,1,8
+Pirtobrutinib,Food,C[C@@H](C(F)(F)F)N1C(=C(C(=N1)C2=CC=C(C=C2)CNC(=O)C3=C(C=CC(=C3)F)OC)C(=O)N)N,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,BTK_inhibitor,-22.9,1,train,1,8
+Tepotinib,Meal,CN1CCC(CC1)COC2=CN=C(N=C2)C3=CC=CC(=C3)CN4C(=O)C=CC(=N4)C5=CC=CC(=C5)C#N,CCCCCCCCCCCCCCCC(=O)O,MET_inhibitor,-28.4,1,train,1,8
+Vemurafenib,Food,CCCS(=O)(=O)NC1=C(C(=C(C=C1)F)C(=O)C2=CNC3=C2C=C(C=N3)C4=CC=C(C=C4)Cl)F,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,BRAF_inhibitor,28.6,1,train,1,8
+Bosutinib,Meal,CN1CCN(CC1)CCCOC2=C(C=C3C(=C2)N=CC(=C3NC4=CC(=C(C=C4Cl)Cl)OC)C#N)OC,CCCCCCCCCCCCCCCC(=O)O,BCR-ABL_inhibitor,-28.7,1,train,1,8
+Tucatinib,Food,CC1=C(C=CC(=C1)NC2=NC=NC3=C2C=C(C=C3)NC4=NC(CO4)(C)C)OC5=CC6=NC=NN6C=C5,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,HER2_inhibitor,-31.8,1,train,1,8
+Pexidartinib,Meal,C1=CC(=NC=C1CC2=CNC3=C2C=C(C=N3)Cl)NCC4=CN=C(C=C4)C(F)(F)F,CCCCCCCCCCCCCCCC(=O)O,CSF1R_inhibitor,28.8,1,train,1,8
+Capmatinib,Caffeine,CNC(=O)C1=C(C=C(C=C1)C2=NN3C(=CN=C3N=C2)CC4=CC5=C(C=C4)N=CC=C5)F,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,MET_inhibitor,33.6,1,train,1,8
+Capecitabine,Food,CCCCCOC(=O)NC1=NC(=O)N(C=C1F)[C@H]2[C@@H]([C@@H]([C@H](O2)C)O)O,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,antimetabolite,-25.1,1,train,1,7
+Ospemifene,Juice,C1=CC=C(C=C1)/C(=C(/C2=CC=CC=C2)\C3=CC=C(C=C3)OCCO)/CCCl,C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O,SERM,21.0,1,train,1,7
+Imatinib,Meal,CC1=C(C=C(C=C1)NC(=O)C2=CC=C(C=C2)CN3CCN(CC3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,CCCCCCCCCCCCCCCC(=O)O,BCR-ABL_inhibitor,-34.6,1,train,1,8
+Erlotinib,Antacid,COCCOC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC=CC(=C3)C#C)OCCOC,[OH-].[OH-].[Mg+2],EGFR_inhibitor,-24.1,1,train,1,8
+Methotrexate,Food,CN(CC1=CN=C2C(=N1)C(=NC(=N2)N)N)C3=CC=C(C=C3)C(=O)N[C@@H](CCC(=O)O)C(=O)O,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,antimetabolite,-24.9,1,train,1,10
+Enzalutamide,Caffeine,CC1(C(=O)N(C(=S)N1C2=CC(=C(C=C2)C(=O)NC)F)C3=CC(=C(C=C3)C#N)C(F)(F)F)C,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,androgen_antagonist,29.2,1,train,1,8
+Alectinib,Food,CCC1=CC2=C(C=C1N3CCC(CC3)N4CCOCC4)C(C5=C(C2=O)C6=C(N5)C=C(C=C6)C#N)(C)C,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,ALK_inhibitor,29.9,1,train,1,8
+Niraparib,Meal,C1C[C@H](CNC1)C2=CC=C(C=C2)N3C=C4C=CC=C(C4=N3)C(=O)N,CCCCCCCCCCCCCCCC(=O)O,PARP_inhibitor,31.5,1,train,1,8
+Tamoxifen,Meal,CC/C(=C(\C1=CC=CC=C1)/C2=CC=C(C=C2)OCCN(C)C)/C3=CC=CC=C3,CCCCCCCCCCCCCCCC(=O)O,SERM,32.1,1,train,1,9
+Rucaparib,Caffeine,CNCC1=CC=C(C=C1)C2=C3CCNC(=O)C4=C3C(=CC(=C4)F)N2,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,PARP_inhibitor,26.7,1,train,1,8
+Pacritinib,Caffeine,C1CCN(C1)CCOC2=C3COC/C=C/COCC4=CC(=CC=C4)C5=NC(=NC=C5)NC(=C3)C=C2,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,JAK_inhibitor,28.3,1,train,1,9
+Pazopanib,Food,CC1=C(C=C(C=C1)NC2=NC=CC(=N2)N(C)C3=CC4=NN(C(=C4C=C3)C)C)S(=O)(=O)N,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,multikinase_inhibitor,27.1,1,train,1,8
+Methotrexate,Alcohol,CN(CC1=CN=C2C(=N1)C(=NC(=N2)N)N)C3=CC=C(C=C3)C(=O)N[C@@H](CCC(=O)O)C(=O)O,CCO,antimetabolite,25.0,1,train,1,10
+Exemestane,Calcium,C[C@]12CC[C@H]3[C@H]([C@@H]1CCC2=O)CC(=C)C4=CC(=O)C=C[C@]34C,[Ca],aromatase_inhibitor,-26.6,1,train,1,7
+Tepotinib,Food,CN1CCC(CC1)COC2=CN=C(N=C2)C3=CC=CC(=C3)CN4C(=O)C=CC(=N4)C5=CC=CC(=C5)C#N,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,MET_inhibitor,21.1,1,train,1,8
+Pazopanib,Antacid,CC1=C(C=C(C=C1)NC2=NC=CC(=N2)N(C)C3=CC4=NN(C(=C4C=C3)C)C)S(=O)(=O)N,[OH-].[OH-].[Mg+2],multikinase_inhibitor,-29.1,1,train,1,8
+Avapritinib,Empty Stomach,C[C@](C1=CC=C(C=C1)F)(C2=CN=C(N=C2)N3CCN(CC3)C4=NC=NN5C4=CC(=C5)C6=CN(N=C6)C)N,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,PDGFR_inhibitor,-34.4,1,train,1,8
+Erlotinib,Food,COCCOC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC=CC(=C3)C#C)OCCOC,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,EGFR_inhibitor,-31.8,1,train,1,8
+Apalutamide,Meal,CNC(=O)C1=C(C=C(C=C1)N2C(=S)N(C(=O)C23CCC3)C4=CC(=C(N=C4)C#N)C(F)(F)F)F,CCCCCCCCCCCCCCCC(=O)O,androgen_antagonist,22.9,1,train,1,8
+Binimetinib,Food,CN1C=NC2=C1C=C(C(=C2F)NC3=C(C=C(C=C3)Br)F)C(=O)NOCCO,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,MEK_inhibitor,31.3,1,train,1,6
+Encorafenib,Juice,C[C@@H](CNC1=NC=CC(=N1)C2=CN(N=C2C3=C(C(=CC(=C3)Cl)NS(=O)(=O)C)F)C(C)C)NC(=O)OC,C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O,BRAF_inhibitor,25.6,1,train,1,9
+Carmustine,Iron,C(CCl)NC(=O)N(CCCl)N=O,[Fe],alkylating_agent,-34.3,1,train,1,2
+Raloxifene,Calcium,C1CCN(CC1)CCOC2=CC=C(C=C2)C(=O)C3=C(SC4=C3C=CC(=C4)O)C5=CC=C(C=C5)O,[Ca],SERM,-24.1,1,train,1,6
+Pazopanib,Fasting,CC1=C(C=C(C=C1)NC2=NC=CC(=N2)N(C)C3=CC4=NN(C(=C4C=C3)C)C)S(=O)(=O)N,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,multikinase_inhibitor,29.6,1,train,1,8
+Sunitinib,Magnesium,CCN(CC)CCNC(=O)C1=C(NC(=C1C)/C=C\2/C3=C(C=CC(=C3)F)NC2=O)C,[OH-].[OH-].[Mg+2],multikinase_inhibitor,-32.8,1,train,1,7
+Ribociclib,Calcium,CN(C)C(=O)C1=CC2=CN=C(N=C2N1C3CCCC3)NC4=NC=C(C=C4)N5CCNCC5,[Ca],CDK4_inhibitor,-32.5,1,train,1,8
+Zanubrutinib,Food,C=CC(=O)N1CCC(CC1)[C@@H]2CCNC3=C(C(=NN23)C4=CC=C(C=C4)OC5=CC=CC=C5)C(=O)N,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,BTK_inhibitor,-33.2,1,train,1,8
+Capmatinib,Food,CNC(=O)C1=C(C=C(C=C1)C2=NN3C(=CN=C3N=C2)CC4=CC5=C(C=C4)N=CC=C5)F,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,MET_inhibitor,-27.9,1,train,1,8
+Glasdegib,Meal,CN1CC[C@H](C[C@@H]1C2=NC3=CC=CC=C3N2)NC(=O)NC4=CC=C(C=C4)C#N,CCCCCCCCCCCCCCCC(=O)O,hedgehog_inhibitor,-32.0,1,train,1,8
+Vemurafenib,Caffeine,CCCS(=O)(=O)NC1=C(C(=C(C=C1)F)C(=O)C2=CNC3=C2C=C(C=N3)C4=CC=C(C=C4)Cl)F,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,BRAF_inhibitor,32.8,1,train,1,8
+Acalabrutinib,Food,CC#CC(=O)N1CCC[C@H]1C2=NC(=C3N2C=CN=C3N)C4=CC=C(C=C4)C(=O)NC5=CC=CC=N5,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,BTK_inhibitor,-33.4,1,train,1,8
+Talazoparib,Food,CN1C(=NC=N1)[C@@H]2[C@H](NC3=CC(=CC4=C3C2=NNC4=O)F)C5=CC=C(C=C5)F,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,PARP_inhibitor,-28.6,1,train,1,7
+Apalutamide,Food,CNC(=O)C1=C(C=C(C=C1)N2C(=S)N(C(=O)C23CCC3)C4=CC(=C(N=C4)C#N)C(F)(F)F)F,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,androgen_antagonist,-33.4,1,train,1,8
+Vismodegib,Food,CS(=O)(=O)C1=CC(=C(C=C1)C(=O)NC2=CC(=C(C=C2)Cl)C3=CC=CC=N3)Cl,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,hedgehog_inhibitor,27.5,1,train,1,7
+Imatinib,Food,CC1=C(C=C(C=C1)NC(=O)C2=CC=C(C=C2)CN3CCN(CC3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,BCR-ABL_inhibitor,22.1,1,train,1,8
+Avapritinib,Food,C[C@](C1=CC=C(C=C1)F)(C2=CN=C(N=C2)N3CCN(CC3)C4=NC=NN5C4=CC(=C5)C6=CN(N=C6)C)N,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,PDGFR_inhibitor,30.9,1,train,1,8
+Busulfan,Iron,CS(=O)(=O)OCCCCOS(=O)(=O)C,[Fe],alkylating_agent,32.4,1,train,1,6
+Raloxifene,Fat,C1CCN(CC1)CCOC2=CC=C(C=C2)C(=O)C3=C(SC4=C3C=CC(=C4)O)C5=CC=C(C=C5)O,CCCCCCCC/C=C\CCCCCCCC(=O)O,SERM,34.7,2,train,1,6
+Vandetanib,St. John'S Wort,CN1CCC(CC1)COC2=C(C=C3C(=C2)N=CN=C3NC4=C(C=C(C=C4)Br)F)OC,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,EGFR_inhibitor,-48.6,2,train,1,8
+Vandetanib,Fat,CN1CCC(CC1)COC2=C(C=C3C(=C2)N=CN=C3NC4=C(C=C(C=C4)Br)F)OC,CCCCCCCC/C=C\CCCCCCCC(=O)O,EGFR_inhibitor,38.7,2,train,1,8
+Ospemifene,Fat,C1=CC=C(C=C1)/C(=C(/C2=CC=CC=C2)\C3=CC=C(C=C3)OCCO)/CCCl,CCCCCCCC/C=C\CCCCCCCC(=O)O,SERM,45.4,2,train,1,7
+Nilotinib,Grapefruit,CC1=C(C=C(C=C1)C(=O)NC2=CC(=CC(=C2)C(F)(F)F)N3C=C(N=C3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,BCR-ABL_inhibitor,58.5,2,train,1,9
+Nilotinib,Fat,CC1=C(C=C(C=C1)C(=O)NC2=CC(=CC(=C2)C(F)(F)F)N3C=C(N=C3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,CCCCCCCC/C=C\CCCCCCCC(=O)O,BCR-ABL_inhibitor,59.0,2,train,1,9
+Ponatinib,Grapefruit,CC1=C(C=C(C=C1)C(=O)NC2=CC(=C(C=C2)CN3CCN(CC3)C)C(F)(F)F)C#CC4=CN=C5N4N=CC=C5,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,BCR-ABL_inhibitor,37.8,2,train,1,8
+Ponatinib,Fat,CC1=C(C=C(C=C1)C(=O)NC2=CC(=C(C=C2)CN3CCN(CC3)C)C(F)(F)F)C#CC4=CN=C5N4N=CC=C5,CCCCCCCC/C=C\CCCCCCCC(=O)O,BCR-ABL_inhibitor,45.6,2,train,1,8
+Erlotinib,Grapefruit,COCCOC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC=CC(=C3)C#C)OCCOC,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,EGFR_inhibitor,47.9,2,train,1,8
+Erlotinib,St. John'S Wort,COCCOC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC=CC(=C3)C#C)OCCOC,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,EGFR_inhibitor,-41.8,2,train,1,8
+Erlotinib,Fat,COCCOC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC=CC(=C3)C#C)OCCOC,CCCCCCCC/C=C\CCCCCCCC(=O)O,EGFR_inhibitor,35.9,2,train,1,8
+Capecitabine,Fat,CCCCCOC(=O)NC1=NC(=O)N(C=C1F)[C@H]2[C@@H]([C@@H]([C@H](O2)C)O)O,CCCCCCCC/C=C\CCCCCCCC(=O)O,antimetabolite,40.7,2,train,1,7
+Imatinib,Grapefruit,CC1=C(C=C(C=C1)NC(=O)C2=CC=C(C=C2)CN3CCN(CC3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,BCR-ABL_inhibitor,59.6,2,train,1,8
+Imatinib,Fat,CC1=C(C=C(C=C1)NC(=O)C2=CC=C(C=C2)CN3CCN(CC3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,CCCCCCCC/C=C\CCCCCCCC(=O)O,BCR-ABL_inhibitor,53.2,2,train,1,8
+Gefitinib,Fat,COC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)F)Cl)OCCCN4CCOCC4,CCCCCCCC/C=C\CCCCCCCC(=O)O,EGFR_inhibitor,32.2,2,train,1,8
+Methotrexate,Fat,CN(CC1=CN=C2C(=N1)C(=NC(=N2)N)N)C3=CC=C(C=C3)C(=O)N[C@@H](CCC(=O)O)C(=O)O,CCCCCCCC/C=C\CCCCCCCC(=O)O,antimetabolite,31.9,2,train,1,10
+Mercaptopurine,Fat,C1=NC2=C(N1)C(=S)N=CN2,CCCCCCCC/C=C\CCCCCCCC(=O)O,antimetabolite,51.9,2,train,1,6
+Sunitinib,Fat,CCN(CC)CCNC(=O)C1=C(NC(=C1C)/C=C\2/C3=C(C=CC(=C3)F)NC2=O)C,CCCCCCCC/C=C\CCCCCCCC(=O)O,multikinase_inhibitor,45.7,2,train,1,7
+Sorafenib,Fat,CNC(=O)C1=NC=CC(=C1)OC2=CC=C(C=C2)NC(=O)NC3=CC(=C(C=C3)Cl)C(F)(F)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,multikinase_inhibitor,57.9,2,train,1,9
+Tamoxifen,Fat,CC/C(=C(\C1=CC=CC=C1)/C2=CC=C(C=C2)OCCN(C)C)/C3=CC=CC=C3,CCCCCCCC/C=C\CCCCCCCC(=O)O,SERM,56.8,2,train,1,9
+Fluorouracil,Fat,C1=C(C(=O)NC(=O)N1)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,antimetabolite,36.8,2,train,1,3
+Lenvatinib,Fat,COC1=CC2=NC=CC(=C2C=C1C(=O)N)OC3=CC(=C(C=C3)NC(=O)NC4CC4)Cl,CCCCCCCC/C=C\CCCCCCCC(=O)O,multikinase_inhibitor,42.8,2,train,1,8
+Bazedoxifene,St. John'S Wort,CC1=C(N(C2=C1C=C(C=C2)O)CC3=CC=C(C=C3)OCCN4CCCCCC4)C5=CC=C(C=C5)O,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,SERM,-50.2,2,train,1,8
+Bazedoxifene,Fat,CC1=C(N(C2=C1C=C(C=C2)O)CC3=CC=C(C=C3)OCCN4CCCCCC4)C5=CC=C(C=C5)O,CCCCCCCC/C=C\CCCCCCCC(=O)O,SERM,42.5,2,train,1,8
+Busulfan,Fat,CS(=O)(=O)OCCCCOS(=O)(=O)C,CCCCCCCC/C=C\CCCCCCCC(=O)O,alkylating_agent,59.2,2,train,1,6
+Regorafenib,Grapefruit,CNC(=O)C1=NC=CC(=C1)OC2=CC(=C(C=C2)NC(=O)NC3=CC(=C(C=C3)Cl)C(F)(F)F)F,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,multikinase_inhibitor,37.6,2,train,1,8
+Regorafenib,St. John'S Wort,CNC(=O)C1=NC=CC(=C1)OC2=CC(=C(C=C2)NC(=O)NC3=CC(=C(C=C3)Cl)C(F)(F)F)F,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,multikinase_inhibitor,-49.9,2,train,1,8
+Regorafenib,Fat,CNC(=O)C1=NC=CC(=C1)OC2=CC(=C(C=C2)NC(=O)NC3=CC(=C(C=C3)Cl)C(F)(F)F)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,multikinase_inhibitor,39.0,2,train,1,8
+Bosutinib,St. John'S Wort,CN1CCN(CC1)CCCOC2=C(C=C3C(=C2)N=CC(=C3NC4=CC(=C(C=C4Cl)Cl)OC)C#N)OC,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,BCR-ABL_inhibitor,-52.7,2,train,1,8
+Bosutinib,Fat,CN1CCN(CC1)CCCOC2=C(C=C3C(=C2)N=CC(=C3NC4=CC(=C(C=C4Cl)Cl)OC)C#N)OC,CCCCCCCC/C=C\CCCCCCCC(=O)O,BCR-ABL_inhibitor,46.1,2,train,1,8
+Cyclophosphamide,Fat,C1CNP(=O)(OC1)N(CCCl)CCCl,CCCCCCCC/C=C\CCCCCCCC(=O)O,alkylating_agent,31.2,2,train,1,8
+Afatinib,St. John'S Wort,CN(C)C/C=C/C(=O)NC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC(=C(C=C3)F)Cl)O[C@H]4CCOC4,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,EGFR_inhibitor,-51.8,2,train,1,7
+Afatinib,Fat,CN(C)C/C=C/C(=O)NC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC(=C(C=C3)F)Cl)O[C@H]4CCOC4,CCCCCCCC/C=C\CCCCCCCC(=O)O,EGFR_inhibitor,50.3,2,train,1,7
+Lapatinib,Grapefruit,CS(=O)(=O)CCNCC1=CC=C(O1)C2=CC3=C(C=C2)N=CN=C3NC4=CC(=C(C=C4)OCC5=CC(=CC=C5)F)Cl,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,EGFR_inhibitor,45.9,2,train,1,8
+Lapatinib,Fat,CS(=O)(=O)CCNCC1=CC=C(O1)C2=CC3=C(C=C2)N=CN=C3NC4=CC(=C(C=C4)OCC5=CC(=CC=C5)F)Cl,CCCCCCCC/C=C\CCCCCCCC(=O)O,EGFR_inhibitor,37.3,2,train,1,8
+Pazopanib,Fat,CC1=C(C=C(C=C1)NC2=NC=CC(=N2)N(C)C3=CC4=NN(C(=C4C=C3)C)C)S(=O)(=O)N,CCCCCCCC/C=C\CCCCCCCC(=O)O,multikinase_inhibitor,49.0,2,train,1,8
+Abiraterone,Fat,C[C@]12CC[C@@H](CC1=CC[C@@H]3[C@@H]2CC[C@]4([C@H]3CC=C4C5=CN=CC=C5)C)O,CCCCCCCC/C=C\CCCCCCCC(=O)O,CYP17_inhibitor,34.8,2,train,1,8
+Acalabrutinib,Fat,CC#CC(=O)N1CCC[C@H]1C2=NC(=C3N2C=CN=C3N)C4=CC=C(C=C4)C(=O)NC5=CC=CC=N5,CCCCCCCC/C=C\CCCCCCCC(=O)O,BTK_inhibitor,37.3,2,train,1,8
+Crizotinib,Grapefruit,C[C@H](C1=C(C=CC(=C1Cl)F)Cl)OC2=C(N=CC(=C2)C3=CN(N=C3)C4CCNCC4)N,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,ALK_inhibitor,35.3,2,train,1,8
+Crizotinib,Fat,C[C@H](C1=C(C=CC(=C1Cl)F)Cl)OC2=C(N=CC(=C2)C3=CN(N=C3)C4CCNCC4)N,CCCCCCCC/C=C\CCCCCCCC(=O)O,ALK_inhibitor,58.2,2,train,1,8
+Vemurafenib,Fat,CCCS(=O)(=O)NC1=C(C(=C(C=C1)F)C(=O)C2=CNC3=C2C=C(C=N3)C4=CC=C(C=C4)Cl)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,BRAF_inhibitor,39.5,2,train,1,8
+Enzalutamide,Fat,CC1(C(=O)N(C(=S)N1C2=CC(=C(C=C2)C(=O)NC)F)C3=CC(=C(C=C3)C#N)C(F)(F)F)C,CCCCCCCC/C=C\CCCCCCCC(=O)O,androgen_antagonist,59.7,2,train,1,8
+Ruxolitinib,Fat,C1CCC(C1)[C@@H](CC#N)N2C=C(C=N2)C3=C4C=CNC4=NC=N3,CCCCCCCC/C=C\CCCCCCCC(=O)O,JAK_inhibitor,56.0,2,train,1,8
+Vismodegib,Fat,CS(=O)(=O)C1=CC(=C(C=C1)C(=O)NC2=CC(=C(C=C2)Cl)C3=CC=CC=N3)Cl,CCCCCCCC/C=C\CCCCCCCC(=O)O,hedgehog_inhibitor,57.4,2,train,1,7
+Ribociclib,Fat,CN(C)C(=O)C1=CC2=CN=C(N=C2N1C3CCCC3)NC4=NC=C(C=C4)N5CCNCC5,CCCCCCCC/C=C\CCCCCCCC(=O)O,CDK4_inhibitor,47.3,2,train,1,8
+Axitinib,Grapefruit,CNC(=O)C1=CC=CC=C1SC2=CC3=C(C=C2)C(=NN3)/C=C/C4=CC=CC=N4,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,multikinase_inhibitor,31.1,2,train,1,8
+Axitinib,St. John'S Wort,CNC(=O)C1=CC=CC=C1SC2=CC3=C(C=C2)C(=NN3)/C=C/C4=CC=CC=N4,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,multikinase_inhibitor,-56.5,2,train,1,8
+Axitinib,Fat,CNC(=O)C1=CC=CC=C1SC2=CC3=C(C=C2)C(=NN3)/C=C/C4=CC=CC=N4,CCCCCCCC/C=C\CCCCCCCC(=O)O,multikinase_inhibitor,40.8,2,train,1,8
+Brigatinib,Grapefruit,CN1CCN(CC1)C2CCN(CC2)C3=CC(=C(C=C3)NC4=NC=C(C(=N4)NC5=CC=CC=C5P(=O)(C)C)Cl)OC,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,ALK_inhibitor,45.9,2,train,1,8
+Brigatinib,Fat,CN1CCN(CC1)C2CCN(CC2)C3=CC(=C(C=C3)NC4=NC=C(C(=N4)NC5=CC=CC=C5P(=O)(C)C)Cl)OC,CCCCCCCC/C=C\CCCCCCCC(=O)O,ALK_inhibitor,46.2,2,train,1,8
+Zanubrutinib,Fat,C=CC(=O)N1CCC(CC1)[C@@H]2CCNC3=C(C(=NN23)C4=CC=C(C=C4)OC5=CC=CC=C5)C(=O)N,CCCCCCCC/C=C\CCCCCCCC(=O)O,BTK_inhibitor,38.1,2,train,1,8
+Pirtobrutinib,Fat,C[C@@H](C(F)(F)F)N1C(=C(C(=N1)C2=CC=C(C=C2)CNC(=O)C3=C(C=CC(=C3)F)OC)C(=O)N)N,CCCCCCCC/C=C\CCCCCCCC(=O)O,BTK_inhibitor,55.1,2,train,1,8
+Alectinib,Fat,CCC1=CC2=C(C=C1N3CCC(CC3)N4CCOCC4)C(C5=C(C2=O)C6=C(N5)C=C(C=C6)C#N)(C)C,CCCCCCCC/C=C\CCCCCCCC(=O)O,ALK_inhibitor,34.7,2,train,1,8
+Lorlatinib,St. John'S Wort,C[C@@H]1C2=C(C=CC(=C2)F)C(=O)N(CC3=NN(C(=C3C4=CC(=C(N=C4)N)O1)C#N)C)C,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,ALK_inhibitor,-45.6,2,train,1,9
+Lorlatinib,Fat,C[C@@H]1C2=C(C=CC(=C2)F)C(=O)N(CC3=NN(C(=C3C4=CC(=C(N=C4)N)O1)C#N)C)C,CCCCCCCC/C=C\CCCCCCCC(=O)O,ALK_inhibitor,58.6,2,train,1,9
+Larotrectinib,Grapefruit,C1C[C@@H](N(C1)C2=NC3=C(C=NN3C=C2)NC(=O)N4CC[C@@H](C4)O)C5=C(C=CC(=C5)F)F,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,TRK_inhibitor,51.1,2,train,1,8
+Larotrectinib,St. John'S Wort,C1C[C@@H](N(C1)C2=NC3=C(C=NN3C=C2)NC(=O)N4CC[C@@H](C4)O)C5=C(C=CC(=C5)F)F,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,TRK_inhibitor,-49.5,2,train,1,8
+Larotrectinib,Fat,C1C[C@@H](N(C1)C2=NC3=C(C=NN3C=C2)NC(=O)N4CC[C@@H](C4)O)C5=C(C=CC(=C5)F)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,TRK_inhibitor,32.9,2,train,1,8
+Tucatinib,Fat,CC1=C(C=CC(=C1)NC2=NC=NC3=C2C=C(C=C3)NC4=NC(CO4)(C)C)OC5=CC6=NC=NN6C=C5,CCCCCCCC/C=C\CCCCCCCC(=O)O,HER2_inhibitor,42.0,2,train,1,8
+Neratinib,Grapefruit,CCOC1=C(C=C2C(=C1)N=CC(=C2NC3=CC(=C(C=C3)OCC4=CC=CC=N4)Cl)C#N)NC(=O)/C=C/CN(C)C,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,HER2_inhibitor,41.2,2,train,1,8
+Neratinib,Fat,CCOC1=C(C=C2C(=C1)N=CC(=C2NC3=CC(=C(C=C3)OCC4=CC=CC=N4)Cl)C#N)NC(=O)/C=C/CN(C)C,CCCCCCCC/C=C\CCCCCCCC(=O)O,HER2_inhibitor,48.8,2,train,1,8
+Ripretinib,Fat,CCN1C2=CC(=NC=C2C=C(C1=O)C3=CC(=C(C=C3Br)F)NC(=O)NC4=CC=CC=C4)NC,CCCCCCCC/C=C\CCCCCCCC(=O)O,KIT_inhibitor,47.6,2,train,1,8
+Avapritinib,Fat,C[C@](C1=CC=C(C=C1)F)(C2=CN=C(N=C2)N3CCN(CC3)C4=NC=NN5C4=CC(=C5)C6=CN(N=C6)C)N,CCCCCCCC/C=C\CCCCCCCC(=O)O,PDGFR_inhibitor,49.3,2,train,1,8
+Capmatinib,Fat,CNC(=O)C1=C(C=C(C=C1)C2=NN3C(=CN=C3N=C2)CC4=CC5=C(C=C4)N=CC=C5)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,MET_inhibitor,35.9,2,train,1,8
+Tepotinib,Fat,CN1CCC(CC1)COC2=CN=C(N=C2)C3=CC=CC(=C3)CN4C(=O)C=CC(=N4)C5=CC=CC(=C5)C#N,CCCCCCCC/C=C\CCCCCCCC(=O)O,MET_inhibitor,30.5,2,train,1,8
+Selpercatinib,St. John'S Wort,CC(C)(COC1=CN2C(=C(C=N2)C#N)C(=C1)C3=CN=C(C=C3)N4CC5CC(C4)N5CC6=CN=C(C=C6)OC)O,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,RET_inhibitor,-46.4,2,train,1,8
+Selpercatinib,Fat,CC(C)(COC1=CN2C(=C(C=N2)C#N)C(=C1)C3=CN=C(C=C3)N4CC5CC(C4)N5CC6=CN=C(C=C6)OC)O,CCCCCCCC/C=C\CCCCCCCC(=O)O,RET_inhibitor,55.3,2,train,1,8
+Sotorasib,Fat,C[C@H]1CN(CCN1C2=NC(=O)N(C3=NC(=C(C=C32)F)C4=C(C=CC=C4F)O)C5=C(C=CN=C5C(C)C)C)C(=O)C=C,CCCCCCCC/C=C\CCCCCCCC(=O)O,KRAS_inhibitor,42.4,2,train,1,8
+Adagrasib,Fat,CN1CCC[C@H]1COC2=NC3=C(CCN(C3)C4=CC=CC5=C4C(=CC=C5)Cl)C(=N2)N6CCN([C@H](C6)CC#N)C(=O)C(=C)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,KRAS_inhibitor,42.9,2,train,1,8
+Apalutamide,Fat,CNC(=O)C1=C(C=C(C=C1)N2C(=S)N(C(=O)C23CCC3)C4=CC(=C(N=C4)C#N)C(F)(F)F)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,androgen_antagonist,45.2,2,train,1,8
+Darolutamide,Fat,C[C@@H](CN1C=CC(=N1)C2=CC(=C(C=C2)C#N)Cl)NC(=O)C3=NNC(=C3)C(C)O,CCCCCCCC/C=C\CCCCCCCC(=O)O,androgen_antagonist,57.2,2,train,1,8
+Niraparib,Fat,C1C[C@H](CNC1)C2=CC=C(C=C2)N3C=C4C=CC=C(C4=N3)C(=O)N,CCCCCCCC/C=C\CCCCCCCC(=O)O,PARP_inhibitor,39.6,2,train,1,8
+Rucaparib,Fat,CNCC1=CC=C(C=C1)C2=C3CCNC(=O)C4=C3C(=CC(=C4)F)N2,CCCCCCCC/C=C\CCCCCCCC(=O)O,PARP_inhibitor,38.8,2,train,1,8
+Talazoparib,Fat,CN1C(=NC=N1)[C@@H]2[C@H](NC3=CC(=CC4=C3C2=NNC4=O)F)C5=CC=C(C=C5)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,PARP_inhibitor,53.7,2,train,1,7
+Idelalisib,Fat,CC[C@@H](C1=NC2=C(C(=CC=C2)F)C(=O)N1C3=CC=CC=C3)NC4=NC=NC5=C4NC=N5,CCCCCCCC/C=C\CCCCCCCC(=O)O,PI3K_inhibitor,44.8,2,train,1,8
+Alpelisib,Fat,CC1=C(SC(=N1)NC(=O)N2CCC[C@H]2C(=O)N)C3=CC(=NC=C3)C(C)(C)C(F)(F)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,PI3K_inhibitor,33.0,2,train,1,8
+Encorafenib,Grapefruit,C[C@@H](CNC1=NC=CC(=N1)C2=CN(N=C2C3=C(C(=CC(=C3)Cl)NS(=O)(=O)C)F)C(C)C)NC(=O)OC,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,BRAF_inhibitor,51.2,2,train,1,9
+Encorafenib,Fat,C[C@@H](CNC1=NC=CC(=N1)C2=CN(N=C2C3=C(C(=CC(=C3)Cl)NS(=O)(=O)C)F)C(C)C)NC(=O)OC,CCCCCCCC/C=C\CCCCCCCC(=O)O,BRAF_inhibitor,32.4,2,train,1,9
+Binimetinib,Fat,CN1C=NC2=C1C=C(C(=C2F)NC3=C(C=C(C=C3)Br)F)C(=O)NOCCO,CCCCCCCC/C=C\CCCCCCCC(=O)O,MEK_inhibitor,41.1,2,train,1,6
+Cobimetinib,St. John'S Wort,C1CCN[C@@H](C1)C2(CN(C2)C(=O)C3=C(C(=C(C=C3)F)F)NC4=C(C=C(C=C4)I)F)O,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,MEK_inhibitor,-59.7,2,train,1,8
+Cobimetinib,Fat,C1CCN[C@@H](C1)C2(CN(C2)C(=O)C3=C(C(=C(C=C3)F)F)NC4=C(C=C(C=C4)I)F)O,CCCCCCCC/C=C\CCCCCCCC(=O)O,MEK_inhibitor,52.6,2,train,1,8
+Midostaurin,Grapefruit,C[C@@]12[C@@H]([C@@H](C[C@@H](O1)N3C4=CC=CC=C4C5=C6C(=C7C8=CC=CC=C8N2C7=C53)CNC6=O)N(C)C(=O)C9=CC=CC=C9)OC,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,FLT3_inhibitor,44.1,2,train,1,8
+Midostaurin,Fat,C[C@@]12[C@@H]([C@@H](C[C@@H](O1)N3C4=CC=CC=C4C5=C6C(=C7C8=CC=CC=C8N2C7=C53)CNC6=O)N(C)C(=O)C9=CC=CC=C9)OC,CCCCCCCC/C=C\CCCCCCCC(=O)O,FLT3_inhibitor,31.7,2,train,1,8
+Quizartinib,St. John'S Wort,CC(C)(C)C1=CC(=NO1)NC(=O)NC2=CC=C(C=C2)C3=CN4C5=C(C=C(C=C5)OCCN6CCOCC6)SC4=N3,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,FLT3_inhibitor,-57.4,2,train,1,8
+Quizartinib,Fat,CC(C)(C)C1=CC(=NO1)NC(=O)NC2=CC=C(C=C2)C3=CN4C5=C(C=C(C=C5)OCCN6CCOCC6)SC4=N3,CCCCCCCC/C=C\CCCCCCCC(=O)O,FLT3_inhibitor,36.7,2,train,1,8
+Glasdegib,Fat,CN1CC[C@H](C[C@@H]1C2=NC3=CC=CC=C3N2)NC(=O)NC4=CC=C(C=C4)C#N,CCCCCCCC/C=C\CCCCCCCC(=O)O,hedgehog_inhibitor,59.1,2,train,1,8
+Fedratinib,Fat,CC1=CN=C(N=C1NC2=CC(=CC=C2)S(=O)(=O)NC(C)(C)C)NC3=CC=C(C=C3)OCCN4CCCC4,CCCCCCCC/C=C\CCCCCCCC(=O)O,JAK_inhibitor,45.8,2,train,1,8
+Pacritinib,Fat,C1CCN(C1)CCOC2=C3COC/C=C/COCC4=CC(=CC=C4)C5=NC(=NC=C5)NC(=C3)C=C2,CCCCCCCC/C=C\CCCCCCCC(=O)O,JAK_inhibitor,59.1,2,train,1,9
+Enasidenib,Fat,CC(C)(CNC1=NC(=NC(=N1)C2=NC(=CC=C2)C(F)(F)F)NC3=CC(=NC=C3)C(F)(F)F)O,CCCCCCCC/C=C\CCCCCCCC(=O)O,IDH_inhibitor,47.5,2,train,1,8
+Ivosidenib,Fat,C1CC(=O)N([C@@H]1C(=O)N(C2=CC(=CN=C2)F)[C@@H](C3=CC=CC=C3Cl)C(=O)NC4CC(C4)(F)F)C5=NC=CC(=C5)C#N,CCCCCCCC/C=C\CCCCCCCC(=O)O,IDH_inhibitor,31.4,2,train,1,8
+Erdafitinib,Fat,CC(C)NCCN(C1=CC2=NC(=CN=C2C=C1)C3=CN(N=C3)C)C4=CC(=CC(=C4)OC)OC,CCCCCCCC/C=C\CCCCCCCC(=O)O,FGFR_inhibitor,38.3,2,train,1,8
+Pemigatinib,Grapefruit,CCN1C2=C3C=C(NC3=NC=C2CN(C1=O)C4=C(C(=CC(=C4F)OC)OC)F)CN5CCOCC5,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,FGFR_inhibitor,59.2,2,train,1,8
+Pemigatinib,Fat,CCN1C2=C3C=C(NC3=NC=C2CN(C1=O)C4=C(C(=CC(=C4F)OC)OC)F)CN5CCOCC5,CCCCCCCC/C=C\CCCCCCCC(=O)O,FGFR_inhibitor,59.6,2,train,1,8
+Pexidartinib,Grapefruit,C1=CC(=NC=C1CC2=CNC3=C2C=C(C=N3)Cl)NCC4=CN=C(C=C4)C(F)(F)F,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,CSF1R_inhibitor,50.5,2,train,1,8
+Pexidartinib,Fat,C1=CC(=NC=C1CC2=CNC3=C2C=C(C=N3)Cl)NCC4=CN=C(C=C4)C(F)(F)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,CSF1R_inhibitor,34.9,2,train,1,8
+Selumetinib,Grapefruit,CN1C=NC2=C1C=C(C(=C2F)NC3=C(C=C(C=C3)Br)Cl)C(=O)NOCCO,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,MEK_inhibitor,58.0,2,train,1,8
+Selumetinib,Fat,CN1C=NC2=C1C=C(C(=C2F)NC3=C(C=C(C=C3)Br)Cl)C(=O)NOCCO,CCCCCCCC/C=C\CCCCCCCC(=O)O,MEK_inhibitor,56.0,2,train,1,8
+Tazemetostat,Grapefruit,CCN(C1CCOCC1)C2=CC(=CC(=C2C)C(=O)NCC3=C(C=C(NC3=O)C)C)C4=CC=C(C=C4)CN5CCOCC5,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,EZH2_inhibitor,54.3,2,train,1,8
+Tazemetostat,St. John'S Wort,CCN(C1CCOCC1)C2=CC(=CC(=C2C)C(=O)NCC3=C(C=C(NC3=O)C)C)C4=CC=C(C=C4)CN5CCOCC5,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,EZH2_inhibitor,-59.7,2,train,1,8
+Tazemetostat,Fat,CCN(C1CCOCC1)C2=CC(=CC(=C2C)C(=O)NCC3=C(C=C(NC3=O)C)C)C4=CC=C(C=C4)CN5CCOCC5,CCCCCCCC/C=C\CCCCCCCC(=O)O,EZH2_inhibitor,34.5,2,train,1,8
+Vorinostat,Fat,C1=CC=C(C=C1)NC(=O)CCCCCCC(=O)NO,CCCCCCCC/C=C\CCCCCCCC(=O)O,HDAC_inhibitor,55.1,2,train,1,8
+Belinostat,Fat,C1=CC=C(C=C1)NS(=O)(=O)C2=CC=CC(=C2)/C=C/C(=O)NO,CCCCCCCC/C=C\CCCCCCCC(=O)O,HDAC_inhibitor,60.0,2,train,1,7
+Lenalidomide,Fat,C1CC(=O)NC(=O)C1N2CC3=C(C2=O)C=CC=C3N,CCCCCCCC/C=C\CCCCCCCC(=O)O,IMiD,59.9,2,train,1,9
+Pomalidomide,Fat,C1CC(=O)NC(=O)C1N2C(=O)C3=C(C2=O)C(=CC=C3)N,CCCCCCCC/C=C\CCCCCCCC(=O)O,IMiD,37.4,2,train,1,10
+Thalidomide,St. John'S Wort,C1CC(=O)NC(=O)C1N2C(=O)C3=CC=CC=C3C2=O,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,IMiD,-53.4,2,train,1,9
+Thalidomide,Fat,C1CC(=O)NC(=O)C1N2C(=O)C3=CC=CC=C3C2=O,CCCCCCCC/C=C\CCCCCCCC(=O)O,IMiD,45.6,2,train,1,9
+Lomustine,Fat,C1CCC(CC1)NC(=O)N(CCCl)N=O,CCCCCCCC/C=C\CCCCCCCC(=O)O,alkylating_agent,56.3,2,train,1,4
+Temozolomide,Fat,CN1C(=O)N2C=NC(=C2N=N1)C(=O)N,CCCCCCCC/C=C\CCCCCCCC(=O)O,alkylating_agent,42.1,2,train,1,6
+Bicalutamide,Fat,CC(CS(=O)(=O)C1=CC=C(C=C1)F)(C(=O)NC2=CC(=C(C=C2)C#N)C(F)(F)F)O,CCCCCCCC/C=C\CCCCCCCC(=O)O,androgen_antagonist,51.1,2,train,1,7
+Flutamide,Fat,CC(C)C(=O)NC1=CC(=C(C=C1)[N+](=O)[O-])C(F)(F)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,androgen_antagonist,34.1,2,train,1,5
+Exemestane,St. John'S Wort,C[C@]12CC[C@H]3[C@H]([C@@H]1CCC2=O)CC(=C)C4=CC(=O)C=C[C@]34C,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,aromatase_inhibitor,-47.0,2,train,1,7
+Exemestane,Fat,C[C@]12CC[C@H]3[C@H]([C@@H]1CCC2=O)CC(=C)C4=CC(=O)C=C[C@]34C,CCCCCCCC/C=C\CCCCCCCC(=O)O,aromatase_inhibitor,47.7,2,train,1,7
+Letrozole,Fat,C1=CC(=CC=C1C#N)C(C2=CC=C(C=C2)C#N)N3C=NC=N3,CCCCCCCC/C=C\CCCCCCCC(=O)O,aromatase_inhibitor,57.1,2,train,1,6
+Anastrozole,Fat,CC(C)(C#N)C1=CC(=CC(=C1)CN2C=NC=N2)C(C)(C)C#N,CCCCCCCC/C=C\CCCCCCCC(=O)O,aromatase_inhibitor,58.5,2,train,1,5
+Etoposide,Fat,C[C@@H]1OC[C@@H]2[C@@H](O1)[C@@H]([C@H]([C@@H](O2)O[C@H]3[C@H]4COC(=O)[C@@H]4[C@@H](C5=CC6=C(C=C35)OCO6)C7=CC(=C(C(=C7)OC)O)OC)O)O,CCCCCCCC/C=C\CCCCCCCC(=O)O,topoisomerase_inhibitor,57.8,2,train,1,5
+Topotecan,Fat,CC[C@@]1(C2=C(COC1=O)C(=O)N3CC4=CC5=C(C=CC(=C5CN(C)C)O)N=C4C3=C2)O,CCCCCCCC/C=C\CCCCCCCC(=O)O,topoisomerase_inhibitor,44.8,2,train,1,5
+Irinotecan,St. John'S Wort,CCC1=C2CN3C(=CC4=C(C3=O)COC(=O)[C@@]4(CC)O)C2=NC5=C1C=C(C=C5)OC(=O)N6CCC(CC6)N7CCCCC7,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,topoisomerase_inhibitor,-45.2,2,train,1,9
+Irinotecan,Fat,CCC1=C2CN3C(=CC4=C(C3=O)COC(=O)[C@@]4(CC)O)C2=NC5=C1C=C(C=C5)OC(=O)N6CCC(CC6)N7CCCCC7,CCCCCCCC/C=C\CCCCCCCC(=O)O,topoisomerase_inhibitor,43.8,2,train,1,9
 Dabrafenib,Alcohol,CC(C)(C)C1=NC(=C(S1)C2=NC(=NC=C2)N)C3=C(C(=CC=C3)NS(=O)(=O)C4=C(C=CC=C4F)F)F,CCO,BRAF_inhibitor,0.0,0,unseen,0,8
-Dabrafenib,St. John'S Wort,CC(C)(C)C1=NC(=C(S1)C2=NC(=NC=C2)N)C3=C(C(=CC=C3)NS(=O)(=O)C4=C(C=CC=C4F)F)F,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,BRAF_inhibitor,0.0,0,unseen,0,8
-Palbociclib,Garlic,CC1=C(C(=O)N(C2=NC(=NC=C12)NC3=NC=C(C=C3)N4CCNCC4)C5CCCC5)C(=O)C,C=CCSS(=O)CC=C,CDK4_inhibitor,0.0,0,unseen,0,8
+Dasatinib,Calcium,CC1=C(C(=CC=C1)Cl)NC(=O)C2=CN=C(S2)NC3=CC(=NC(=N3)C)N4CCN(CC4)CCO,[Ca],BCR-ABL_inhibitor,0.0,0,unseen,0,8
+Venetoclax,St. John'S Wort,CC1(CCC(=C(C1)C2=CC=C(C=C2)Cl)CN3CCN(CC3)C4=CC(=C(C=C4)C(=O)NS(=O)(=O)C5=CC(=C(C=C5)NCC6CCOCC6)[N+](=O)[O-])OC7=CN=C8C(=C7)C=CN8)C,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,BCL2_inhibitor,0.0,0,unseen,0,9
+Cabozantinib,Green Tea,COC1=CC2=C(C=CN=C2C=C1OC)OC3=CC=C(C=C3)NC(=O)C4(CC4)C(=O)NC5=CC=C(C=C5)F,C1[C@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC(=C(C(=C3)O)O)O)OC(=O)C4=CC(=C(C(=C4)O)O)O,multikinase_inhibitor,0.0,0,unseen,0,8
+Ibrutinib,Dairy,C=CC(=O)N1CCC[C@H](C1)N2C3=NC=NC(=C3C(=N2)C4=CC=C(C=C4)OC5=CC=CC=C5)N,[Ca],BTK_inhibitor,0.0,0,unseen,0,8
+Entrectinib,Dairy,CN1CCN(CC1)C2=CC(=C(C=C2)C(=O)NC3=NNC4=C3C=C(C=C4)CC5=CC(=CC(=C5)F)F)NC6CCOCC6,[Ca],TRK_inhibitor,0.0,0,unseen,0,8
+Pralsetinib,Green Tea,CC1=CC(=NN1)NC2=NC(=NC(=C2)C)C3CCC(CC3)(C(=O)N[C@@H](C)C4=CN=C(C=C4)N5C=C(C=N5)F)OC,C1[C@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC(=C(C(=C3)O)O)O)OC(=O)C4=CC(=C(C(=C4)O)O)O,RET_inhibitor,0.0,0,unseen,0,8
+Entrectinib,Calcium,CN1CCN(CC1)C2=CC(=C(C=C2)C(=O)NC3=NNC4=C3C=C(C=C4)CC5=CC(=CC(=C5)F)F)NC6CCOCC6,[Ca],TRK_inhibitor,0.0,0,unseen,0,8
+Dasatinib,Fasting,CC1=C(C(=CC=C1)Cl)NC(=O)C2=CN=C(S2)NC3=CC(=NC(=N3)C)N4CCN(CC4)CCO,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,BCR-ABL_inhibitor,0.0,0,unseen,0,8
+Venetoclax,Juice,CC1(CCC(=C(C1)C2=CC=C(C=C2)Cl)CN3CCN(CC3)C4=CC(=C(C=C4)C(=O)NS(=O)(=O)C5=CC(=C(C=C5)NCC6CCOCC6)[N+](=O)[O-])OC7=CN=C8C(=C7)C=CN8)C,C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O,BCL2_inhibitor,0.0,0,unseen,0,9
+Pralsetinib,Juice,CC1=CC(=NN1)NC2=NC(=NC(=C2)C)C3CCC(CC3)(C(=O)N[C@@H](C)C4=CN=C(C=C4)N5C=C(C=N5)F)OC,C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O,RET_inhibitor,0.0,0,unseen,0,8
+Duvelisib,Antacid,C[C@@H](C1=CC2=C(C(=CC=C2)Cl)C(=O)N1C3=CC=CC=C3)NC4=NC=NC5=C4NC=N5,[OH-].[OH-].[Mg+2],PI3K_inhibitor,0.0,0,unseen,0,8
+Pralsetinib,Magnesium,CC1=CC(=NN1)NC2=NC(=NC(=C2)C)C3CCC(CC3)(C(=O)N[C@@H](C)C4=CN=C(C=C4)N5C=C(C=N5)F)OC,[OH-].[OH-].[Mg+2],RET_inhibitor,0.0,0,unseen,0,8
+Gilteritinib,Green Tea,CCC1=C(N=C(C(=N1)C(=O)N)NC2=CC(=C(C=C2)N3CCC(CC3)N4CCN(CC4)C)OC)NC5CCOCC5,C1[C@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC(=C(C(=C3)O)O)O)OC(=O)C4=CC(=C(C(=C4)O)O)O,FLT3_inhibitor,0.0,0,unseen,0,8
+Toremifene,Caffeine,CN(C)CCOC1=CC=C(C=C1)/C(=C(/CCCl)\C2=CC=CC=C2)/C3=CC=CC=C3,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,SERM,0.0,0,unseen,0,8
+Trametinib,Dairy,CC1=C2C(=C(N(C1=O)C)NC3=C(C=C(C=C3)I)F)C(=O)N(C(=O)N2C4=CC=CC(=C4)NC(=O)C)C5CC5,[Ca],MEK_inhibitor,0.0,0,unseen,0,5
+Pralsetinib,St. John'S Wort,CC1=CC(=NN1)NC2=NC(=NC(=C2)C)C3CCC(CC3)(C(=O)N[C@@H](C)C4=CN=C(C=C4)N5C=C(C=N5)F)OC,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,RET_inhibitor,0.0,0,unseen,0,8
+Palbociclib,Dairy,CC1=C(C(=O)N(C2=NC(=NC=C12)NC3=NC=C(C=C3)N4CCNCC4)C5CCCC5)C(=O)C,[Ca],CDK4_inhibitor,0.0,0,unseen,0,8
+Olaparib,Coffee,C1CC1C(=O)N2CCN(CC2)C(=O)C3=C(C=CC(=C3)CC4=NNC(=O)C5=CC=CC=C54)F,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,PARP_inhibitor,0.0,0,unseen,0,8
+Palbociclib,Iron,CC1=C(C(=O)N(C2=NC(=NC=C12)NC3=NC=C(C=C3)N4CCNCC4)C5CCCC5)C(=O)C,[Fe],CDK4_inhibitor,0.0,0,unseen,0,8
+Gilteritinib,Magnesium,CCC1=C(N=C(C(=N1)C(=O)N)NC2=CC(=C(C=C2)N3CCC(CC3)N4CCN(CC4)C)OC)NC5CCOCC5,[OH-].[OH-].[Mg+2],FLT3_inhibitor,0.0,0,unseen,0,8
+Palbociclib,Vitamin C,CC1=C(C(=O)N(C2=NC(=NC=C12)NC3=NC=C(C=C3)N4CCNCC4)C5CCCC5)C(=O)C,C([C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O)O,CDK4_inhibitor,0.0,0,unseen,0,8
+Ibrutinib,Green Tea,C=CC(=O)N1CCC[C@H](C1)N2C3=NC=NC(=C3C(=N2)C4=CC=C(C=C4)OC5=CC=CC=C5)N,C1[C@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC(=C(C(=C3)O)O)O)OC(=O)C4=CC(=C(C(=C4)O)O)O,BTK_inhibitor,0.0,0,unseen,0,8
+Toremifene,Dairy,CN(C)CCOC1=CC=C(C=C1)/C(=C(/CCCl)\C2=CC=CC=C2)/C3=CC=CC=C3,[Ca],SERM,0.0,0,unseen,0,8
+Sonidegib,Iron,C[C@@H]1CN(C[C@@H](O1)C)C2=NC=C(C=C2)NC(=O)C3=CC=CC(=C3C)C4=CC=C(C=C4)OC(F)(F)F,[Fe],hedgehog_inhibitor,0.0,0,unseen,0,8
+Ifosfamide,Vitamin C,C1CN(P(=O)(OC1)NCCCl)CCCl,C([C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O)O,alkylating_agent,0.0,0,unseen,0,8
 Cabozantinib,Caffeine,COC1=CC2=C(C=CN=C2C=C1OC)OC3=CC=C(C=C3)NC(=O)C4(CC4)C(=O)NC5=CC=C(C=C5)F,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,multikinase_inhibitor,0.0,0,unseen,0,8
-Venetoclax,Garlic,CC1(CCC(=C(C1)C2=CC=C(C=C2)Cl)CN3CCN(CC3)C4=CC(=C(C=C4)C(=O)NS(=O)(=O)C5=CC(=C(C=C5)NCC6CCOCC6)[N+](=O)[O-])OC7=CN=C8C(=C7)C=CN8)C,C=CCSS(=O)CC=C,BCL2_inhibitor,0.0,0,unseen,0,9
-Olaparib,Green Tea,C1CC1C(=O)N2CCN(CC2)C(=O)C3=C(C=CC(=C3)CC4=NNC(=O)C5=CC=CC=C54)F,C1[C@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC(=C(C(=C3)O)O)O)OC(=O)C4=CC(=C(C(=C4)O)O)O,PARP_inhibitor,0.0,0,unseen,0,8
-Osimertinib,Alcohol,CN1C=C(C2=CC=CC=C21)C3=NC(=NC=C3)NC4=C(C=C(C(=C4)NC(=O)C=C)N(C)CCN(C)C)OC,CCO,EGFR_inhibitor,-28.2,1,unseen,1,8
-Osimertinib,Calcium,CN1C=C(C2=CC=CC=C21)C3=NC(=NC=C3)NC4=C(C=C(C(=C4)NC(=O)C=C)N(C)CCN(C)C)OC,[Ca],EGFR_inhibitor,-21.8,1,unseen,1,8
-Ifosfamide,Alcohol,C1CN(P(=O)(OC1)NCCCl)CCCl,CCO,alkylating_agent,29.5,1,unseen,1,8
-Cabozantinib,Calcium,COC1=CC2=C(C=CN=C2C=C1OC)OC3=CC=C(C=C3)NC(=O)C4(CC4)C(=O)NC5=CC=C(C=C5)F,[Ca],multikinase_inhibitor,-25.8,1,unseen,1,8
-Toremifene,Alcohol,CN(C)CCOC1=CC=C(C=C1)/C(=C(/CCCl)\C2=CC=CC=C2)/C3=CC=CC=C3,CCO,SERM,21.2,1,unseen,1,8
-Toremifene,Calcium,CN(C)CCOC1=CC=C(C=C1)/C(=C(/CCCl)\C2=CC=CC=C2)/C3=CC=CC=C3,[Ca],SERM,23.0,1,unseen,1,8
-Gemcitabine,Alcohol,C1=CN(C(=O)N=C1N)[C@H]2C([C@@H]([C@H](O2)CO)O)(F)F,CCO,antimetabolite,-34.6,1,unseen,1,6
-Ceritinib,Calcium,CC1=CC(=C(C=C1C2CCNCC2)OC(C)C)NC3=NC=C(C(=N3)NC4=CC=CC=C4S(=O)(=O)C(C)C)Cl,[Ca],ALK_inhibitor,27.1,1,unseen,1,8
-Dasatinib,Grapefruit,CC1=C(C(=CC=C1)Cl)NC(=O)C2=CN=C(S2)NC3=CC(=NC(=N3)C)N4CCN(CC4)CCO,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,BCR-ABL_inhibitor,34.7,2,unseen,1,8
-Dasatinib,Fat,CC1=C(C(=CC=C1)Cl)NC(=O)C2=CN=C(S2)NC3=CC(=NC(=N3)C)N4CCN(CC4)CCO,CCCCCCCC/C=C\CCCCCCCC(=O)O,BCR-ABL_inhibitor,31.7,2,unseen,1,8
-Palbociclib,Grapefruit,CC1=C(C(=O)N(C2=NC(=NC=C12)NC3=NC=C(C=C3)N4CCNCC4)C5CCCC5)C(=O)C,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,CDK4_inhibitor,59.0,2,unseen,1,8
-Palbociclib,Fat,CC1=C(C(=O)N(C2=NC(=NC=C12)NC3=NC=C(C=C3)N4CCNCC4)C5CCCC5)C(=O)C,CCCCCCCC/C=C\CCCCCCCC(=O)O,CDK4_inhibitor,54.3,2,unseen,1,8
-Osimertinib,Fat,CN1C=C(C2=CC=CC=C21)C3=NC(=NC=C3)NC4=C(C=C(C(=C4)NC(=O)C=C)N(C)CCN(C)C)OC,CCCCCCCC/C=C\CCCCCCCC(=O)O,EGFR_inhibitor,50.5,2,unseen,1,8
-Ifosfamide,Fat,C1CN(P(=O)(OC1)NCCCl)CCCl,CCCCCCCC/C=C\CCCCCCCC(=O)O,alkylating_agent,32.7,2,unseen,1,8
-Cabozantinib,Grapefruit,COC1=CC2=C(C=CN=C2C=C1OC)OC3=CC=C(C=C3)NC(=O)C4(CC4)C(=O)NC5=CC=C(C=C5)F,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,multikinase_inhibitor,35.9,2,unseen,1,8
-Cabozantinib,Fat,COC1=CC2=C(C=CN=C2C=C1OC)OC3=CC=C(C=C3)NC(=O)C4(CC4)C(=O)NC5=CC=C(C=C5)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,multikinase_inhibitor,31.4,2,unseen,1,8
-Toremifene,Grapefruit,CN(C)CCOC1=CC=C(C=C1)/C(=C(/CCCl)\C2=CC=CC=C2)/C3=CC=CC=C3,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,SERM,34.2,2,unseen,1,8
-Toremifene,St. John'S Wort,CN(C)CCOC1=CC=C(C=C1)/C(=C(/CCCl)\C2=CC=CC=C2)/C3=CC=CC=C3,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,SERM,-41.5,2,unseen,1,8
-Toremifene,Fat,CN(C)CCOC1=CC=C(C=C1)/C(=C(/CCCl)\C2=CC=CC=C2)/C3=CC=CC=C3,CCCCCCCC/C=C\CCCCCCCC(=O)O,SERM,59.6,2,unseen,1,8
-Gemcitabine,Fat,C1=CN(C(=O)N=C1N)[C@H]2C([C@@H]([C@H](O2)CO)O)(F)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,antimetabolite,54.5,2,unseen,1,6
-Venetoclax,Grapefruit,CC1(CCC(=C(C1)C2=CC=C(C=C2)Cl)CN3CCN(CC3)C4=CC(=C(C=C4)C(=O)NS(=O)(=O)C5=CC(=C(C=C5)NCC6CCOCC6)[N+](=O)[O-])OC7=CN=C8C(=C7)C=CN8)C,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,BCL2_inhibitor,55.9,2,unseen,1,9
-Venetoclax,Fat,CC1(CCC(=C(C1)C2=CC=C(C=C2)Cl)CN3CCN(CC3)C4=CC(=C(C=C4)C(=O)NS(=O)(=O)C5=CC(=C(C=C5)NCC6CCOCC6)[N+](=O)[O-])OC7=CN=C8C(=C7)C=CN8)C,CCCCCCCC/C=C\CCCCCCCC(=O)O,BCL2_inhibitor,48.7,2,unseen,1,9
-Ibrutinib,Grapefruit,C=CC(=O)N1CCC[C@H](C1)N2C3=NC=NC(=C3C(=N2)C4=CC=C(C=C4)OC5=CC=CC=C5)N,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,BTK_inhibitor,31.9,2,unseen,1,8
-Ibrutinib,Fat,C=CC(=O)N1CCC[C@H](C1)N2C3=NC=NC(=C3C(=N2)C4=CC=C(C=C4)OC5=CC=CC=C5)N,CCCCCCCC/C=C\CCCCCCCC(=O)O,BTK_inhibitor,39.3,2,unseen,1,8
-Ceritinib,Grapefruit,CC1=CC(=C(C=C1C2CCNCC2)OC(C)C)NC3=NC=C(C(=N3)NC4=CC=CC=C4S(=O)(=O)C(C)C)Cl,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,ALK_inhibitor,51.9,2,unseen,1,8
-Ceritinib,Fat,CC1=CC(=C(C=C1C2CCNCC2)OC(C)C)NC3=NC=C(C(=N3)NC4=CC=CC=C4S(=O)(=O)C(C)C)Cl,CCCCCCCC/C=C\CCCCCCCC(=O)O,ALK_inhibitor,49.1,2,unseen,1,8
-Dabrafenib,Fat,CC(C)(C)C1=NC(=C(S1)C2=NC(=NC=C2)N)C3=C(C(=CC=C3)NS(=O)(=O)C4=C(C=CC=C4F)F)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,BRAF_inhibitor,46.8,2,unseen,1,8
-Olaparib,Grapefruit,C1CC1C(=O)N2CCN(CC2)C(=O)C3=C(C=CC(=C3)CC4=NNC(=O)C5=CC=CC=C54)F,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,PARP_inhibitor,30.9,2,unseen,1,8
-Olaparib,Fat,C1CC1C(=O)N2CCN(CC2)C(=O)C3=C(C=CC(=C3)CC4=NNC(=O)C5=CC=CC=C54)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,PARP_inhibitor,49.1,2,unseen,1,8
-Sonidegib,Fat,C[C@@H]1CN(C[C@@H](O1)C)C2=NC=C(C=C2)NC(=O)C3=CC=CC(=C3C)C4=CC=C(C=C4)OC(F)(F)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,hedgehog_inhibitor,57.2,2,unseen,1,8
+Dasatinib,Iron,CC1=C(C(=CC=C1)Cl)NC(=O)C2=CN=C(S2)NC3=CC(=NC(=N3)C)N4CCN(CC4)CCO,[Fe],BCR-ABL_inhibitor,0.0,0,unseen,0,8
+Pralsetinib,Food,CC1=CC(=NN1)NC2=NC(=NC(=C2)C)C3CCC(CC3)(C(=O)N[C@@H](C)C4=CN=C(C=C4)N5C=C(C=N5)F)OC,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,RET_inhibitor,-22.7,1,unseen,1,8
+Trametinib,Food,CC1=C2C(=C(N(C1=O)C)NC3=C(C=C(C=C3)I)F)C(=O)N(C(=O)N2C4=CC=CC(=C4)NC(=O)C)C5CC5,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,MEK_inhibitor,28.4,1,unseen,1,5
+Dasatinib,Meal,CC1=C(C(=CC=C1)Cl)NC(=O)C2=CN=C(S2)NC3=CC(=NC(=N3)C)N4CCN(CC4)CCO,CCCCCCCCCCCCCCCC(=O)O,BCR-ABL_inhibitor,23.3,1,unseen,1,8
+Sonidegib,Food,C[C@@H]1CN(C[C@@H](O1)C)C2=NC=C(C=C2)NC(=O)C3=CC=CC(=C3C)C4=CC=C(C=C4)OC(F)(F)F,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,hedgehog_inhibitor,20.7,1,unseen,1,8
+Palbociclib,Food,CC1=C(C(=O)N(C2=NC(=NC=C12)NC3=NC=C(C=C3)N4CCNCC4)C5CCCC5)C(=O)C,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,CDK4_inhibitor,31.4,1,unseen,1,8
+Trametinib,Empty Stomach,CC1=C2C(=C(N(C1=O)C)NC3=C(C=C(C=C3)I)F)C(=O)N(C(=O)N2C4=CC=CC(=C4)NC(=O)C)C5CC5,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,MEK_inhibitor,-27.2,1,unseen,1,5
+Cabozantinib,Meal,COC1=CC2=C(C=CN=C2C=C1OC)OC3=CC=C(C=C3)NC(=O)C4(CC4)C(=O)NC5=CC=C(C=C5)F,CCCCCCCCCCCCCCCC(=O)O,multikinase_inhibitor,-30.1,1,unseen,1,8
+Osimertinib,Fasting,CN1C=C(C2=CC=CC=C21)C3=NC(=NC=C3)NC4=C(C=C(C(=C4)NC(=O)C=C)N(C)CCN(C)C)OC,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,EGFR_inhibitor,-29.6,1,unseen,1,8
+Gilteritinib,Food,CCC1=C(N=C(C(=N1)C(=O)N)NC2=CC(=C(C=C2)N3CCC(CC3)N4CCN(CC4)C)OC)NC5CCOCC5,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,FLT3_inhibitor,-24.3,1,unseen,1,8
+Ibrutinib,Food,C=CC(=O)N1CCC[C@H](C1)N2C3=NC=NC(=C3C(=N2)C4=CC=C(C=C4)OC5=CC=CC=C5)N,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,BTK_inhibitor,-28.4,1,unseen,1,8
+Ceritinib,Meal,CC1=CC(=C(C=C1C2CCNCC2)OC(C)C)NC3=NC=C(C(=N3)NC4=CC=CC=C4S(=O)(=O)C(C)C)Cl,CCCCCCCCCCCCCCCC(=O)O,ALK_inhibitor,-22.9,1,unseen,1,8
+Osimertinib,Calcium,CN1C=C(C2=CC=CC=C21)C3=NC(=NC=C3)NC4=C(C=C(C(=C4)NC(=O)C=C)N(C)CCN(C)C)OC,[Ca],EGFR_inhibitor,28.5,1,unseen,1,8
+Olaparib,Meal,C1CC1C(=O)N2CCN(CC2)C(=O)C3=C(C=CC(=C3)CC4=NNC(=O)C5=CC=CC=C54)F,CCCCCCCCCCCCCCCC(=O)O,PARP_inhibitor,25.4,1,unseen,1,8
+Osimertinib,Magnesium,CN1C=C(C2=CC=CC=C21)C3=NC(=NC=C3)NC4=C(C=C(C(=C4)NC(=O)C=C)N(C)CCN(C)C)OC,[OH-].[OH-].[Mg+2],EGFR_inhibitor,-22.4,1,unseen,1,8
+Ceritinib,Food,CC1=CC(=C(C=C1C2CCNCC2)OC(C)C)NC3=NC=C(C(=N3)NC4=CC=CC=C4S(=O)(=O)C(C)C)Cl,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,ALK_inhibitor,24.2,1,unseen,1,8
+Gemcitabine,Alcohol,C1=CN(C(=O)N=C1N)[C@H]2C([C@@H]([C@H](O2)CO)O)(F)F,CCO,antimetabolite,32.3,1,unseen,1,6
+Dasatinib,Antacid,CC1=C(C(=CC=C1)Cl)NC(=O)C2=CN=C(S2)NC3=CC(=NC(=N3)C)N4CCN(CC4)CCO,[OH-].[OH-].[Mg+2],BCR-ABL_inhibitor,-22.2,1,unseen,1,8
+Cabozantinib,Food,COC1=CC2=C(C=CN=C2C=C1OC)OC3=CC=C(C=C3)NC(=O)C4(CC4)C(=O)NC5=CC=C(C=C5)F,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,multikinase_inhibitor,23.6,1,unseen,1,8
+Dabrafenib,Fasting,CC(C)(C)C1=NC(=C(S1)C2=NC(=NC=C2)N)C3=C(C(=CC=C3)NS(=O)(=O)C4=C(C=CC=C4F)F)F,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,BRAF_inhibitor,-25.8,1,unseen,1,8
+Osimertinib,Alcohol,CN1C=C(C2=CC=CC=C21)C3=NC(=NC=C3)NC4=C(C=C(C(=C4)NC(=O)C=C)N(C)CCN(C)C)OC,CCO,EGFR_inhibitor,24.7,1,unseen,1,8
+Palbociclib,Juice,CC1=C(C(=O)N(C2=NC(=NC=C12)NC3=NC=C(C=C3)N4CCNCC4)C5CCCC5)C(=O)C,C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O,CDK4_inhibitor,28.4,1,unseen,1,8
+Gilteritinib,Meal,CCC1=C(N=C(C(=N1)C(=O)N)NC2=CC(=C(C=C2)N3CCC(CC3)N4CCN(CC4)C)OC)NC5CCOCC5,CCCCCCCCCCCCCCCC(=O)O,FLT3_inhibitor,34.4,1,unseen,1,8
+Dasatinib,Magnesium,CC1=C(C(=CC=C1)Cl)NC(=O)C2=CN=C(S2)NC3=CC(=NC(=N3)C)N4CCN(CC4)CCO,[OH-].[OH-].[Mg+2],BCR-ABL_inhibitor,-27.9,1,unseen,1,8
+Entrectinib,Meal,CN1CCN(CC1)C2=CC(=C(C=C2)C(=O)NC3=NNC4=C3C=C(C=C4)CC5=CC(=CC(=C5)F)F)NC6CCOCC6,CCCCCCCCCCCCCCCC(=O)O,TRK_inhibitor,-26.9,1,unseen,1,8
+Ceritinib,Juice,CC1=CC(=C(C=C1C2CCNCC2)OC(C)C)NC3=NC=C(C(=N3)NC4=CC=CC=C4S(=O)(=O)C(C)C)Cl,C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O,ALK_inhibitor,29.7,1,unseen,1,8
+Cabozantinib,Iron,COC1=CC2=C(C=CN=C2C=C1OC)OC3=CC=C(C=C3)NC(=O)C4(CC4)C(=O)NC5=CC=C(C=C5)F,[Fe],multikinase_inhibitor,-29.5,1,unseen,1,8
+Pralsetinib,Fasting,CC1=CC(=NN1)NC2=NC(=NC(=C2)C)C3CCC(CC3)(C(=O)N[C@@H](C)C4=CN=C(C=C4)N5C=C(C=N5)F)OC,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,RET_inhibitor,34.3,1,unseen,1,8
+Duvelisib,Fasting,C[C@@H](C1=CC2=C(C(=CC=C2)Cl)C(=O)N1C3=CC=CC=C3)NC4=NC=NC5=C4NC=N5,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,PI3K_inhibitor,29.3,1,unseen,1,8
+Dasatinib,Grapefruit,CC1=C(C(=CC=C1)Cl)NC(=O)C2=CN=C(S2)NC3=CC(=NC(=N3)C)N4CCN(CC4)CCO,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,BCR-ABL_inhibitor,30.6,2,unseen,1,8
+Dasatinib,Fat,CC1=C(C(=CC=C1)Cl)NC(=O)C2=CN=C(S2)NC3=CC(=NC(=N3)C)N4CCN(CC4)CCO,CCCCCCCC/C=C\CCCCCCCC(=O)O,BCR-ABL_inhibitor,59.1,2,unseen,1,8
+Palbociclib,Grapefruit,CC1=C(C(=O)N(C2=NC(=NC=C12)NC3=NC=C(C=C3)N4CCNCC4)C5CCCC5)C(=O)C,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,CDK4_inhibitor,44.2,2,unseen,1,8
+Palbociclib,Fat,CC1=C(C(=O)N(C2=NC(=NC=C12)NC3=NC=C(C=C3)N4CCNCC4)C5CCCC5)C(=O)C,CCCCCCCC/C=C\CCCCCCCC(=O)O,CDK4_inhibitor,33.6,2,unseen,1,8
+Osimertinib,Fat,CN1C=C(C2=CC=CC=C21)C3=NC(=NC=C3)NC4=C(C=C(C(=C4)NC(=O)C=C)N(C)CCN(C)C)OC,CCCCCCCC/C=C\CCCCCCCC(=O)O,EGFR_inhibitor,45.3,2,unseen,1,8
+Ifosfamide,Fat,C1CN(P(=O)(OC1)NCCCl)CCCl,CCCCCCCC/C=C\CCCCCCCC(=O)O,alkylating_agent,37.2,2,unseen,1,8
+Cabozantinib,Grapefruit,COC1=CC2=C(C=CN=C2C=C1OC)OC3=CC=C(C=C3)NC(=O)C4(CC4)C(=O)NC5=CC=C(C=C5)F,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,multikinase_inhibitor,34.3,2,unseen,1,8
+Cabozantinib,Fat,COC1=CC2=C(C=CN=C2C=C1OC)OC3=CC=C(C=C3)NC(=O)C4(CC4)C(=O)NC5=CC=C(C=C5)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,multikinase_inhibitor,44.7,2,unseen,1,8
+Toremifene,Grapefruit,CN(C)CCOC1=CC=C(C=C1)/C(=C(/CCCl)\C2=CC=CC=C2)/C3=CC=CC=C3,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,SERM,50.7,2,unseen,1,8
+Toremifene,St. John'S Wort,CN(C)CCOC1=CC=C(C=C1)/C(=C(/CCCl)\C2=CC=CC=C2)/C3=CC=CC=C3,CC(C)C(=O)[C@]12C(=O)C(=C([C@](C1=O)(C[C@@H]([C@@]2(C)CCC=C(C)C)CC=C(C)C)CC=C(C)C)O)CC=C(C)C,SERM,-42.8,2,unseen,1,8
+Toremifene,Fat,CN(C)CCOC1=CC=C(C=C1)/C(=C(/CCCl)\C2=CC=CC=C2)/C3=CC=CC=C3,CCCCCCCC/C=C\CCCCCCCC(=O)O,SERM,40.2,2,unseen,1,8
+Gemcitabine,Fat,C1=CN(C(=O)N=C1N)[C@H]2C([C@@H]([C@H](O2)CO)O)(F)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,antimetabolite,46.7,2,unseen,1,6
+Venetoclax,Grapefruit,CC1(CCC(=C(C1)C2=CC=C(C=C2)Cl)CN3CCN(CC3)C4=CC(=C(C=C4)C(=O)NS(=O)(=O)C5=CC(=C(C=C5)NCC6CCOCC6)[N+](=O)[O-])OC7=CN=C8C(=C7)C=CN8)C,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,BCL2_inhibitor,57.0,2,unseen,1,9
+Venetoclax,Fat,CC1(CCC(=C(C1)C2=CC=C(C=C2)Cl)CN3CCN(CC3)C4=CC(=C(C=C4)C(=O)NS(=O)(=O)C5=CC(=C(C=C5)NCC6CCOCC6)[N+](=O)[O-])OC7=CN=C8C(=C7)C=CN8)C,CCCCCCCC/C=C\CCCCCCCC(=O)O,BCL2_inhibitor,48.2,2,unseen,1,9
+Ibrutinib,Grapefruit,C=CC(=O)N1CCC[C@H](C1)N2C3=NC=NC(=C3C(=N2)C4=CC=C(C=C4)OC5=CC=CC=C5)N,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,BTK_inhibitor,49.5,2,unseen,1,8
+Ibrutinib,Fat,C=CC(=O)N1CCC[C@H](C1)N2C3=NC=NC(=C3C(=N2)C4=CC=C(C=C4)OC5=CC=CC=C5)N,CCCCCCCC/C=C\CCCCCCCC(=O)O,BTK_inhibitor,55.5,2,unseen,1,8
+Ceritinib,Grapefruit,CC1=CC(=C(C=C1C2CCNCC2)OC(C)C)NC3=NC=C(C(=N3)NC4=CC=CC=C4S(=O)(=O)C(C)C)Cl,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,ALK_inhibitor,48.9,2,unseen,1,8
+Ceritinib,Fat,CC1=CC(=C(C=C1C2CCNCC2)OC(C)C)NC3=NC=C(C(=N3)NC4=CC=CC=C4S(=O)(=O)C(C)C)Cl,CCCCCCCC/C=C\CCCCCCCC(=O)O,ALK_inhibitor,53.8,2,unseen,1,8
+Dabrafenib,Fat,CC(C)(C)C1=NC(=C(S1)C2=NC(=NC=C2)N)C3=C(C(=CC=C3)NS(=O)(=O)C4=C(C=CC=C4F)F)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,BRAF_inhibitor,42.8,2,unseen,1,8
+Olaparib,Grapefruit,C1CC1C(=O)N2CCN(CC2)C(=O)C3=C(C=CC(=C3)CC4=NNC(=O)C5=CC=CC=C54)F,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,PARP_inhibitor,52.2,2,unseen,1,8
+Olaparib,Fat,C1CC1C(=O)N2CCN(CC2)C(=O)C3=C(C=CC(=C3)CC4=NNC(=O)C5=CC=CC=C54)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,PARP_inhibitor,50.9,2,unseen,1,8
+Sonidegib,Fat,C[C@@H]1CN(C[C@@H](O1)C)C2=NC=C(C=C2)NC(=O)C3=CC=CC(=C3C)C4=CC=C(C=C4)OC(F)(F)F,CCCCCCCC/C=C\CCCCCCCC(=O)O,hedgehog_inhibitor,53.9,2,unseen,1,8
+Entrectinib,Grapefruit,CN1CCN(CC1)C2=CC(=C(C=C2)C(=O)NC3=NNC4=C3C=C(C=C4)CC5=CC(=CC(=C5)F)F)NC6CCOCC6,CC(=CCC/C(=C/COC1=C2C=CC(=O)OC2=CC3=C1C=CO3)/C)C,TRK_inhibitor,52.7,2,unseen,1,8
+Entrectinib,Fat,CN1CCN(CC1)C2=CC(=C(C=C2)C(=O)NC3=NNC4=C3C=C(C=C4)CC5=CC(=CC(=C5)F)F)NC6CCOCC6,CCCCCCCC/C=C\CCCCCCCC(=O)O,TRK_inhibitor,30.4,2,unseen,1,8
+Pralsetinib,Fat,CC1=CC(=NN1)NC2=NC(=NC(=C2)C)C3CCC(CC3)(C(=O)N[C@@H](C)C4=CN=C(C=C4)N5C=C(C=N5)F)OC,CCCCCCCC/C=C\CCCCCCCC(=O)O,RET_inhibitor,56.3,2,unseen,1,8
+Duvelisib,Fat,C[C@@H](C1=CC2=C(C(=CC=C2)Cl)C(=O)N1C3=CC=CC=C3)NC4=NC=NC5=C4NC=N5,CCCCCCCC/C=C\CCCCCCCC(=O)O,PI3K_inhibitor,40.5,2,unseen,1,8
+Trametinib,Fat,CC1=C2C(=C(N(C1=O)C)NC3=C(C=C(C=C3)I)F)C(=O)N(C(=O)N2C4=CC=CC(=C4)NC(=O)C)C5CC5,CCCCCCCC/C=C\CCCCCCCC(=O)O,MEK_inhibitor,53.3,2,unseen,1,5
+Gilteritinib,Fat,CCC1=C(N=C(C(=N1)C(=O)N)NC2=CC(=C(C=C2)N3CCC(CC3)N4CCN(CC4)C)OC)NC5CCOCC5,CCCCCCCC/C=C\CCCCCCCC(=O)O,FLT3_inhibitor,52.4,2,unseen,1,8

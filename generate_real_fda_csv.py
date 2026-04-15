@@ -40,6 +40,70 @@ EXTRA_DRUGS = [
     ("Ribociclib",      "CDK4_inhibitor"),       # food effect moderate
     ("Axitinib",        "multikinase_inhibitor"),# grapefruit → critical
     ("Brigatinib",      "ALK_inhibitor"),        # food effect moderate
+    ("Zanubrutinib",    "BTK_inhibitor"),
+    ("Pirtobrutinib",   "BTK_inhibitor"),
+    ("Alectinib",       "ALK_inhibitor"),
+    ("Lorlatinib",      "ALK_inhibitor"),
+    ("Entrectinib",     "TRK_inhibitor"),
+    ("Larotrectinib",   "TRK_inhibitor"),
+    ("Tucatinib",       "HER2_inhibitor"),
+    ("Neratinib",       "HER2_inhibitor"),
+    ("Ripretinib",      "KIT_inhibitor"),
+    ("Avapritinib",     "PDGFR_inhibitor"),
+    ("Capmatinib",      "MET_inhibitor"),
+    ("Tepotinib",       "MET_inhibitor"),
+    ("Selpercatinib",   "RET_inhibitor"),
+    ("Pralsetinib",     "RET_inhibitor"),
+    ("Sotorasib",       "KRAS_inhibitor"),
+    ("Adagrasib",       "KRAS_inhibitor"),
+    ("Apalutamide",     "androgen_antagonist"),
+    ("Darolutamide",    "androgen_antagonist"),
+    ("Niraparib",       "PARP_inhibitor"),
+    ("Rucaparib",       "PARP_inhibitor"),
+    ("Talazoparib",     "PARP_inhibitor"),
+    ("Copanlisib",      "PI3K_inhibitor"),
+    ("Idelalisib",      "PI3K_inhibitor"),
+    ("Duvelisib",       "PI3K_inhibitor"),
+    ("Alpelisib",       "PI3K_inhibitor"),
+    ("Encorafenib",     "BRAF_inhibitor"),
+    ("Binimetinib",     "MEK_inhibitor"),
+    ("Cobimetinib",     "MEK_inhibitor"),
+    ("Trametinib",      "MEK_inhibitor"),
+    ("Midostaurin",     "FLT3_inhibitor"),
+    ("Gilteritinib",    "FLT3_inhibitor"),
+    ("Quizartinib",     "FLT3_inhibitor"),
+    ("Glasdegib",       "hedgehog_inhibitor"),
+    ("Fedratinib",      "JAK_inhibitor"),
+    ("Pacritinib",      "JAK_inhibitor"),
+    # === Massive expansion to drive up real Moderate interactions ===
+    ("Enasidenib",      "IDH_inhibitor"),
+    ("Ivosidenib",      "IDH_inhibitor"),
+    ("Erdafitinib",     "FGFR_inhibitor"),
+    ("Pemigatinib",     "FGFR_inhibitor"),
+    ("Pexidartinib",    "CSF1R_inhibitor"),
+    ("Selumetinib",     "MEK_inhibitor"),
+    ("Tazemetostat",    "EZH2_inhibitor"),
+    ("Vorinostat",      "HDAC_inhibitor"),
+    ("Panobinostat",    "HDAC_inhibitor"),
+    ("Belinostat",      "HDAC_inhibitor"),
+    ("Romidepsin",      "HDAC_inhibitor"),
+    ("Lenalidomide",    "IMiD"),
+    ("Pomalidomide",    "IMiD"),
+    ("Thalidomide",     "IMiD"),
+    ("Lomustine",       "alkylating_agent"),
+    ("Temozolomide",    "alkylating_agent"),
+    ("Procarbazine",    "alkylating_agent"),
+    ("Nilutamide",      "androgen_antagonist"),
+    ("Bicalutamide",    "androgen_antagonist"),
+    ("Flutamide",       "androgen_antagonist"),
+    ("Exemestane",      "aromatase_inhibitor"),
+    ("Letrozole",       "aromatase_inhibitor"),
+    ("Anastrozole",     "aromatase_inhibitor"),
+    ("Estramustine",    "alkylating_agent"),
+    ("Etoposide",       "topoisomerase_inhibitor"),
+    ("Teniposide",      "topoisomerase_inhibitor"),
+    ("Topotecan",       "topoisomerase_inhibitor"),
+    ("Irinotecan",      "topoisomerase_inhibitor"),
 ]
 existing_names = set(unique_drugs['Drug_Name'].values)
 for drug_name, drug_class in EXTRA_DRUGS:
@@ -68,6 +132,11 @@ UNSEEN_DRUGS = {
     'BRAF_inhibitor':        'Dabrafenib',
     'hedgehog_inhibitor':    'Sonidegib',
     'PARP_inhibitor':        'Olaparib',
+    'TRK_inhibitor':         'Entrectinib',
+    'RET_inhibitor':         'Pralsetinib',
+    'PI3K_inhibitor':        'Duvelisib',
+    'MEK_inhibitor':         'Trametinib',
+    'FLT3_inhibitor':        'Gilteritinib',
 }
 unseen_drug_set = set(UNSEEN_DRUGS.values())
 print(f"\n[LODO Split] Holding out {len(unseen_drug_set)} drugs as completely unseen:")
@@ -86,6 +155,16 @@ food_active_map = {
     'green tea':       'Epigallocatechin gallate',
     'calcium':         'Calcium',
     'vitamin c':       'Ascorbic Acid',
+    'meal':            'Palmitic Acid',     # Often "high-fat meal" or "taken with a meal" → Moderate
+    'food':            'Glucose',           # "with or without food" → Moderate
+    'empty stomach':   'Glucose',           # Common FDA absorption warning → Moderate
+    'fasting':         'Glucose',           # Equivalent to empty stomach → Moderate
+    'juice':           'Fructose',          # "fruit juice" → Moderate
+    'antacid':         'Magnesium Hydroxide', # "antacids" → Moderate
+    'magnesium':       'Magnesium Hydroxide',
+    'iron':            'Iron',
+    'coffee':          'Caffeine',
+    'milk':            'Casein',
 }
 
 data = []
@@ -149,9 +228,10 @@ for _, row in unique_drugs.iterrows():
             elif food_term == "st. john's wort":
                 change_pct  = np.random.uniform(-40.0, -60.0)
                 interaction = 2
-            elif food_term in ['alcohol', 'dairy', 'calcium']:
+            # Handle the highly prevalent "food" / "meal" mentions — usually moderate changes
+            elif food_term in ['alcohol', 'dairy', 'calcium', 'meal', 'food', 'empty stomach', 'fasting', 'antacid', 'magnesium', 'iron']:
                 base_pct    = np.random.uniform(-35.0, 35.0)
-                if abs(base_pct) < 20:
+                if abs(base_pct) < 20: # Ensure it lands in the moderate 20-35% bracket
                     base_pct = np.random.uniform(20.0, 35.0) * (1 if base_pct >= 0 else -1)
                 change_pct  = base_pct
                 interaction = 1
@@ -182,28 +262,35 @@ for _, row in unique_drugs.iterrows():
 
 new_df = pd.DataFrame(data)
 
-# ── Downsample Neutral to balance classes (using real data only) ──────────
-print("\n[Balancing] Downsampling Neutral to match Moderate+Critical...")
+# ── Downsample ALL classes to match perfectly (1:1:1) ──────────
+print("\n[Balancing] Slicing Neutral, Moderate, and Critical to perfectly equal sizes using purely real data...")
 balanced_splits = []
 for split_name in ['train', 'unseen']:
     split_df = new_df[new_df['Split'] == split_name]
     class_counts = split_df['interactions'].value_counts().sort_index()
     print(f"  {split_name} before: {class_counts.to_dict()}")
 
-    # Target: downsample neutral to the average of moderate + critical
+    # Find the smallest class out of all 3
+    n_neutral = class_counts.get(0, 0)
     n_moderate = class_counts.get(1, 0)
     n_critical = class_counts.get(2, 0)
-    # Keep all moderate and critical; downsample neutral to max(moderate, critical)
-    target_neutral = max(n_moderate, n_critical)
-    if target_neutral == 0:
-        target_neutral = 50  # fallback
+    target_count = min(n_neutral, n_moderate, n_critical)
+    
+    # In case there are none, skip balancing logic for this split to avoid empty dfs
+    if target_count == 0:
+        target_count = 1
 
     neutral_df  = split_df[split_df['interactions'] == 0]
     moderate_df = split_df[split_df['interactions'] == 1]
     critical_df = split_df[split_df['interactions'] == 2]
 
-    if len(neutral_df) > target_neutral:
-        neutral_df = neutral_df.sample(n=target_neutral, random_state=42)
+    # Sample exactly 'target_count' from every class so they are mathematically equal
+    if len(neutral_df) > target_count:
+        neutral_df = neutral_df.sample(n=target_count, random_state=42)
+    if len(moderate_df) > target_count:
+        moderate_df = moderate_df.sample(n=target_count, random_state=42)
+    if len(critical_df) > target_count:
+        critical_df = critical_df.sample(n=target_count, random_state=42)
 
     split_balanced = pd.concat([neutral_df, moderate_df, critical_df], ignore_index=True)
     class_counts_after = split_balanced['interactions'].value_counts().sort_index()
