@@ -42,7 +42,7 @@ from sklearn.model_selection import StratifiedKFold, train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.feature_selection import RFE
 from sklearn.decomposition import PCA
-from imblearn.over_sampling import SMOTE, BorderlineSMOTE
+from imblearn.over_sampling import BorderlineSMOTE
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import (
     RandomForestClassifier, GradientBoostingClassifier, VotingClassifier
@@ -104,7 +104,9 @@ def load_all_datasets(csv_path="clinical_interaction_real.csv") -> pd.DataFrame:
             "risk_level":  row["interactions"] if "interactions" in row else 0,
             "pct_change":  row["Bioavail_Change_Pct"],
             "drug_class":  row["Drug_Class"],
-            "split":       row["Split"]
+            "split":       row["Split"],
+            "fda_mentions_food":      row.get("fda_mentions_food", 0),
+            "fda_interaction_keywords": row.get("fda_interaction_keywords", 0),
         })
             
     df_full = pd.DataFrame(records)
@@ -263,8 +265,17 @@ def build_feature_matrix(df: pd.DataFrame, fp_bits: int = 256) -> pd.DataFrame:
 
     tanimoto_df = pd.DataFrame({"tanimoto_similarity": tanimotos})
 
+    # ── FDA interaction keyword count (drug-level pharmacovigilance signal) ──
+    # NOTE: bioavail_change and fda_mentions_food are NOT included as features
+    # because they directly encode the label (data leakage).
+    # fda_interaction_keywords counts interaction-related words across the FULL
+    # FDA label text — it's a drug-level signal, not food-specific.
+    fda_parts = []
+    if "fda_interaction_keywords" in df.columns:
+        fda_parts.append(df[["fda_interaction_keywords"]].reset_index(drop=True).astype(float))
+
     # concatenate all feature blocks
-    feat_df = pd.concat([
+    concat_parts = [
         drug_fp_df,
         food_fp_df,
         drug_desc_df.reset_index(drop=True),
@@ -272,7 +283,9 @@ def build_feature_matrix(df: pd.DataFrame, fp_bits: int = 256) -> pd.DataFrame:
         drug_api_df.reset_index(drop=True),
         food_api_df.reset_index(drop=True),
         tanimoto_df,
-    ], axis=1)
+    ] + fda_parts
+
+    feat_df = pd.concat(concat_parts, axis=1)
 
     print(f"[Features] Matrix shape: {feat_df.shape[0]} rows × {feat_df.shape[1]} cols")
     return feat_df
@@ -298,11 +311,13 @@ def apply_rfe(X: np.ndarray, y: np.ndarray, n_features: int = 40) -> np.ndarray:
     return rfe.support_
 
 
-def train_classifier(X_train, y_train, params: dict = None) -> VotingClassifier:
+def train_classifier(X_train, y_train, sample_weight=None) -> VotingClassifier:
     """
     Soft-Voting Ensemble: XGBoost + RandomForest + GradientBoosting.
     Parameters are tuned to avoid overfitting on a ~310-row real-world dataset
     with 537 feature dimensions — shallow trees, strong regularization.
+    Uses sample_weight for cost-sensitive learning to handle class imbalance
+    without discarding majority-class data.
     """
     xgb_clf = xgb.XGBClassifier(
         n_estimators=150,        # Fewer trees to prevent memorisation
@@ -312,7 +327,7 @@ def train_classifier(X_train, y_train, params: dict = None) -> VotingClassifier:
         reg_lambda=1.5,          # Stronger L2 weight penalty
         subsample=0.75,          # Only see 75% of rows per tree → forces generalization
         colsample_bytree=0.6,    # Only see 60% of features per tree
-        min_child_weight=5,      # Require more samples per leaf → less overfitting
+        min_child_weight=5,      # Harder to split on rare unseen scaffold patterns
         gamma=0.3,               # Higher min-loss-reduction before splitting
         use_label_encoder=False,
         eval_metric="mlogloss",
@@ -324,9 +339,8 @@ def train_classifier(X_train, y_train, params: dict = None) -> VotingClassifier:
     rf_clf = RandomForestClassifier(
         n_estimators=200,
         max_depth=6,             # Shallower trees
-        min_samples_leaf=5,      # Needs ≥5 samples per leaf — prevents micro-splits
+        min_samples_leaf=3,      # Moderate constraint for ~310-row dataset
         max_features="sqrt",     # Only √537 ≈ 23 features per split
-        class_weight="balanced",
         random_state=SEED,
         n_jobs=-1,
     )
@@ -335,7 +349,7 @@ def train_classifier(X_train, y_train, params: dict = None) -> VotingClassifier:
         max_depth=3,             # Deliberately shallow stumps
         learning_rate=0.08,
         subsample=0.75,
-        min_samples_leaf=5,
+        min_samples_leaf=3,
         random_state=SEED,
     )
     ensemble = VotingClassifier(
@@ -347,7 +361,10 @@ def train_classifier(X_train, y_train, params: dict = None) -> VotingClassifier:
         voting="soft",
         weights=[2, 2, 1],   # Equal XGB/RF weight; GB acts as a tiebreaker
     )
-    ensemble.fit(X_train, y_train)
+    if sample_weight is not None:
+        ensemble.fit(X_train, y_train, sample_weight=sample_weight)
+    else:
+        ensemble.fit(X_train, y_train)
     return ensemble
 
 
@@ -936,22 +953,37 @@ def main():
     df = df_all[df_all["split"] == "train"].copy()
     unseen_df = df_all[df_all["split"] == "unseen"].copy()
 
+    # ── Verify class distribution ─────────────────────────────────────────
+    print("\n  [Class Distribution — Train]")
+    for cls_val, cls_name in [(0, 'Neutral'), (1, 'Moderate'), (2, 'Critical')]:
+        n = (df['risk_level'] == cls_val).sum()
+        print(f"    {cls_name:10s}: {n}")
+    print("  [Class Distribution — Unseen]")
+    for cls_val, cls_name in [(0, 'Neutral'), (1, 'Moderate'), (2, 'Critical')]:
+        n = (unseen_df['risk_level'] == cls_val).sum()
+        print(f"    {cls_name:10s}: {n}")
+
     # ── 2. Feature Engineering ────────────────────────────────────────────
     print("\n[STEP 2] Feature Engineering")
     feat_df = build_feature_matrix(df, fp_bits=256)
     unseen_feat = build_feature_matrix(unseen_df, fp_bits=256)
     feat_names = feat_df.columns.tolist()
 
-    # ── 3. Train/Val Split (Academic ML path vs Random mapping) ───────────
-    print("\n[STEP 3/4] Randomized Train/Val Split for High Academic Metrics (>90%)")
+    # ── 3. Stratified Train/Val Split ──────────────────────────────────────
+    # NOTE: scaffold_split puts all 13 moderate samples in one split (no class
+    # guarantee). Stratified split ensures all 3 classes appear in both sets.
+    # The LODO unseen set already provides structurally-honest evaluation.
+    print("\n[STEP 3/4] Stratified Train/Val Split")
     X = feat_df.values
     y_cls = df["risk_level"].values
     y_reg = df["pct_change"].values
-    
-    # Stratified Random Splitting specifically maps structural data to achieve >90% precision
+
     X_train, X_val, y_cls_train, y_cls_val, y_reg_train, y_reg_val = train_test_split(
         X, y_cls, y_reg, test_size=0.2, random_state=SEED, stratify=y_cls
     )
+
+    print(f"  Train class dist: { {0: int((y_cls_train==0).sum()), 1: int((y_cls_train==1).sum()), 2: int((y_cls_train==2).sum())} }")
+    print(f"  Val   class dist: { {0: int((y_cls_val==0).sum()), 1: int((y_cls_val==1).sum()), 2: int((y_cls_val==2).sum())} }")
 
     # Scale continuous descriptors
     scaler  = StandardScaler()
@@ -961,7 +993,7 @@ def main():
 
     # ── Dimensionality Structure Validation ───────────────────────────────
     n_fp = 512   # 256 drug + 256 food
-    print("\n  [Validation] Retaining explicit 512-bit Morgan Arrays to preserve orthogonal representation logic...")
+    print("\n  [Validation] Retaining 512-bit Morgan Arrays (256 drug + 256 food)...")
     X_fp_train = X_train[:, :n_fp]
     X_fp_val = X_val[:, :n_fp]
     X_fp_unseen = X_unseen[:, :n_fp]
@@ -983,15 +1015,34 @@ def main():
     )
     print(f"[RFE] Final dense feature matrix mapping exactly {X_train_full.shape[1]} dimensions.")
 
-    # ── 4. SMOTE Rebalancing (BorderlineSMOTE for smarter boundary synthesis) ────
-    print("\n[SMOTE] Rebalancing minority critical/moderate classes via BorderlineSMOTE...")
-    smote = BorderlineSMOTE(random_state=SEED, kind="borderline-1")
-    X_train_cls, y_cls_train_sm = smote.fit_resample(X_train_full, y_cls_train)
-    print(f"  [SMOTE] Matrix expanded from {len(y_cls_train)} to {len(y_cls_train_sm)} rows.")
+    # ── 4. BorderlineSMOTE for Moderate class oversampling (Fix 3) ────────
+    print("\n[SMOTE] Oversampling Moderate class via BorderlineSMOTE...")
+    y_cls_train_orig = y_cls_train.copy()
+    n_moderate = int((y_cls_train == 1).sum())
+    print(f"  Moderate samples before SMOTE: {n_moderate}")
+
+    if n_moderate >= 2:  # need at least 2 samples for SMOTE
+        smote = BorderlineSMOTE(
+            sampling_strategy={1: max(40, n_moderate)},
+            k_neighbors=min(4, n_moderate - 1),
+            random_state=SEED,
+            kind="borderline-1"
+        )
+        X_train_full, y_cls_train = smote.fit_resample(X_train_full, y_cls_train)
+
+        # Extend regression targets for synthetic rows
+        moderate_median_pct = np.median(y_reg_train[y_cls_train_orig == 1])
+        n_synthetic = len(y_cls_train) - len(y_reg_train)
+        y_reg_train = np.concatenate([y_reg_train,
+                                       np.full(n_synthetic, moderate_median_pct)])
+        print(f"  Moderate samples after SMOTE:  {int((y_cls_train == 1).sum())}")
+        print(f"  Total training rows: {len(y_cls_train)} (was {len(y_cls_train_orig)})")
+    else:
+        print(f"  [WARN] Too few moderate samples ({n_moderate}) for SMOTE, skipping.")
 
     # ── 5. Train Soft-Voting Ensemble ──────────────────────────────────────
     print("\n[STEP 3] Training Soft-Voting Ensemble (XGBoost + RandomForest + GradientBoosting)")
-    clf = train_classifier(X_train_cls, y_cls_train_sm)
+    clf = train_classifier(X_train_full, y_cls_train)
     reg = train_regressor(X_train_full, y_reg_train)
     print("  XGBoost classifier and LightGBM regressor trained.")
 
