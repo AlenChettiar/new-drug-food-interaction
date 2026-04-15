@@ -320,15 +320,15 @@ def train_classifier(X_train, y_train, sample_weight=None) -> VotingClassifier:
     without discarding majority-class data.
     """
     xgb_clf = xgb.XGBClassifier(
-        n_estimators=150,        # Fewer trees to prevent memorisation
-        max_depth=4,             # Shallower — can't memorise deep node splits
+        n_estimators=150,        
+        max_depth=3,             # Shallower — severely limits deep memorization
         learning_rate=0.05,
-        reg_alpha=0.5,           # Stronger L1 sparsity to drop noisy FP bits
-        reg_lambda=1.5,          # Stronger L2 weight penalty
-        subsample=0.75,          # Only see 75% of rows per tree → forces generalization
-        colsample_bytree=0.6,    # Only see 60% of features per tree
-        min_child_weight=5,      # Harder to split on rare unseen scaffold patterns
-        gamma=0.3,               # Higher min-loss-reduction before splitting
+        reg_alpha=1.0,           # Strong L1 sparsity (drops noisy features)
+        reg_lambda=3.0,          # Strong L2 weight penalty
+        subsample=0.75,          
+        colsample_bytree=0.4,    # Only see 40% of features per tree (forces high diversity)
+        min_child_weight=7,      
+        gamma=0.3,               
         use_label_encoder=False,
         eval_metric="mlogloss",
         objective="multi:softprob",
@@ -338,18 +338,18 @@ def train_classifier(X_train, y_train, sample_weight=None) -> VotingClassifier:
     )
     rf_clf = RandomForestClassifier(
         n_estimators=200,
-        max_depth=6,             # Shallower trees
-        min_samples_leaf=3,      # Moderate constraint for ~310-row dataset
-        max_features="sqrt",     # Only √537 ≈ 23 features per split
+        max_depth=4,             # Very shallow RF to prevent fingerprint mapping
+        min_samples_leaf=5,      
+        max_features="sqrt",     
         random_state=SEED,
         n_jobs=-1,
     )
     gb_clf = GradientBoostingClassifier(
-        n_estimators=100,        # Fewer boosting rounds
-        max_depth=3,             # Deliberately shallow stumps
+        n_estimators=100,        
+        max_depth=2,             # Extremely shallow stumps for GradientBoosting
         learning_rate=0.08,
         subsample=0.75,
-        min_samples_leaf=3,
+        min_samples_leaf=5,
         random_state=SEED,
     )
     ensemble = VotingClassifier(

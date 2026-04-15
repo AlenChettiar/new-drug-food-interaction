@@ -14,29 +14,29 @@
 ### 🟢 Training Set
 | Metric | Value |
 |--------|-------|
-| Accuracy | 0.9541 |
-| Precision | 0.9539 |
-| Recall | 0.9541 |
-| F1 | 0.9538 |
-| Roc_Auc | 0.9949 |
+| Accuracy | 0.8834 |
+| Precision | 0.8817 |
+| Recall | 0.8834 |
+| F1 | 0.8812 |
+| Roc_Auc | 0.9799 |
 
 ### 🟡 Validation Set
 | Metric | Value |
 |--------|-------|
-| Accuracy | 0.7887 |
-| Precision | 0.7881 |
-| Recall | 0.7887 |
-| F1 | 0.7790 |
-| Roc_Auc | 0.8884 |
+| Accuracy | 0.8028 |
+| Precision | 0.7977 |
+| Recall | 0.8028 |
+| F1 | 0.7974 |
+| Roc_Auc | 0.8899 |
 
 ### 🔴 Unseen Test Set (LODO)
 | Metric | Value |
 |--------|-------|
-| Accuracy | 0.8810 |
-| Precision | 0.8789 |
-| Recall | 0.8810 |
-| F1 | 0.8792 |
-| Roc_Auc | 0.9528 |
+| Accuracy | 0.8690 |
+| Precision | 0.8670 |
+| Recall | 0.8690 |
+| F1 | 0.8667 |
+| Roc_Auc | 0.9513 |
 
 ## 3. Regression Metrics (% Bioavailability Change)
 
