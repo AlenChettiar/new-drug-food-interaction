@@ -1,21 +1,31 @@
-===============================================
-  Model Evaluation Metrics: Random Forest
-===============================================
+=======================================================
+  Model: Random Forest
+=======================================================
 
-[Training Set Performance]
-  - Accuracy: 0.9292
-  - Precision: 0.9341
-  - Recall (Sensitivity): 0.9292
-  - F1 Score: 0.9301
+  Training Time : 0.12s
 
-[Validation Set Performance]
-  - Accuracy: 0.6852
-  - Precision: 0.688
-  - Recall (Sensitivity): 0.6852
-  - F1 Score: 0.6738
+[Train]
+  Accuracy              : 0.9234
+  Precision             : 0.9264
+  Recall                : 0.9234
+  F1 Score              : 0.9239
+  ROC AUC               : 0.9759
 
-[Unseen Test Set Performance]
-  - Accuracy: 0.56
-  - Precision: 0.6556
-  - Recall (Sensitivity): 0.56
-  - F1 Score: 0.5979
+[Validation]
+  Accuracy              : 0.9194
+  Precision             : 0.8745
+  Recall                : 0.9194
+  F1 Score              : 0.8963
+  ROC AUC               : 0.8468
+
+[Unseen (LODO)]
+  Accuracy              : 0.8375
+  Precision             : 0.7793
+  Recall                : 0.8375
+  F1 Score              : 0.7916
+  ROC AUC               : 0.8497
+
+[Unseen Confusion Matrix (Neutral|Moderate|Critical)]
+[[59  0  0]
+ [ 7  0  0]
+ [ 6  0  8]]

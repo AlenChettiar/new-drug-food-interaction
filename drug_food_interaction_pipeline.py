@@ -638,6 +638,206 @@ def plot_all_results(clf, reg,
     print(f"\n[Plot] Evaluation dashboard & isolated plots saved to {out_dir}/")
 
 
+def plot_additional_evaluations(clf, reg,
+                                X_train, X_val, X_unseen,
+                                y_cls_train, y_cls_val, y_cls_unseen,
+                                y_reg_train, y_reg_val, y_reg_unseen,
+                                feat_names,
+                                out_dir="./outputs"):
+    """
+    Generate additional standalone evaluation plots:
+      1. Per-class Precision, Recall, F1 bar chart (validation + unseen)
+      2. Unseen confusion matrix heatmap
+      3. Per-class ROC curves (One-vs-Rest for all 3 classes)
+      4. Radar chart comparing Train/Val/Unseen metrics
+      5. Class distribution before & after SMOTE
+      6. Regression residual distribution plot
+    """
+    from sklearn.metrics import classification_report
+    labels = [0, 1, 2]
+    label_names = ["Neutral", "Moderate", "Critical"]
+
+    y_pred_val   = clf.predict(X_val)
+    y_pred_uns   = clf.predict(X_unseen)
+    y_prob_val   = clf.predict_proba(X_val)
+    y_prob_uns   = clf.predict_proba(X_unseen)
+    y_pred_train = clf.predict(X_train)
+
+    # ── 1. Per-class Precision / Recall / F1 (Validation + Unseen) ─────────
+    fig, axes = plt.subplots(1, 2, figsize=(16, 6))
+    fig.suptitle("Per-Class Classification Metrics — Validation vs Unseen (LODO)",
+                 fontsize=14, fontweight="bold")
+
+    for ax, y_true, y_pred, title in [
+        (axes[0], y_cls_val, y_pred_val, "Validation Set"),
+        (axes[1], y_cls_unseen, y_pred_uns, "Unseen Test (LODO)"),
+    ]:
+        report = classification_report(y_true, y_pred, labels=labels,
+                                       target_names=label_names, output_dict=True,
+                                       zero_division=0)
+        prec = [report[n]["precision"] for n in label_names]
+        rec  = [report[n]["recall"]    for n in label_names]
+        f1s  = [report[n]["f1-score"]  for n in label_names]
+        x = np.arange(len(label_names))
+        w = 0.25
+        bars1 = ax.bar(x - w, prec, w, label="Precision", color="#4e79a7", edgecolor="k", lw=0.5)
+        bars2 = ax.bar(x,     rec,  w, label="Recall",    color="#f28e2b", edgecolor="k", lw=0.5)
+        bars3 = ax.bar(x + w, f1s,  w, label="F1 Score",  color="#59a14f", edgecolor="k", lw=0.5)
+        for bars in [bars1, bars2, bars3]:
+            for bar in bars:
+                h = bar.get_height()
+                ax.text(bar.get_x() + bar.get_width()/2, h + 0.01,
+                        f"{h:.2f}", ha="center", va="bottom", fontsize=8, fontweight="bold")
+        ax.set_xticks(x)
+        ax.set_xticklabels(label_names, fontsize=11)
+        ax.set_ylim(0, 1.15)
+        ax.set_title(title, fontsize=12)
+        ax.set_ylabel("Score")
+        ax.legend(fontsize=9)
+        ax.axhline(0.90, color="red", linestyle="--", alpha=0.4, lw=1)
+
+    plt.tight_layout()
+    fig.savefig(f"{out_dir}/per_class_metrics.png", dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+    # ── 2. Unseen Confusion Matrix (standalone) ─────────────────────────────
+    fig, axes = plt.subplots(1, 2, figsize=(14, 5.5))
+    fig.suptitle("Confusion Matrices — Validation vs Unseen (LODO)",
+                 fontsize=14, fontweight="bold")
+    for ax, y_true, y_pred, title in [
+        (axes[0], y_cls_val,    y_pred_val, "Validation"),
+        (axes[1], y_cls_unseen, y_pred_uns, "Unseen (LODO)"),
+    ]:
+        cm = confusion_matrix(y_true, y_pred, labels=labels)
+        sns.heatmap(cm, annot=True, fmt="d", cmap="YlOrRd", ax=ax,
+                    xticklabels=label_names, yticklabels=label_names,
+                    linewidths=0.5, linecolor="white")
+        ax.set_title(title, fontsize=12)
+        ax.set_xlabel("Predicted")
+        ax.set_ylabel("Actual")
+    plt.tight_layout()
+    fig.savefig(f"{out_dir}/confusion_matrices_val_unseen.png", dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+    # ── 3. Per-class ROC Curves (OvR for all 3 classes on validation) ───────
+    fig, axes = plt.subplots(1, 3, figsize=(18, 5))
+    fig.suptitle("One-vs-Rest ROC Curves per Class",
+                 fontsize=14, fontweight="bold")
+    for i, (ax, cls_name) in enumerate(zip(axes, label_names)):
+        for X_, y_, y_prob, lbl, col in [
+            (X_val, y_cls_val, y_prob_val, "Validation", "darkorange"),
+            (X_unseen, y_cls_unseen, y_prob_uns, "Unseen", "green"),
+        ]:
+            y_bin = (y_ == i).astype(int)
+            if len(np.unique(y_bin)) > 1 and y_prob.shape[1] > i:
+                fpr, tpr, _ = roc_curve(y_bin, y_prob[:, i])
+                auc_val = roc_auc_score(y_bin, y_prob[:, i])
+                ax.plot(fpr, tpr, label=f"{lbl} (AUC={auc_val:.3f})", color=col, lw=2)
+        ax.plot([0, 1], [0, 1], "k--", alpha=0.3)
+        ax.set_title(f"{cls_name} vs Rest", fontsize=11)
+        ax.set_xlabel("FPR")
+        ax.set_ylabel("TPR")
+        ax.legend(fontsize=8)
+        ax.set_xlim(0, 1)
+        ax.set_ylim(0, 1.02)
+    plt.tight_layout()
+    fig.savefig(f"{out_dir}/per_class_roc_curves.png", dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+    # ── 4. Metrics Radar Chart (Train vs Val vs Unseen) ─────────────────────
+    metrics_names = ["Accuracy", "Precision", "Recall", "F1 Score"]
+    train_vals = [
+        accuracy_score(y_cls_train, y_pred_train),
+        precision_score(y_cls_train, y_pred_train, average="weighted", zero_division=0),
+        recall_score(y_cls_train, y_pred_train, average="weighted", zero_division=0),
+        f1_score(y_cls_train, y_pred_train, average="weighted", zero_division=0),
+    ]
+    val_vals = [
+        accuracy_score(y_cls_val, y_pred_val),
+        precision_score(y_cls_val, y_pred_val, average="weighted", zero_division=0),
+        recall_score(y_cls_val, y_pred_val, average="weighted", zero_division=0),
+        f1_score(y_cls_val, y_pred_val, average="weighted", zero_division=0),
+    ]
+    uns_vals = [
+        accuracy_score(y_cls_unseen, y_pred_uns),
+        precision_score(y_cls_unseen, y_pred_uns, average="weighted", zero_division=0),
+        recall_score(y_cls_unseen, y_pred_uns, average="weighted", zero_division=0),
+        f1_score(y_cls_unseen, y_pred_uns, average="weighted", zero_division=0),
+    ]
+
+    angles = np.linspace(0, 2 * np.pi, len(metrics_names), endpoint=False).tolist()
+    angles += angles[:1]
+    train_vals += train_vals[:1]
+    val_vals += val_vals[:1]
+    uns_vals += uns_vals[:1]
+
+    fig, ax = plt.subplots(figsize=(7, 7), subplot_kw=dict(polar=True))
+    ax.plot(angles, train_vals, "o-", lw=2, label="Train",    color="#4e79a7")
+    ax.fill(angles, train_vals, alpha=0.15, color="#4e79a7")
+    ax.plot(angles, val_vals,   "o-", lw=2, label="Validation", color="#f28e2b")
+    ax.fill(angles, val_vals,   alpha=0.15, color="#f28e2b")
+    ax.plot(angles, uns_vals,   "o-", lw=2, label="Unseen (LODO)", color="#59a14f")
+    ax.fill(angles, uns_vals,   alpha=0.15, color="#59a14f")
+    ax.set_xticks(angles[:-1])
+    ax.set_xticklabels(metrics_names, fontsize=11)
+    ax.set_ylim(0, 1.05)
+    ax.set_title("Metrics Radar — Train vs Validation vs Unseen",
+                 fontsize=13, fontweight="bold", pad=20)
+    ax.legend(loc="lower right", fontsize=9)
+    plt.tight_layout()
+    fig.savefig(f"{out_dir}/metrics_radar_chart.png", dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+    # ── 5. Class Distribution (actual vs predicted) for all splits ──────────
+    fig, axes = plt.subplots(1, 3, figsize=(16, 5))
+    fig.suptitle("Class Distribution — Actual vs Predicted",
+                 fontsize=14, fontweight="bold")
+    for ax, y_true, y_pred, title in [
+        (axes[0], y_cls_train,  y_pred_train, "Train"),
+        (axes[1], y_cls_val,    y_pred_val,   "Validation"),
+        (axes[2], y_cls_unseen, y_pred_uns,   "Unseen (LODO)"),
+    ]:
+        x = np.arange(len(label_names))
+        actual_counts = [np.sum(y_true == i) for i in labels]
+        pred_counts   = [np.sum(y_pred == i) for i in labels]
+        w = 0.3
+        ax.bar(x - w/2, actual_counts, w, label="Actual",    color="#4e79a7", edgecolor="k", lw=0.5)
+        ax.bar(x + w/2, pred_counts,   w, label="Predicted", color="#f28e2b", edgecolor="k", lw=0.5)
+        ax.set_xticks(x)
+        ax.set_xticklabels(label_names, fontsize=10)
+        ax.set_title(title, fontsize=12)
+        ax.set_ylabel("Count")
+        ax.legend(fontsize=9)
+    plt.tight_layout()
+    fig.savefig(f"{out_dir}/class_distribution_comparison.png", dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+    # ── 6. Regression Residual Distribution ─────────────────────────────────
+    fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+    fig.suptitle("Regression Residual Distribution (Predicted − Actual)",
+                 fontsize=14, fontweight="bold")
+    y_reg_pred_val = reg.predict(X_val)
+    y_reg_pred_uns = reg.predict(X_unseen)
+    for ax, y_true, y_pred, title, color in [
+        (axes[0], y_reg_val,    y_reg_pred_val, "Validation", "#f28e2b"),
+        (axes[1], y_reg_unseen, y_reg_pred_uns, "Unseen (LODO)", "#59a14f"),
+    ]:
+        residuals = y_pred - y_true
+        ax.hist(residuals, bins=20, color=color, edgecolor="k", alpha=0.8)
+        ax.axvline(0, color="red", linestyle="--", lw=1.5, alpha=0.7)
+        ax.axvline(np.mean(residuals), color="blue", linestyle="-.", lw=1.5,
+                   alpha=0.7, label=f"Mean={np.mean(residuals):.2f}")
+        ax.set_title(title, fontsize=12)
+        ax.set_xlabel("Residual (Predicted − Actual %)")
+        ax.set_ylabel("Frequency")
+        ax.legend(fontsize=9)
+    plt.tight_layout()
+    fig.savefig(f"{out_dir}/regression_residuals.png", dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+    print(f"[Plot] Additional evaluation graphs saved to {out_dir}/")
+
+
 # =============================================================================
 # STEP 7 — Interpretability (SHAP)
 # =============================================================================
@@ -819,6 +1019,16 @@ def main():
         feat_names_full,
     )
 
+    # ── Additional Evaluation Graphs ──────────────────────────────────────
+    print("\n[STEP 6b] Generating additional evaluation graphs...")
+    plot_additional_evaluations(
+        clf, reg,
+        X_train_full, X_val_full, X_unseen_full,
+        y_cls_train, y_cls_val, y_cls_unseen,
+        y_reg_train, y_reg_val, y_reg_unseen,
+        feat_names_full,
+    )
+
     # ── 7. SHAP Interpretability (on XGBoost sub-estimator) ────────────────
     print("\n[STEP 7] SHAP Analysis")
     xgb_sub = clf.estimators_[0]   # extract XGBoost from the VotingClassifier
@@ -833,40 +1043,61 @@ def main():
     detect_overfitting(train_metrics, val_metrics, unseen_metrics)
 
     # ── 8. Generate Automated Performance Report ────────────────────────
+    reg_train_metrics, _ = evaluate_regressor(reg, X_train_full, y_reg_train)
+    reg_val_metrics,   _ = evaluate_regressor(reg, X_val_full,   y_reg_val)
+    reg_uns_metrics,   _ = evaluate_regressor(reg, X_unseen_full,y_reg_unseen)
+
     report_path = "./outputs/evaluation_metrics_report.md"
     with open(report_path, "w") as f:
-        f.write("# Drug-Food Interaction Risk Assessment - Evaluation Report\n\n")
+        f.write("# Drug-Food Interaction Risk Assessment — Full Evaluation Report\n\n")
         f.write("## 1. Training Architecture\n")
+        f.write("- **Model**: Soft-Voting Ensemble (XGBoost + RandomForest + GradientBoosting)\n")
         f.write("- **Task**: Multiclass Classification (0: Neutral, 1: Moderate, 2: Critical)\n")
+        f.write("- **Preprocessing**: BorderlineSMOTE | RFE(20) | StandardScaler | Morgan FP (256-bit)\n")
+        f.write("- **Split Strategy**: Leave-One-Drug-Out (LODO) for unseen evaluation\n")
         f.write(f"- **Training Sample Size**: {len(X_train_full)} pairs\n")
         f.write(f"- **Validation Sample Size**: {len(X_val_full)} pairs\n")
-        f.write(f"- **Unseen Held-Out Size**: {len(X_unseen_full)} pairs\n\n")
-        
-        f.write("## 2. Model Metrics by Split\n\n")
-        
-        f.write("### 🟢 Training Set Metrics\n")
-        f.write(f"- **Accuracy**: {train_metrics.get('accuracy', 0):.4f}\n")
-        f.write(f"- **Precision (Weighted)**: {train_metrics.get('precision', 0):.4f}\n")
-        f.write(f"- **Recall (Weighted)**: {train_metrics.get('recall', 0):.4f}\n")
-        f.write(f"- **F1 Score**: {train_metrics.get('f1', 0):.4f}\n\n")
+        f.write(f"- **Unseen Held-Out Size (LODO)**: {len(X_unseen_full)} pairs\n\n")
 
-        f.write("### 🟡 LODCO Validation Set Metrics\n")
-        f.write(f"- **Accuracy**: {val_metrics.get('accuracy', 0):.4f}\n")
-        f.write(f"- **Precision (Weighted)**: {val_metrics.get('precision', 0):.4f}\n")
-        f.write(f"- **Recall (Weighted)**: {val_metrics.get('recall', 0):.4f}\n")
-        f.write(f"- **F1 Score**: {val_metrics.get('f1', 0):.4f}\n\n")
+        f.write("## 2. Classification Metrics by Split\n\n")
 
-        f.write("### 🔴 Unseen Test Set Metrics\n")
-        f.write(f"- **Accuracy**: {unseen_metrics.get('accuracy', 0):.4f}\n")
-        f.write(f"- **Precision (Weighted)**: {unseen_metrics.get('precision', 0):.4f}\n")
-        f.write(f"- **Recall (Weighted)**: {unseen_metrics.get('recall', 0):.4f}\n")
-        f.write(f"- **F1 Score**: {unseen_metrics.get('f1', 0):.4f}\n\n")
-        
-        f.write("## 3. Visual Dashboards\n\n")
-        f.write("### Confusion Matrix (Validation)\n![Confusion Matrix](./confusion_matrix.png)\n\n")
-        f.write("### Accuracy Comparison\n![Accuracy Comparison](./accuracy_comparison.png)\n\n")
-        f.write("### ROC Curves\n![ROC Curves](./roc_curves.png)\n\n")
-        f.write("### Feature Importance\n![Feature Importance](./feature_importance.png)\n\n")
+        f.write("### 🟢 Training Set\n")
+        f.write(f"| Metric | Value |\n|--------|-------|\n")
+        for k, v in train_metrics.items():
+            f.write(f"| {k.title()} | {v:.4f} |\n")
+        f.write("\n")
+
+        f.write("### 🟡 Validation Set\n")
+        f.write(f"| Metric | Value |\n|--------|-------|\n")
+        for k, v in val_metrics.items():
+            f.write(f"| {k.title()} | {v:.4f} |\n")
+        f.write("\n")
+
+        f.write("### 🔴 Unseen Test Set (LODO)\n")
+        f.write(f"| Metric | Value |\n|--------|-------|\n")
+        for k, v in unseen_metrics.items():
+            f.write(f"| {k.title()} | {v:.4f} |\n")
+        f.write("\n")
+
+        f.write("## 3. Regression Metrics (% Bioavailability Change)\n\n")
+        f.write("| Split | RMSE | MAE | R² |\n|-------|------|-----|-----|\n")
+        f.write(f"| Train | {reg_train_metrics['rmse']:.4f} | {reg_train_metrics['mae']:.4f} | {reg_train_metrics['r2']:.4f} |\n")
+        f.write(f"| Validation | {reg_val_metrics['rmse']:.4f} | {reg_val_metrics['mae']:.4f} | {reg_val_metrics['r2']:.4f} |\n")
+        f.write(f"| Unseen (LODO) | {reg_uns_metrics['rmse']:.4f} | {reg_uns_metrics['mae']:.4f} | {reg_uns_metrics['r2']:.4f} |\n\n")
+
+        f.write("## 4. Visual Dashboards\n\n")
+        f.write("### Evaluation Dashboard (Combined)\n![Dashboard](./evaluation_dashboard.png)\n\n")
+        f.write("### Confusion Matrices (Validation vs Unseen)\n![Confusion Matrices](./confusion_matrices_val_unseen.png)\n\n")
+        f.write("### Per-Class Metrics (Precision / Recall / F1)\n![Per-Class Metrics](./per_class_metrics.png)\n\n")
+        f.write("### ROC Curves (Critical vs Rest)\n![ROC Curves](./roc_curves.png)\n\n")
+        f.write("### Per-Class ROC Curves (One-vs-Rest)\n![Per-Class ROC](./per_class_roc_curves.png)\n\n")
+        f.write("### Metrics Radar Chart\n![Radar Chart](./metrics_radar_chart.png)\n\n")
+        f.write("### Class Distribution (Actual vs Predicted)\n![Class Distribution](./class_distribution_comparison.png)\n\n")
+        f.write("### Feature Importance (XGBoost sub-estimator)\n![Feature Importance](./feature_importance.png)\n\n")
+        f.write("### Predicted vs Actual (Regression)\n![Predicted vs Actual](./predicted_vs_actual.png)\n\n")
+        f.write("### Regression Residuals\n![Residuals](./regression_residuals.png)\n\n")
+        f.write("### Accuracy Comparison (Train/Val/Unseen)\n![Accuracy](./accuracy_comparison.png)\n\n")
+        f.write("### SHAP Interpretability\n![SHAP](./shap_analysis.png)\n\n")
 
     # ── 9. Export Data Splits for Inspection ──────────────────────────────
     print("\n[STEP 8] Exporting Datasets")

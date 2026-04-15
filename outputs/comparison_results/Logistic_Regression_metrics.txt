@@ -1,21 +1,31 @@
-===============================================
-  Model Evaluation Metrics: Logistic Regression
-===============================================
+=======================================================
+  Model: Logistic Regression
+=======================================================
 
-[Training Set Performance]
-  - Accuracy: 0.7547
-  - Precision: 0.7992
-  - Recall (Sensitivity): 0.7547
-  - F1 Score: 0.7614
+  Training Time : 0.01s
 
-[Validation Set Performance]
-  - Accuracy: 0.7037
-  - Precision: 0.7099
-  - Recall (Sensitivity): 0.7037
-  - F1 Score: 0.7056
+[Train]
+  Accuracy              : 0.9194
+  Precision             : 0.9436
+  Recall                : 0.9194
+  F1 Score              : 0.9266
+  ROC AUC               : 0.9801
 
-[Unseen Test Set Performance]
-  - Accuracy: 0.52
-  - Precision: 0.6911
-  - Recall (Sensitivity): 0.52
-  - F1 Score: 0.5698
+[Validation]
+  Accuracy              : 0.9194
+  Precision             : 0.9041
+  Recall                : 0.9194
+  F1 Score              : 0.9117
+  ROC AUC               : 0.8818
+
+[Unseen (LODO)]
+  Accuracy              : 0.8250
+  Precision             : 0.7711
+  Recall                : 0.8250
+  F1 Score              : 0.7759
+  ROC AUC               : 0.8872
+
+[Unseen Confusion Matrix (Neutral|Moderate|Critical)]
+[[59  0  0]
+ [ 7  0  0]
+ [ 7  0  7]]

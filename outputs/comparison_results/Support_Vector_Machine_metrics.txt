@@ -1,21 +1,31 @@
-===============================================
-  Model Evaluation Metrics: Support Vector Machine
-===============================================
+=======================================================
+  Model: Support Vector Machine
+=======================================================
 
-[Training Set Performance]
-  - Accuracy: 0.7736
-  - Precision: 0.8277
-  - Recall (Sensitivity): 0.7736
-  - F1 Score: 0.7796
+  Training Time : 0.07s
 
-[Validation Set Performance]
-  - Accuracy: 0.6111
-  - Precision: 0.6604
-  - Recall (Sensitivity): 0.6111
-  - F1 Score: 0.6213
+[Train]
+  Accuracy              : 0.9435
+  Precision             : 0.9592
+  Recall                : 0.9435
+  F1 Score              : 0.9489
+  ROC AUC               : 0.9921
 
-[Unseen Test Set Performance]
-  - Accuracy: 0.54
-  - Precision: 0.704
-  - Recall (Sensitivity): 0.54
-  - F1 Score: 0.5957
+[Validation]
+  Accuracy              : 0.8710
+  Precision             : 0.8551
+  Recall                : 0.8710
+  F1 Score              : 0.8623
+  ROC AUC               : 0.8552
+
+[Unseen (LODO)]
+  Accuracy              : 0.8250
+  Precision             : 0.7711
+  Recall                : 0.8250
+  F1 Score              : 0.7759
+  ROC AUC               : 0.8562
+
+[Unseen Confusion Matrix (Neutral|Moderate|Critical)]
+[[59  0  0]
+ [ 7  0  0]
+ [ 7  0  7]]

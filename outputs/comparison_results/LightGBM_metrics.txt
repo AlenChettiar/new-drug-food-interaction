@@ -1,21 +1,31 @@
-===============================================
-  Model Evaluation Metrics: LightGBM
-===============================================
+=======================================================
+  Model: LightGBM
+=======================================================
 
-[Training Set Performance]
-  - Accuracy: 0.8821
-  - Precision: 0.8848
-  - Recall (Sensitivity): 0.8821
-  - F1 Score: 0.8778
+  Training Time : 0.64s
 
-[Validation Set Performance]
-  - Accuracy: 0.6667
-  - Precision: 0.6595
-  - Recall (Sensitivity): 0.6667
-  - F1 Score: 0.6512
+[Train]
+  Accuracy              : 0.9839
+  Precision             : 0.9858
+  Recall                : 0.9839
+  F1 Score              : 0.9846
+  ROC AUC               : 0.9981
 
-[Unseen Test Set Performance]
-  - Accuracy: 0.66
-  - Precision: 0.6711
-  - Recall (Sensitivity): 0.66
-  - F1 Score: 0.665
+[Validation]
+  Accuracy              : 0.9355
+  Precision             : 0.9050
+  Recall                : 0.9355
+  F1 Score              : 0.9200
+  ROC AUC               : 0.8415
+
+[Unseen (LODO)]
+  Accuracy              : 0.8375
+  Precision             : 0.8321
+  Recall                : 0.8375
+  F1 Score              : 0.8187
+  ROC AUC               : 0.8733
+
+[Unseen Confusion Matrix (Neutral|Moderate|Critical)]
+[[57  1  1]
+ [ 5  2  0]
+ [ 6  0  8]]

@@ -1,0 +1,31 @@
+=======================================================
+  Model: Naive Bayes
+=======================================================
+
+  Training Time : 0.00s
+
+[Train]
+  Accuracy              : 0.8226
+  Precision             : 0.9188
+  Recall                : 0.8226
+  F1 Score              : 0.8456
+  ROC AUC               : 0.9426
+
+[Validation]
+  Accuracy              : 0.7742
+  Precision             : 0.8027
+  Recall                : 0.7742
+  F1 Score              : 0.7840
+  ROC AUC               : 0.6450
+
+[Unseen (LODO)]
+  Accuracy              : 0.7250
+  Precision             : 0.6387
+  Recall                : 0.7250
+  F1 Score              : 0.6736
+  ROC AUC               : 0.5540
+
+[Unseen Confusion Matrix (Neutral|Moderate|Critical)]
+[[54  0  5]
+ [ 7  0  0]
+ [10  0  4]]

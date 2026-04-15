@@ -1,0 +1,31 @@
+=======================================================
+  Model: Decision Tree
+=======================================================
+
+  Training Time : 0.02s
+
+[Train]
+  Accuracy              : 0.8992
+  Precision             : 0.8988
+  Recall                : 0.8992
+  F1 Score              : 0.8988
+  ROC AUC               : 0.9650
+
+[Validation]
+  Accuracy              : 0.9355
+  Precision             : 0.8909
+  Recall                : 0.9355
+  F1 Score              : 0.9124
+  ROC AUC               : 0.7551
+
+[Unseen (LODO)]
+  Accuracy              : 0.8500
+  Precision             : 0.8396
+  Recall                : 0.8500
+  F1 Score              : 0.8357
+  ROC AUC               : 0.8136
+
+[Unseen Confusion Matrix (Neutral|Moderate|Critical)]
+[[56  1  2]
+ [ 5  2  0]
+ [ 4  0 10]]

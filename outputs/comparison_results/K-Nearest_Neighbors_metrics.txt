@@ -1,21 +1,31 @@
-===============================================
-  Model Evaluation Metrics: K-Nearest Neighbors
-===============================================
+=======================================================
+  Model: K-Nearest Neighbors
+=======================================================
 
-[Training Set Performance]
-  - Accuracy: 0.6274
-  - Precision: 0.6222
-  - Recall (Sensitivity): 0.6274
-  - F1 Score: 0.5714
+  Training Time : 0.00s
 
-[Validation Set Performance]
-  - Accuracy: 0.5556
-  - Precision: 0.5198
-  - Recall (Sensitivity): 0.5556
-  - F1 Score: 0.499
+[Train]
+  Accuracy              : 0.7903
+  Precision             : 0.9010
+  Recall                : 0.7903
+  F1 Score              : 0.8228
+  ROC AUC               : 0.9617
 
-[Unseen Test Set Performance]
-  - Accuracy: 0.56
-  - Precision: 0.6745
-  - Recall (Sensitivity): 0.56
-  - F1 Score: 0.541
+[Validation]
+  Accuracy              : 0.6129
+  Precision             : 0.7741
+  Recall                : 0.6129
+  F1 Score              : 0.6841
+  ROC AUC               : 0.5527
+
+[Unseen (LODO)]
+  Accuracy              : 0.6000
+  Precision             : 0.7581
+  Recall                : 0.6000
+  F1 Score              : 0.6385
+  ROC AUC               : 0.7801
+
+[Unseen Confusion Matrix (Neutral|Moderate|Critical)]
+[[32 19  8]
+ [ 3  4  0]
+ [ 2  0 12]]

@@ -1,0 +1,31 @@
+=======================================================
+  Model: Soft-Voting Ensemble (XGB+RF+GB)
+=======================================================
+
+  Training Time : 1.67s
+
+[Train]
+  Accuracy              : 0.9476
+  Precision             : 0.9459
+  Recall                : 0.9476
+  F1 Score              : 0.9467
+  ROC AUC               : 0.9906
+
+[Validation]
+  Accuracy              : 0.9355
+  Precision             : 0.8909
+  Recall                : 0.9355
+  F1 Score              : 0.9124
+  ROC AUC               : 0.8578
+
+[Unseen (LODO)]
+  Accuracy              : 0.8375
+  Precision             : 0.7793
+  Recall                : 0.8375
+  F1 Score              : 0.7916
+  ROC AUC               : 0.8563
+
+[Unseen Confusion Matrix (Neutral|Moderate|Critical)]
+[[59  0  0]
+ [ 7  0  0]
+ [ 6  0  8]]
