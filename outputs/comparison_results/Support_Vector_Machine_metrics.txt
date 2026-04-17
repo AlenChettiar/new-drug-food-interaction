@@ -2,30 +2,30 @@
   Model: Support Vector Machine
 =======================================================
 
-  Training Time : 0.07s
+  Training Time : 0.06s
 
 [Train]
-  Accuracy              : 0.9435
-  Precision             : 0.9592
-  Recall                : 0.9435
-  F1 Score              : 0.9489
-  ROC AUC               : 0.9921
+  Accuracy              : 0.9152
+  Precision             : 0.9181
+  Recall                : 0.9152
+  F1 Score              : 0.9136
+  ROC AUC               : 0.9886
 
 [Validation]
-  Accuracy              : 0.8710
-  Precision             : 0.8551
-  Recall                : 0.8710
-  F1 Score              : 0.8623
-  ROC AUC               : 0.8552
+  Accuracy              : 0.6620
+  Precision             : 0.6709
+  Recall                : 0.6620
+  F1 Score              : 0.6395
+  ROC AUC               : 0.8659
 
 [Unseen (LODO)]
-  Accuracy              : 0.8250
-  Precision             : 0.7711
-  Recall                : 0.8250
-  F1 Score              : 0.7759
-  ROC AUC               : 0.8562
+  Accuracy              : 0.8333
+  Precision             : 0.8378
+  Recall                : 0.8333
+  F1 Score              : 0.8294
+  ROC AUC               : 0.9732
 
 [Unseen Confusion Matrix (Neutral|Moderate|Critical)]
-[[59  0  0]
- [ 7  0  0]
- [ 7  0  7]]
+[[22  4  2]
+ [ 3 20  5]
+ [ 0  0 28]]

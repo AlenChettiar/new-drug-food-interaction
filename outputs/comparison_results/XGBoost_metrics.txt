@@ -2,30 +2,30 @@
   Model: XGBoost
 =======================================================
 
-  Training Time : 0.44s
+  Training Time : 0.33s
 
 [Train]
-  Accuracy              : 0.9435
-  Precision             : 0.9399
-  Recall                : 0.9435
-  F1 Score              : 0.9413
-  ROC AUC               : 0.9870
+  Accuracy              : 0.8869
+  Precision             : 0.8855
+  Recall                : 0.8869
+  F1 Score              : 0.8848
+  ROC AUC               : 0.9776
 
 [Validation]
-  Accuracy              : 0.9355
-  Precision             : 0.8909
-  Recall                : 0.9355
-  F1 Score              : 0.9124
-  ROC AUC               : 0.8806
+  Accuracy              : 0.8028
+  Precision             : 0.7977
+  Recall                : 0.8028
+  F1 Score              : 0.7974
+  ROC AUC               : 0.8968
 
 [Unseen (LODO)]
-  Accuracy              : 0.8500
-  Precision             : 0.8533
-  Recall                : 0.8500
-  F1 Score              : 0.8306
-  ROC AUC               : 0.8617
+  Accuracy              : 0.8690
+  Precision             : 0.8753
+  Recall                : 0.8690
+  F1 Score              : 0.8645
+  ROC AUC               : 0.9477
 
 [Unseen Confusion Matrix (Neutral|Moderate|Critical)]
-[[58  1  0]
- [ 5  2  0]
- [ 6  0  8]]
+[[19  7  2]
+ [ 2 26  0]
+ [ 0  0 28]]

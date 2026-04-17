@@ -7,19 +7,19 @@
 
 | Model                            |   Train Acc |   Val Acc |   Unseen Acc |   Val F1 |   Unseen F1 |   Val AUC |   Unseen AUC |
 |:---------------------------------|------------:|----------:|-------------:|---------:|------------:|----------:|-------------:|
-| Decision Tree                    |      0.8992 |    0.9355 |       0.85   |   0.9124 |      0.8357 |    0.7551 |       0.8136 |
-| LightGBM                         |      0.9839 |    0.9355 |       0.8375 |   0.92   |      0.8187 |    0.8415 |       0.8733 |
-| XGBoost                          |      0.9435 |    0.9355 |       0.85   |   0.9124 |      0.8306 |    0.8806 |       0.8617 |
-| Soft-Voting Ensemble (XGB+RF+GB) |      0.9476 |    0.9355 |       0.8375 |   0.9124 |      0.7916 |    0.8578 |       0.8563 |
-| Logistic Regression              |      0.9194 |    0.9194 |       0.825  |   0.9117 |      0.7759 |    0.8818 |       0.8872 |
-| Random Forest                    |      0.9234 |    0.9194 |       0.8375 |   0.8963 |      0.7916 |    0.8468 |       0.8497 |
-| Support Vector Machine           |      0.9435 |    0.871  |       0.825  |   0.8623 |      0.7759 |    0.8552 |       0.8562 |
-| Naive Bayes                      |      0.8226 |    0.7742 |       0.725  |   0.784  |      0.6736 |    0.645  |       0.554  |
-| AdaBoost                         |      0.5282 |    0.6452 |       0.6625 |   0.7001 |      0.6871 |    0.9349 |       0.8988 |
-| K-Nearest Neighbors              |      0.7903 |    0.6129 |       0.6    |   0.6841 |      0.6385 |    0.5527 |       0.7801 |
+| XGBoost                          |      0.8869 |    0.8028 |       0.869  |   0.7974 |      0.8645 |    0.8968 |       0.9477 |
+| Soft-Voting Ensemble (XGB+RF+GB) |      0.8905 |    0.8028 |       0.869  |   0.7974 |      0.8667 |    0.8908 |       0.9515 |
+| Logistic Regression              |      0.9611 |    0.7746 |       0.8095 |   0.7698 |      0.8095 |    0.8774 |       0.9415 |
+| Decision Tree                    |      0.8339 |    0.7606 |       0.6786 |   0.7565 |      0.6699 |    0.8585 |       0.9097 |
+| Random Forest                    |      0.8269 |    0.7606 |       0.869  |   0.7535 |      0.8676 |    0.8929 |       0.9541 |
+| LightGBM                         |      0.9788 |    0.7606 |       0.8214 |   0.7455 |      0.8178 |    0.895  |       0.9526 |
+| Naive Bayes                      |      0.7244 |    0.7042 |       0.7024 |   0.6464 |      0.6672 |    0.7883 |       0.7583 |
+| AdaBoost                         |      0.7032 |    0.6901 |       0.7143 |   0.5873 |      0.6445 |    0.8313 |       0.8529 |
+| Support Vector Machine           |      0.9152 |    0.662  |       0.8333 |   0.6395 |      0.8294 |    0.8659 |       0.9732 |
+| K-Nearest Neighbors              |      0.7703 |    0.6338 |       0.7381 |   0.6279 |      0.7294 |    0.7602 |       0.8928 |
 
 ## Winner
-**Decision Tree** achieved the highest validation accuracy at `0.9355` and unseen accuracy at `0.8500`.
+**XGBoost** achieved the highest validation accuracy at `0.8028` and unseen accuracy at `0.8690`.
 
 ## Outputs
 - `accuracy_comparison_all_models.png` — Bar chart per model across Train/Val/Unseen

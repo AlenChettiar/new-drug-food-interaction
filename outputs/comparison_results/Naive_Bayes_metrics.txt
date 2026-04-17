@@ -5,27 +5,27 @@
   Training Time : 0.00s
 
 [Train]
-  Accuracy              : 0.8226
-  Precision             : 0.9188
-  Recall                : 0.8226
-  F1 Score              : 0.8456
-  ROC AUC               : 0.9426
+  Accuracy              : 0.7244
+  Precision             : 0.8254
+  Recall                : 0.7244
+  F1 Score              : 0.6600
+  ROC AUC               : 0.8315
 
 [Validation]
-  Accuracy              : 0.7742
-  Precision             : 0.8027
-  Recall                : 0.7742
-  F1 Score              : 0.7840
-  ROC AUC               : 0.6450
+  Accuracy              : 0.7042
+  Precision             : 0.7162
+  Recall                : 0.7042
+  F1 Score              : 0.6464
+  ROC AUC               : 0.7883
 
 [Unseen (LODO)]
-  Accuracy              : 0.7250
-  Precision             : 0.6387
-  Recall                : 0.7250
-  F1 Score              : 0.6736
-  ROC AUC               : 0.5540
+  Accuracy              : 0.7024
+  Precision             : 0.7266
+  Recall                : 0.7024
+  F1 Score              : 0.6672
+  ROC AUC               : 0.7583
 
 [Unseen Confusion Matrix (Neutral|Moderate|Critical)]
-[[54  0  5]
- [ 7  0  0]
- [10  0  4]]
+[[ 7 20  1]
+ [ 0 28  0]
+ [ 4  0 24]]

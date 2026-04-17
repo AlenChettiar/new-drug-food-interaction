@@ -2,30 +2,30 @@
   Model: Random Forest
 =======================================================
 
-  Training Time : 0.12s
+  Training Time : 0.10s
 
 [Train]
-  Accuracy              : 0.9234
-  Precision             : 0.9264
-  Recall                : 0.9234
-  F1 Score              : 0.9239
-  ROC AUC               : 0.9759
+  Accuracy              : 0.8269
+  Precision             : 0.8225
+  Recall                : 0.8269
+  F1 Score              : 0.8227
+  ROC AUC               : 0.9634
 
 [Validation]
-  Accuracy              : 0.9194
-  Precision             : 0.8745
-  Recall                : 0.9194
-  F1 Score              : 0.8963
-  ROC AUC               : 0.8468
+  Accuracy              : 0.7606
+  Precision             : 0.7505
+  Recall                : 0.7606
+  F1 Score              : 0.7535
+  ROC AUC               : 0.8929
 
 [Unseen (LODO)]
-  Accuracy              : 0.8375
-  Precision             : 0.7793
-  Recall                : 0.8375
-  F1 Score              : 0.7916
-  ROC AUC               : 0.8497
+  Accuracy              : 0.8690
+  Precision             : 0.8688
+  Recall                : 0.8690
+  F1 Score              : 0.8676
+  ROC AUC               : 0.9541
 
 [Unseen Confusion Matrix (Neutral|Moderate|Critical)]
-[[59  0  0]
- [ 7  0  0]
- [ 6  0  8]]
+[[23  3  2]
+ [ 6 22  0]
+ [ 0  0 28]]

@@ -38,20 +38,20 @@ np.random.seed(SEED)
 def build_voting_ensemble() -> VotingClassifier:
     """Our champion Soft-Voting Ensemble from the main pipeline."""
     xgb_clf = xgb.XGBClassifier(
-        n_estimators=150, max_depth=4, learning_rate=0.05,
-        reg_alpha=0.5, reg_lambda=1.5, subsample=0.75,
-        colsample_bytree=0.6, min_child_weight=5, gamma=0.3,
+        n_estimators=150, max_depth=3, learning_rate=0.05,
+        reg_alpha=1.0, reg_lambda=3.0, subsample=0.75,
+        colsample_bytree=0.4, min_child_weight=7, gamma=0.3,
         use_label_encoder=False, eval_metric="mlogloss",
         objective="multi:softprob", num_class=3,
         random_state=SEED, verbosity=0,
     )
     rf_clf = RandomForestClassifier(
-        n_estimators=200, max_depth=6, min_samples_leaf=5,
+        n_estimators=200, max_depth=4, min_samples_leaf=5,
         max_features="sqrt", class_weight="balanced",
         random_state=SEED, n_jobs=-1,
     )
     gb_clf = GradientBoostingClassifier(
-        n_estimators=100, max_depth=3, learning_rate=0.08,
+        n_estimators=100, max_depth=2, learning_rate=0.08,
         subsample=0.75, min_samples_leaf=5, random_state=SEED,
     )
     return VotingClassifier(
@@ -117,11 +117,10 @@ def main():
     X_v   = np.hstack([X_val[:, :n_fp],   X_val[:, n_fp:][:, rfe_mask]])
     X_uns = np.hstack([X_unseen_s[:, :n_fp], X_unseen_s[:, n_fp:][:, rfe_mask]])
 
-    # ── 4. BorderlineSMOTE ──────────────────────────────────────────────
-    print("\n[Step 4] Applying BorderlineSMOTE to training set...")
-    smote = BorderlineSMOTE(random_state=SEED, kind="borderline-1")
-    X_tr_sm, y_tr_sm = smote.fit_resample(X_tr, y_train)
-    print(f"  Expanded: {len(y_train)} → {len(y_tr_sm)} rows")
+    # ── 4. Legacy SMOTE (Removed) ───────────────────────────────────────
+    print("\n[Step 4] FDA Dataset perfectly balanced naturally. Skipping SMOTE.")
+    X_tr_sm = X_tr
+    y_tr_sm = y_train
 
     # ── 5. Define all models ────────────────────────────────────────────
     models = {
@@ -153,9 +152,9 @@ def main():
             class_weight="balanced", random_state=SEED, verbose=-1
         ),
         "XGBoost": xgb.XGBClassifier(
-            n_estimators=150, max_depth=4, learning_rate=0.05,
-            reg_alpha=0.5, reg_lambda=1.5, subsample=0.75,
-            colsample_bytree=0.6, min_child_weight=5, gamma=0.3,
+            n_estimators=150, max_depth=3, learning_rate=0.05,
+            reg_alpha=1.0, reg_lambda=3.0, subsample=0.75,
+            colsample_bytree=0.4, min_child_weight=7, gamma=0.3,
             use_label_encoder=False, eval_metric="mlogloss",
             objective="multi:softprob", num_class=3,
             random_state=SEED, verbosity=0

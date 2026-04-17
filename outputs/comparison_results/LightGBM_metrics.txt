@@ -2,30 +2,30 @@
   Model: LightGBM
 =======================================================
 
-  Training Time : 0.64s
+  Training Time : 0.44s
 
 [Train]
-  Accuracy              : 0.9839
-  Precision             : 0.9858
-  Recall                : 0.9839
-  F1 Score              : 0.9846
-  ROC AUC               : 0.9981
+  Accuracy              : 0.9788
+  Precision             : 0.9788
+  Recall                : 0.9788
+  F1 Score              : 0.9787
+  ROC AUC               : 0.9987
 
 [Validation]
-  Accuracy              : 0.9355
-  Precision             : 0.9050
-  Recall                : 0.9355
-  F1 Score              : 0.9200
-  ROC AUC               : 0.8415
+  Accuracy              : 0.7606
+  Precision             : 0.7615
+  Recall                : 0.7606
+  F1 Score              : 0.7455
+  ROC AUC               : 0.8950
 
 [Unseen (LODO)]
-  Accuracy              : 0.8375
-  Precision             : 0.8321
-  Recall                : 0.8375
-  F1 Score              : 0.8187
-  ROC AUC               : 0.8733
+  Accuracy              : 0.8214
+  Precision             : 0.8212
+  Recall                : 0.8214
+  F1 Score              : 0.8178
+  ROC AUC               : 0.9526
 
 [Unseen Confusion Matrix (Neutral|Moderate|Critical)]
-[[57  1  1]
- [ 5  2  0]
- [ 6  0  8]]
+[[18  8  2]
+ [ 4 24  0]
+ [ 1  0 27]]

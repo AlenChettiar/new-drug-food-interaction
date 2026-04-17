@@ -2,30 +2,30 @@
   Model: AdaBoost
 =======================================================
 
-  Training Time : 0.26s
+  Training Time : 0.10s
 
 [Train]
-  Accuracy              : 0.5282
-  Precision             : 0.8820
-  Recall                : 0.5282
-  F1 Score              : 0.5892
-  ROC AUC               : 0.9051
+  Accuracy              : 0.7032
+  Precision             : 0.8167
+  Recall                : 0.7032
+  F1 Score              : 0.6214
+  ROC AUC               : 0.8435
 
 [Validation]
-  Accuracy              : 0.6452
-  Precision             : 0.8999
-  Recall                : 0.6452
-  F1 Score              : 0.7001
-  ROC AUC               : 0.9349
+  Accuracy              : 0.6901
+  Precision             : 0.8131
+  Recall                : 0.6901
+  F1 Score              : 0.5873
+  ROC AUC               : 0.8313
 
 [Unseen (LODO)]
-  Accuracy              : 0.6625
-  Precision             : 0.8651
-  Recall                : 0.6625
-  F1 Score              : 0.6871
-  ROC AUC               : 0.8988
+  Accuracy              : 0.7143
+  Precision             : 0.8311
+  Recall                : 0.7143
+  F1 Score              : 0.6445
+  ROC AUC               : 0.8529
 
 [Unseen Confusion Matrix (Neutral|Moderate|Critical)]
-[[32 17 10]
- [ 0  7  0]
- [ 0  0 14]]
+[[ 4 22  2]
+ [ 0 28  0]
+ [ 0  0 28]]
