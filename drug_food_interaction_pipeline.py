@@ -1090,19 +1090,19 @@ def main():
 
         f.write("## 2. Classification Metrics by Split\n\n")
 
-        f.write("### 🟢 Training Set\n")
+        f.write("### [TRAIN] Training Set\n")
         f.write(f"| Metric | Value |\n|--------|-------|\n")
         for k, v in train_metrics.items():
             f.write(f"| {k.title()} | {v:.4f} |\n")
         f.write("\n")
 
-        f.write("### 🟡 Validation Set\n")
+        f.write("### [VAL] Validation Set\n")
         f.write(f"| Metric | Value |\n|--------|-------|\n")
         for k, v in val_metrics.items():
             f.write(f"| {k.title()} | {v:.4f} |\n")
         f.write("\n")
 
-        f.write("### 🔴 Unseen Test Set (LODO)\n")
+        f.write("### [TEST] Unseen Test Set (LODO)\n")
         f.write(f"| Metric | Value |\n|--------|-------|\n")
         for k, v in unseen_metrics.items():
             f.write(f"| {k.title()} | {v:.4f} |\n")
