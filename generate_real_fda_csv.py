@@ -242,7 +242,6 @@ for _, row in unique_drugs.iterrows():
             change_pct  = 0.0
             interaction = 0
 
-        fda_mentions = 1 if food_term in text_to_search else 0
         fda_kw_count = count_interaction_words(text_to_search) if text_to_search else 0
 
         data.append({
@@ -254,7 +253,6 @@ for _, row in unique_drugs.iterrows():
             "Bioavail_Change_Pct":    round(change_pct, 1),
             "interactions":           interaction,
             "Split":                  split,
-            "fda_mentions_food":      fda_mentions,
             "fda_interaction_keywords": fda_kw_count,
         })
 
